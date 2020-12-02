@@ -14,7 +14,8 @@ class TapelsController extends Controller
      */
     public function index()
     {
-        //
+        //    $suppliers=Supplier::all();
+        return view('admin.tapels.index');
     }
 
     /**
