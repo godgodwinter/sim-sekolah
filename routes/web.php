@@ -17,3 +17,6 @@ Route::resource('tapel','App\Http\Controllers\TapelsController');
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/documentation', function () {
+    return view('documentation');
+});

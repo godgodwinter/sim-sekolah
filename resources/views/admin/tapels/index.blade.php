@@ -10,28 +10,7 @@
 @endsection
 
 @section('headernav')
-<div class="page-header">
-    <div class="row align-items-end">
-        <div class="col-lg-8">
-            <div class="page-header-title">
-                <div class="d-inline">
-                    <h4>@yield('title')</h4>
-                    <span>Halaman Mastering</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="page-header-breadcrumb">
-                <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item">
-                        <a href="#"> <i class="feather icon-home"></i> </a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#!">@yield('title')</a> </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+
 @endsection
 @section('notif')
 @if (session('status'))
@@ -43,5 +22,77 @@
 </div>
 @endif
 @endsection
-@section('container')
+@section('site-content')
+    <div class="site-content">
+      <div class="panel panel-default panel-table">
+        <div class="panel-heading">
+          <h3 class="m-t-0 m-b-5">@yield('title')</h3>
+          <p class="text-muted m-b-0"></p>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered dataTable" id="table-1">
+              <thead>
+                <tr>
+                  <th>Rendering engine</th>
+                  <th>Browser</th>
+                  <th>Platform(s)</th>
+                  <th>Engine version</th>
+                  <th>CSS grade</th>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>Misc</td>
+                  <td>Links</td>
+                  <td>Text only</td>
+                  <td>-</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Misc</td>
+                  <td>Lynx</td>
+                  <td>Text only</td>
+                  <td>-</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Misc</td>
+                  <td>IE Mobile</td>
+                  <td>Windows Mobile 6</td>
+                  <td>-</td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>Misc</td>
+                  <td>PSP browser</td>
+                  <td>PSP</td>
+                  <td>-</td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>Other browsers</td>
+                  <td>All others</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>U</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Rendering engine</th>
+                  <th>Browser</th>
+                  <th>Platform(s)</th>
+                  <th>Engine version</th>
+                  <th>CSS grade</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
 @endsection
