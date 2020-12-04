@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    
     <link rel="stylesheet" href="{{ asset("cosmos/") }}/css/vendor.min.css">
     <link rel="stylesheet" href="{{ asset("cosmos/") }}/css/cosmos.min.css">
     <link rel="stylesheet" href="{{ asset("cosmos/") }}/css/application.min.css">
@@ -257,6 +258,17 @@
           </ul>
         </div>
       </div>
+      
+    
+    @yield('notif')
+
+    {{-- <div class="alert alert-info border-info">
+    OK <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+              class="pcoded-micon"> <i class="feather icon-x-square"></i></span>
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div> --}}
+
     @yield('site-content')
       <div class="site-footer">
         2017 © Cosmos

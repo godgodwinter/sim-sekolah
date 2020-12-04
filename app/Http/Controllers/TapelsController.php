@@ -14,8 +14,9 @@ class TapelsController extends Controller
      */
     public function index()
     {
-        //    $suppliers=Supplier::all();
-        return view('admin.tapels.index');
+        $tapels=Tapel::all();
+        return view('admin.tapels.index',compact('tapels'));
+        // return view('admin.tapels.index');
     }
 
     /**
@@ -37,6 +38,18 @@ class TapelsController extends Controller
     public function store(Request $request)
     {
         //
+         //
+         $request->validate([
+            'nama'=>'required'
+            
+        ],
+        [
+            'nama.required'=>'Nama harus diisi'
+
+        ]);
+            // dd($request);
+        Tapel::create($request->all());
+        return redirect('/tapel')->with('status','Data berhasil di tambahkan');
     }
 
     /**
@@ -71,6 +84,23 @@ class TapelsController extends Controller
     public function update(Request $request, Tapel $tapel)
     {
         //
+        $request->validate([
+            'nama'=>'required'
+        ],
+          
+        [
+            'nama.required'=>'Nama harus diisi'
+
+
+        ]);
+         //aksi update
+      
+        tapel::where('id',$tapel->id)
+            ->update([
+                'nama'=>$request->nama
+            ]);
+            return redirect('/tapel')->with('status','Data berhasil diupdate!');
+
     }
 
     /**
@@ -82,5 +112,7 @@ class TapelsController extends Controller
     public function destroy(Tapel $tapel)
     {
         //
+        Tapel::destroy($tapel->id);
+        return redirect('/tapel')->with('status','Data berhasil dihapus!');
     }
 }
