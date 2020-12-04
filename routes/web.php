@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('tapel','App\Http\Controllers\TapelsController');
+Route::resource('ppdb','App\Http\Controllers\PpdbsController');
 
 Route::get('/', function () {
     return view('welcome');
