@@ -32,7 +32,7 @@
     <!----------------------------------------------------------------------
 NAVBAR (remove topnav if you don't want changed nav background on scroll)
 ------------------------------------------------------------------------>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="topnav navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="fas fa-anchor mr-2"></i><strong>PPDB</strong> SMK DW
                 KROMENGAN</a><button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -44,8 +44,12 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
                   
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Daftar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ppdbuser_beranda">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ppdbuser_beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ppdbuser_identitas">Identitas Diri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ppdbuser_ortu">Orang Tua</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ppdbuser_rincian">Rincian</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ppdbuser_persetujuan">Persetujuan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ppdbuser_logout">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -53,127 +57,9 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
     <!-- End Navbar -->
 
 
-    <!-------------------------------------
-HEADER
---------------------------------------->
-    <header>
-        <div class="jumbotron jumbotron-lg jumbotron-fluid mb-0 pb-3 bg-primary position-relative">
-            <div class="container-fluid text-white h-100">
-                <div class="d-lg-flex align-items-center justify-content-between text-center pl-lg-5">
-                    <div class="col pt-4 pb-4">
-                        <h1 class="display-3"><strong>SMK DHARMA WANITA</strong>KROMENGAN</h1>
-                        <h5 class="font-weight-light mb-4">Penerimaan Peserta Didik Baru <br><strong> Online</strong> &
-                            <strong><i class="fab fa-sass fa-2x text-info"></i></strong></h5>
-                        <a href="#" class="btn btn-lg btn-outline-white btn-round">Daftar Sekarang</a>
-                    </div>
-                    <div
-                        class="col align-self-bottom align-items-right text-right h-max-380 position-relative z-index-1">
-                        <img src="{{ asset("anchor/") }}/assets/img/demo/dashb.png"
-                            class="rounded img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <svg style="-webkit-transform:rotate(-180deg); -moz-transform:rotate(-180deg); -o-transform:rotate(-180deg); transform:rotate(-180deg); margin-top: -1px;"
-            version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px" y="0px" viewbox="0 0 1440 126" style="enable-background:new 0 0 1440 126;" xml:space="preserve">
-            <path class="bg-primary"
-                d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z" />
-        </svg>
-    </header>
-    <!--- END HEADER -->
-
 
     <main class="container">
 
-        <!--------------------------------------
-COLOR SCHEME
---------------------------------------->
-
-<section class="pt-4 pb-5" data-aos="fade-up" id="example-carousel">
-    <h3 class="h5 mb-4 font-weight-bold">Jadwal PPDB</h3>
-    <p class="mb-3">Silahkan mengisi data nilai rapor mulai dari semester 1 hingga semester 4.
-    </p>
-    <div class="row">
-        <div class="col-xl-2"></div>
-        <div class="col-xl-12">
-            <div class="card">
-               
-                <div class="card-body">
-                  
-
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                            <div class="table-responsive">
-                                <form action="#" method="post" id="form_rapor">
-                                    <table class="table table-bordered table-striped table-responsive">
-                                        <thead>
-                                            <tr>
-                                                <th rowspan="2" width="30%" class="text-center">Keterangan
-                                                </th>
-                                                <th colspan="4" class="text-center">Gelombang Ke-</th>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-center" style="min-width:70px;">1</th>
-                                                <th class="text-center" style="min-width:70px;">2</th>
-                                                <th class="text-center" style="min-width:70px;">3</th>
-                                                <th class="text-center" style="min-width:70px;">4</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            <tr>
-                                                <td>Pendaftaran</td>
-                                                <td class="p-2 text-center"><input type="text"
-                                                    class="text-center form-control p-1" name="nr_6782"
-                                                    id="nr_6782" value="11 Desember 2020" readonly></td>
-                                            <td class="p-2 text-center"><input type="text"
-                                                    class="text-center form-control p-1" name="nr_6782"
-                                                    id="nr_6782" value="11 Desember 2020" readonly></td>
-                                            <td class="p-2 text-center"><input type="text"
-                                                    class="text-center form-control p-1" name="nr_6782"
-                                                    id="nr_6782" value="11 Desember 2020" readonly></td>
-                                            <td class="p-2 text-center"><input type="text"
-                                                    class="text-center form-control p-1" name="nr_6782"
-                                                    id="nr_6782" value="11 Desember 2020" readonly></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pengumuman</td>
-                                                <td class="p-2 text-center"><input type="text"
-                                                        class="text-center form-control p-1" name="nr_6782"
-                                                        id="nr_6782" value="11 Desember 2020" readonly></td>
-                                                <td class="p-2 text-center"><input type="text"
-                                                        class="text-center form-control p-1" name="nr_6782"
-                                                        id="nr_6782" value="11 Desember 2020" readonly></td>
-                                                <td class="p-2 text-center"><input type="text"
-                                                        class="text-center form-control p-1" name="nr_6782"
-                                                        id="nr_6782" value="11 Desember 2020" readonly></td>
-                                                <td class="p-2 text-center"><input type="text"
-                                                        class="text-center form-control p-1" name="nr_6782"
-                                                        id="nr_6782" value="11 Desember 2020" readonly></td>
-                                                
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </form>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                  
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-2"></div>
-    </div>
-
-
-    </div>
-</section>
 
         <section class="pt-5 pb-5" data-aos="fade-up">
             <h3 class="h5 mb-1 font-weight-bold">Alur Pendaftaran</h3>
@@ -204,7 +90,7 @@ COLOR SCHEME
 
                                 <div class="media-body text-center">
                                     <h6 class="media-title font-weight-semibold"><strong>Langkah 2</strong></h6>
-                                    <span class="opacity-75">Pilih Gelombang</span>
+                                    <span class="opacity-75">Identitas Diri</span>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +104,7 @@ COLOR SCHEME
 
                                 <div class="media-body text-center">
                                     <h6 class="media-title font-weight-semibold"><strong>Langkah 3</strong></h6>
-                                    <span class="opacity-75">Isi Identitas Diri</span>
+                                    <span class="opacity-75">Data Orang Tua / Wali</span>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +118,7 @@ COLOR SCHEME
 
                                 <div class="media-body text-center">
                                     <h6 class="media-title font-weight-semibold"><strong>Langkah 4</strong></h6>
-                                    <span class="opacity-75">Input Nilai Rapor</span>
+                                    <span class="opacity-75">Rincian Lainya</span>
                                 </div>
                             </div>
                         </div>
@@ -246,20 +132,6 @@ COLOR SCHEME
 
                                 <div class="media-body text-center">
                                     <h6 class="media-title font-weight-semibold"><strong>Langkah 5</strong></h6>
-                                    <span class="opacity-75">Mengumpulkan Berkas</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
-
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 6</strong></h6>
                                     <span class="opacity-75">Pilih Jurusan</span>
                                 </div>
                             </div>
@@ -273,8 +145,8 @@ COLOR SCHEME
                                 </div>
 
                                 <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 7</strong></h6>
-                                    <span class="opacity-75">Mengisi Ekstra Kulikuler </span>
+                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 6</strong></h6>
+                                    <span class="opacity-75">Persetujuan</span>
                                 </div>
                             </div>
                         </div>
@@ -287,12 +159,13 @@ COLOR SCHEME
                                 </div>
 
                                 <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 8</strong></h6>
+                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 7</strong></h6>
                                     <span class="opacity-75">Cetak Kartu Peserta</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                   
 
                 </div>
             </div>
@@ -420,7 +293,7 @@ DEMO MODAL & DONATE BUTTON ONLY - DON'T COPY
         </div>
     </div>
     <div style="position:fixed; bottom:20px;left:20px;">
-        <a href="https://www.paypal.me/wowthemes/10" target="_blank"><img class="rounded-circle shadow-lg"
+        <a href="https://api.whatsapp.com/send?phone=112" target="_blank"><img class="rounded-circle shadow-lg"
                 src="{{ asset("anchor/") }}/assets/img/demo/coffee.png" width="70"
                 data-toggle="tooltip" data-placement="top" title="" data-original-title="Buy me a coffee!"></a>
     </div>
