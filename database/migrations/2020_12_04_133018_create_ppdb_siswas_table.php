@@ -15,27 +15,37 @@ class CreatePpdbSiswasTable extends Migration
     {
         Schema::create('ppdb_siswas', function (Blueprint $table) {
             $table->id();
-            $table->string('nisn');
             $table->string('nama');
-            $table->string('panggilan');
             $table->string('jk');
+            $table->string('nisn');
+            $table->string('nik');
+            $table->string('no_kk');
             $table->string('tempat_lahir');
+            $table->string('tgl_lahir');
+            $table->string('no_registrasi_akta_lahir');
             $table->string('agama');
+            $table->string('kewarganegaraan');
+            $table->string('berkebutuhankhusus');
+            $table->string('alamat_jalan');
+            $table->string('rt');
+            $table->string('rw');
+            $table->string('nama_dusun');
+            $table->string('nama_kelurahan_desa');
+            $table->string('kecamatan');
+            $table->string('kodepos');
+            $table->string('tempattinggal');
+            $table->string('modatransportasi');
+            $table->string('anakkeberapa');
+            $table->string('apakahpunyakip');
+            $table->string('apakahmenerimakip');
+            $table->string('alasanmenonakpip');
+
+//kontak
             $table->string('telp');
-            $table->string('alamat');
+            $table->string('hp');
             $table->string('email');
-            $table->string('ayah_nama');
-            $table->string('ayah_pekerjaan');
-            $table->string('ayah_telp');
-            $table->string('ayah_alamat');
-            $table->string('ibu_nama');
-            $table->string('ibu_pekerjaan');
-            $table->string('ibu_telp');
-            $table->string('ibu_alamat');
-            $table->string('smp_nama');
-            $table->string('pekerjaan');
-            $table->string('pekerjaan');
-            $table->string('pekerjaan');
+
+
             $table->timestamps();
         });
     }

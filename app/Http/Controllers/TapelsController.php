@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tapel;
 use Illuminate\Http\Request;
+use PDF;
 
 class TapelsController extends Controller
 {
@@ -114,5 +115,13 @@ class TapelsController extends Controller
         //
         Tapel::destroy($tapel->id);
         return redirect('/tapel')->with('status','Data berhasil dihapus!');
+    }
+
+    public function cetak_pdf()
+    {
+    	$tapel = Tapel::all();
+ 
+    	$pdf = PDF::loadview('admin.tapels.tapelpdf',['tapels'=>$tapel]);
+    	return $pdf->download('laporan-tapel-pdf');
     }
 }

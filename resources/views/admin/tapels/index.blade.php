@@ -73,6 +73,7 @@
         </div>
         <div class="panel-body">
           <div class="table-responsive">
+          <a href="/tapel/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
             <table class="table table-striped table-bordered dataTable" id="table-1">
               <thead>
                 <tr>
