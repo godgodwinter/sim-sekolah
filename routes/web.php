@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyExportImportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,7 @@ Route::get('/', function () {
 Route::get('/documentation', function () {
     return view('documentation');
 });
+
+Route::get('importExportView', [ MyExportImportController::class, 'importExportView' ]);
+Route::get('export', [ MyExportImportController::class, 'export' ])->name('export');
+Route::post('import', [ MyExportImportController::class, 'import' ])->name('import');
