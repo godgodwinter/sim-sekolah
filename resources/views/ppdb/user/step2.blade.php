@@ -78,7 +78,7 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
     
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <legend class="text-uppercase font-size-sm font-weight-bold">INFORMASI ORANG TUA</legend>
+                                <legend class="text-uppercase font-size-sm font-weight-bold">DATA AYAH</legend>
     
                                 <div class="form-group row">
                                     <label class="col-form-label col-lg-3">Nama Ayah <code>*</code></label>
@@ -87,7 +87,7 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
                                             <span class="input-group-prepend">
                                                 <span class="input-group-text"><i class="icon-menu"></i></span>
                                             </span>
-                                            <input type="text" class="form-control" placeholder="Nama Ayah" name="nama_ayah" id="nama_ayah">
+                                            <input type="text" class="form-control" placeholder="Nama Ayah" name="ayah_nama" id="ayah_nama">
                                         </div>
                                     </div>
                                 </div>
@@ -147,132 +147,27 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
                                             <span class="input-group-prepend">
                                                 <span class="input-group-text"><i class="icon-menu"></i></span>
                                             </span>
-                                            <input type="nama_ayah" class="form-control" placeholder="Nama Ayah" name="nama_ayah" id="nama_ayah">
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3" id="nama_lengkap">Nama Lengkap <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-user"></i></span>
-                                            </span>
-                                            <input type="text" class="form-control" placeholder="Nama Pendaftar" name="nama" id="nama_lengkap">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3" >Jenis Kelamin <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="jk" id="gender">
+                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="ayah_penghasilanbulanan" id="gender">
                                                 <option value="" disabled selected>- Pilih -</option>
-                                                <option value="L">Laki-Laki</option>
-                                                <option value="P">Perempuan</option>
+                                                <option value="< Rp 500.000,00">< Rp 500.000,00</option><option value="Rp. 500.000,00 - Rp. 999.999,00">Rp. 500.000,00 - Rp. 999.999,00</option>
+                                                <option value="Rp. 1.000.000,00 - Rp. 1.999.999,00">Rp. 1.000.000,00 - Rp. 1.999.999,00</option>
+                                                <option value="Rp. 2.000.000,00 - Rp. 4.999.999,00">Rp. 2.000.000,00 - Rp. 4.999.999,00</option>
+                                                <option value="Rp. 5.000.000,00 - Rp. 20.000.000,00">Rp. 5.000.000,00 - Rp. 20.000.000,00</option>
+                                                <option value="> Rp. 20.000.000,00">> Rp. 20.000.000,00</option>
+                                                <option value="Tidak Berpenghasilan">Tidak Berpenghasilan</option>
+                                              
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3" id="nik">NIK <code>*</code></label>
+                                    <label class="col-form-label col-lg-3">Berkebutuhan khusus Ayah <code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-user"></i></span>
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
                                             </span>
-                                    <input type="text" class="form-control" placeholder="NIK / No. KITAS(Untuk WNA)" name="nik" id="nik">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3" id="no_kk">No KK <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-user"></i></span>
-                                            </span>
-                                    <input type="text" class="form-control" placeholder="No KK" name="no_kk" id="no_kk">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3" id="tempat_lahir">Tempat Lahir <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-user"></i></span>
-                                            </span>
-                                    <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" id="tempat_lahir">
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Tanggal Lahir <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <div class="input-group">
-                                                <span class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="icon-location4"></i></span>
-                                                </span>
-                                                <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tgl_lahir" id="tgl_lahir">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">No. Akta<code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-calendar"></i></span>
-                                            </span>
-                                            <input type="text" class="form-control daterange-single" placeholder="No Registrasi Akta Lahir" name="no_registrasi_akta_lahir" id="no_registrasi_akta_lahir">
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Agama <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="agama" id="agama">
-                                                <option value="" disabled>- Pilih -</option>
-                                                <option value="islam">Islam</option>
-                                                <option value="kristen">Kristen/Protestan</option>
-                                                <option value="katholik">Katholik</option>
-                                                <option value="hindu">Hindu</option>
-                                                <option value="budha">Budha</option>
-                                                <option value="Khonghucu">Khonghucu</option>
-                                                <option value="Kepercayaan Kepada Tuhan YME">Kepercayaan Kepada Tuhan YME</option>
-                                                <option value="lainnya">lainnya</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Kewarganegaraan <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="kewarganegaraan" id="kewarganegaraan">
-                                                <option value="" disabled>- Pilih -</option>
-                                                <option value="Indonesia (WNI)">Indonesia (WNI)</option>
-                                                <option value="Asing (WNA)">Asing (WNA)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Berkebutuhan Khusus <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="berkebutuhankhusus" id="berkebutuhankhusus">
+                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="ayah_berkebutuhankhusus" id="ayah_berkebutuhankhusus">
                                                 <option value="" disabled>- Pilih -</option>
                                                 <option value="Tidak">Tidak</option>
                                                 <option value="Netra">Netra</option>
@@ -296,226 +191,246 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
                                     </div>
                                 </div>
     
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Alamat <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-location3"></i></span>
-                                            </span>
-                                            <textarea rows="3" cols="3" class="form-control" placeholder="Alamat" name="alamat_jalan" id="alamat_jalan"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">RT <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-location3"></i></span>
-                                            </span>
-                                            <input type="text" class="form-control daterange-single" placeholder="RT" name="rt" id="rt">
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">RW <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-location3"></i></span>
-                                            </span>
-                                            <input type="text" class="form-control daterange-single" placeholder="RW" name="rw" id="rw">
-                                        </div>
-                                    </div>
-                                </div>
     
     
                             </div>
-    
+                            
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                
-    
-    
+                                <legend class="text-uppercase font-size-sm font-weight-bold">DATA IBU</legend>
     
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Nama Dusun <code>*</code></label>
+                                    <label class="col-form-label col-lg-3">Nama Ibu <code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-location3"></i></span>
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
                                             </span>
-                                            <input type="text" class="form-control daterange-single" placeholder="Nama Dusun" name="nama_dusun" id="nama_dusun">
+                                            <input type="text" class="form-control" placeholder="Nama Ibu" name="ibu_nama" id="ibu_nama">
                                         </div>
                                     </div>
                                 </div>
+    
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Nama Kelurahan/Desa <code>*</code></label>
+                                    <label class="col-form-label col-lg-3">NIK Ibu <code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-location3"></i></span>
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
                                             </span>
-                                            <input type="text" class="form-control daterange-single" placeholder="Nama Kelurahan atau Desa" name="nama_kelurahan_desa" id="nama_kelurahan_desa">
+                                            <input type="text" class="form-control" placeholder="NIK Ibu" name="ibu_nik" id="ibu_nik">
                                         </div>
                                     </div>
                                 </div>
+    
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Kecamatan <code>*</code></label>
+                                    <label class="col-form-label col-lg-3">Tanggal Lahir Ibu <code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-location3"></i></span>
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
                                             </span>
-                                            <input type="text" class="form-control daterange-single" placeholder="Nama Kecamatan" name="kecamatan" id="kecamatan">
+                                            <input type="date" class="form-control" placeholder="Tanggal Lahir Ibu" name="ibu_tahunlahir" id="ibu_tahunlahir">
                                         </div>
                                     </div>
                                 </div>
+    
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Kode POS <code>*</code></label>
+                                    <label class="col-form-label col-lg-3">Pendidikan Ibu <code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-location3"></i></span>
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
                                             </span>
-                                            <input type="text" class="form-control daterange-single" placeholder="Kode POS" name="kodepos" id="kodepos">
+                                            <input type="text" class="form-control" placeholder="Pendidikan Ibu" name="ibu_pendidikan" id="ibu_pendidikan">
                                         </div>
                                     </div>
                                 </div>
+    
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Tempat Tinggal<code>*</code></label>
+                                    <label class="col-form-label col-lg-3">Pekerjaan Ibu <code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="tempattinggal" id="tempattinggal">
-                                                <option value="" disabled>- Pilih -</option>
-                                                <option value="Bersama Orang Tua">Bersama Orang Tua</option>
-                                                <option value="Wali">Wali</option>
-                                                <option value="Kos">Kos</option>
-                                                <option value="Asrama">Asrama</option>
-                                                <option value="Panti Asuhan">Panti Asuhan</option>
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="Pekerjaan Ibu" name="ibu_pekerjaan" id="ibu_pekerjaan">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Penghasilan Bulanan Ibu <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="ibu_penghasilanbulanan" id="gender">
+                                                <option value="" disabled selected>- Pilih -</option>
+                                                <option value="< Rp 500.000,00">< Rp 500.000,00</option><option value="Rp. 500.000,00 - Rp. 999.999,00">Rp. 500.000,00 - Rp. 999.999,00</option>
+                                                <option value="Rp. 1.000.000,00 - Rp. 1.999.999,00">Rp. 1.000.000,00 - Rp. 1.999.999,00</option>
+                                                <option value="Rp. 2.000.000,00 - Rp. 4.999.999,00">Rp. 2.000.000,00 - Rp. 4.999.999,00</option>
+                                                <option value="Rp. 5.000.000,00 - Rp. 20.000.000,00">Rp. 5.000.000,00 - Rp. 20.000.000,00</option>
+                                                <option value="> Rp. 20.000.000,00">> Rp. 20.000.000,00</option>
+                                                <option value="Tidak Berpenghasilan">Tidak Berpenghasilan</option>
+                                              
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Moda Transportasi<code>*</code></label>
+                                    <label class="col-form-label col-lg-3">Berkebutuhan khusus Ibu <code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="modatransportasi" id="modatransportasi">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="ibu_berkebutuhankhusus" id="ibu_berkebutuhankhusus">
                                                 <option value="" disabled>- Pilih -</option>
-                                                <option value="Jalan Kaki">Jalan Kaki</option>
-                                                <option value="Kendaraan Pribadi">Kendaraan Pribadi</option>
-                                                <option value="Kendaraan Umun/Angkot">Kendaraan Umun/Angkot</option>
-                                                <option value="Jemputan Sekolah">Jemputan Sekolah</option>
-                                                <option value="Kereta Api">Kereta Api</option>
-                                                <option value="Ojek">Ojek</option>
-                                                <option value="Andong/Bendi/Saldo/Dokar/Delman">Andong/Bendi/Saldo/Dokar/Delman</option>
-                                                <option value="Perahu Penyebrangan/Rakit/Getek">Perahu Penyebrangan/Rakit/Getek</option>
-                                                <option value="Lainya">Lainya</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Apakah Punya KIP?<code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="apakahpunyakip" id="apakahpunyakip">
-                                                <option value="" disabled>- Pilih -</option>
-                                                <option value="Ya">Ya</option>
                                                 <option value="Tidak">Tidak</option>
+                                                <option value="Netra">Netra</option>
+                                                <option value="Rungu">Rungu</option>
+                                                <option value="Grahita Ringan">Grahita Ringan</option>
+                                                <option value="Grahita Sedang">Grahita Sedang</option>
+                                                <option value="Daksa Ringan">Daksa Ringan</option>
+                                                <option value="Daksa Sedang">Daksa Sedang</option>
+                                                <option value="Wicara">Wicara</option>
+                                                <option value="Tuna Ganda">Tuna Ganda</option>
+                                                <option value="Hiper Aktif">Hiper Aktif</option>
+                                                <option value="Cerdas Istimas">Cerdas Istimas</option>
+                                                <option value="Bakat Istimewa">Bakat Istimewa</option>
+                                                <option value="Kesulitan Belajar">Kesulitan Belajar</option>
+                                                <option value="Narko">Narko</option>
+                                                <option value="Indigo">Indigo</option>
+                                                <option value="Dawn Sindrome">Dawn Sindrome</option>
+                                                <option value="Autis">Autis</option>
                                             </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Apakah Peserta Didik tetap menerima KIP?<code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="apakahmenerimakip" id="apakahmenerimakip">
-                                                <option value="" disabled>- Pilih -</option>
-                                                <option value="Ya">Ya</option>
-                                                <option value="Tidak">Tidak</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Alasan Menolak KIP?<code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="alasanmenonakpip" id="alasanmenonakpip">
-                                                <option value="" disabled>- Pilih -</option>
-                                                <option value="Dilarang karena menerima bantuan serupa">Dilarang karena menerima bantuan serupa</option>
-                                                <option value="Menolak">Menolak</option>
-                                                <option value="Sudah Mampu">Sudah Mampu</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Apakah Punya KIP<code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <span class="input-group-prepend">
-                                                <span class="input-group-text"><i class="icon-location3"></i></span>
-                                            </span>
-                                            <input type="text" class="form-control daterange-single" placeholder="Anak Keberapa" name="anakkeberapa" id="anakkeberapa">
                                         </div>
                                     </div>
                                 </div>
     
-                                <legend class="text-uppercase font-size-sm font-weight-bold">INFORMASI AKUN</legend>
     
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Email <code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <div class="input-group">
-                                                <span class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="icon-envelop5"></i></span>
-                                                </span>
-                                                <input readonly type="email" class="form-control" placeholder="Email" name="email" id="email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Nomor Telepon Rumah<code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <div class="input-group">
-                                                <span class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="icon-envelop5"></i></span>
-                                                </span>
-                                                <input type="text" class="form-control" placeholder="Telepon Ruman" name="telp" id="telp">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Nomor HP<code>*</code></label>
-                                    <div class="col-lg-9">
-                                        <div class="input-group">
-                                            <div class="input-group">
-                                                <span class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="icon-envelop5"></i></span>
-                                                </span>
-                                                <input type="text" class="form-control" placeholder="Nomor HP Pribadi" name="hp" id="hp">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+    
                             </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <legend class="text-uppercase font-size-sm font-weight-bold">DATA WALI</legend>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Nama Wali <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="Nama Wali" name="wali_nama" id="wali_nama">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">NIK Ibu <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="NIK Ibu" name="wali_nik" id="wali_nik">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Tanggal Lahir Wali <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="date" class="form-control" placeholder="Tanggal Lahir Wali" name="wali_tahunlahir" id="wali_tahunlahir">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Pendidikan Wali <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="Pendidikan Wali" name="wali_pendidikan" id="wali_pendidikan">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Pekerjaan Wali <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="Pekerjaan Wali" name="wali_pekerjaan" id="wali_pekerjaan">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Penghasilan Bulanan Wali <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="wali_penghasilanbulanan" id="gender">
+                                                <option value="" disabled selected>- Pilih -</option>
+                                                <option value="< Rp 500.000,00">< Rp 500.000,00</option><option value="Rp. 500.000,00 - Rp. 999.999,00">Rp. 500.000,00 - Rp. 999.999,00</option>
+                                                <option value="Rp. 1.000.000,00 - Rp. 1.999.999,00">Rp. 1.000.000,00 - Rp. 1.999.999,00</option>
+                                                <option value="Rp. 2.000.000,00 - Rp. 4.999.999,00">Rp. 2.000.000,00 - Rp. 4.999.999,00</option>
+                                                <option value="Rp. 5.000.000,00 - Rp. 20.000.000,00">Rp. 5.000.000,00 - Rp. 20.000.000,00</option>
+                                                <option value="> Rp. 20.000.000,00">> Rp. 20.000.000,00</option>
+                                                <option value="Tidak Berpenghasilan">Tidak Berpenghasilan</option>
+                                              
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Berkebutuhan khusus Wali <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <select class="form-control form-control-md select select2" data-minimum-results-for-search="Infinity" data-container-css-class="select-md" data-fouc name="wali_berkebutuhankhusus" id="wali_berkebutuhankhusus">
+                                                <option value="" disabled>- Pilih -</option>
+                                                <option value="Tidak">Tidak</option>
+                                                <option value="Netra">Netra</option>
+                                                <option value="Rungu">Rungu</option>
+                                                <option value="Grahita Ringan">Grahita Ringan</option>
+                                                <option value="Grahita Sedang">Grahita Sedang</option>
+                                                <option value="Daksa Ringan">Daksa Ringan</option>
+                                                <option value="Daksa Sedang">Daksa Sedang</option>
+                                                <option value="Wicara">Wicara</option>
+                                                <option value="Tuna Ganda">Tuna Ganda</option>
+                                                <option value="Hiper Aktif">Hiper Aktif</option>
+                                                <option value="Cerdas Istimas">Cerdas Istimas</option>
+                                                <option value="Bakat Istimewa">Bakat Istimewa</option>
+                                                <option value="Kesulitan Belajar">Kesulitan Belajar</option>
+                                                <option value="Narko">Narko</option>
+                                                <option value="Indigo">Indigo</option>
+                                                <option value="Dawn Sindrome">Dawn Sindrome</option>
+                                                <option value="Autis">Autis</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+    
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
