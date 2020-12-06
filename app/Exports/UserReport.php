@@ -10,7 +10,7 @@ class UsersExport implements FromCollection
 {
     public function laporanExcel()
     {
-        dd(Tapel::all());
+        //dd(Tapel::all());
         return Tapel::all();
     }
 }

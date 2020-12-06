@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Milon\Barcode\BarcodeServiceProvider::class
 
     ],
 
@@ -228,7 +229,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         // 'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-    'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+         'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
+         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
 
     ],
 

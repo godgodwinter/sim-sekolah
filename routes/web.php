@@ -22,6 +22,7 @@ Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiri
 Route::get('tapel', 'App\Http\Controllers\TapelsController@index');
 Route::get('cetak_pdf', 'App\Http\Controllers\TapelsController@cetak_pdf');
 Route::get('/excel', 'App\Http\Controllers\TapelsController@laporanExcel');
+Route::get('barcode', 'App\Http\Controllers\TapelsController@barcode');
 
 Route::get('/', function () {
     return view('welcome');
