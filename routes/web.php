@@ -19,7 +19,7 @@ Route::resource('ppdbuser_beranda','App\Http\Controllers\PpdbUserBerandaControll
 Route::resource('ppdbuser_ortu','App\Http\Controllers\PpdbUserIdentitasOrtuController');
 Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiriController');
 Route::get('tapel', 'App\Http\Controllers\TapelsController@index');
-Route::get('tapel/cetak_pdf', 'App\Http\Controllers\TapelsController@cetak_pdf');
+Route::get('cetak_pdf', 'App\Http\Controllers\TapelsController@cetak_pdf');
 
 Route::get('/', function () {
     return view('welcome');
