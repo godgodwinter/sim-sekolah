@@ -25,7 +25,7 @@ class CreatePpdbSiswasTable extends Migration
             $table->string('no_registrasi_akta_lahir');
             $table->string('agama');
             $table->string('kewarganegaraan');
-            $table->string('berkebutuhan khusus');
+            $table->string('berkebutuhankhusus');
             $table->string('alamat_jalan');
             $table->string('rt');
             $table->string('rw');

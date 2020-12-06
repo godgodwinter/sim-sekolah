@@ -71,23 +71,83 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-header header-elements-inline">
-                        <h5 class="card-title">Data Identitas Diri</h5>
+                        <h5 class="card-title">Data Orang Tua dan Wali </h5>
                     </div>
                     <div class="card-body">
                         <p class="mb-3">Silahkan melengkapi data profil kalian sesuai dengan form yang disediakan. jika terdapat tanda bintang <code>(*)</code>, maka wajib diisi.</p>
     
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <legend class="text-uppercase font-size-sm font-weight-bold">IDENTITAS DIRI</legend>
+                                <legend class="text-uppercase font-size-sm font-weight-bold">INFORMASI ORANG TUA</legend>
     
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">NISN <code>*</code></label>
+                                    <label class="col-form-label col-lg-3">Nama Ayah <code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
                                                 <span class="input-group-text"><i class="icon-menu"></i></span>
                                             </span>
-                                            <input type="number" class="form-control" placeholder="NISN" name="nisn" id="nisn">
+                                            <input type="text" class="form-control" placeholder="Nama Ayah" name="nama_ayah" id="nama_ayah">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">NIK Ayah <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="NIK Ayah" name="ayah_nik" id="ayah_nik">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Tanggal Lahir Ayah <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="date" class="form-control" placeholder="Tanggal Lahir Ayah" name="ayah_tahunlahir" id="ayah_tahunlahir">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Pendidikan Ayah <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="Pendidikan Ayah" name="ayah_pendidikan" id="ayah_pendidikan">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Pekerjaan Ayah <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="Pekerjaan Ayah" name="ayah_pekerjaan" id="ayah_pekerjaan">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Penghasilan Bulanan Ayah <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="nama_ayah" class="form-control" placeholder="Nama Ayah" name="nama_ayah" id="nama_ayah">
                                         </div>
                                     </div>
                                 </div>
