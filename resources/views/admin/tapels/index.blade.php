@@ -74,6 +74,7 @@
         <div class="panel-body">
           <div class="table-responsive">
           <a href="/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+          <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
             <table class="table table-striped table-bordered dataTable" id="table-1">
               <thead>
                 <tr>
@@ -180,7 +181,26 @@
           </div>
         </div>
       </div>
-      
+      <div class="container main-section">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card bg-light mt-3">
+                    <div class="card-header">
+                        Import Tapel
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="file" class="form-control">
+                            <br>
+                            <button class="btn btn-success">Import User Data</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
       
     </div>
 @endsection

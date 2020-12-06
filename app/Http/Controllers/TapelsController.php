@@ -130,4 +130,8 @@ class TapelsController extends Controller
     {
         return Excel::download(new UserReport, 'users.xlsx');
     }
+    public function barcode()
+    {
+        return view('admin.tapels.barcode');
+    }
 }
