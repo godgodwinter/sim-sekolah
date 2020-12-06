@@ -20,6 +20,7 @@ Route::resource('ppdbuser_ortu','App\Http\Controllers\PpdbUserIdentitasOrtuContr
 Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiriController');
 Route::get('tapel', 'App\Http\Controllers\TapelsController@index');
 Route::get('cetak_pdf', 'App\Http\Controllers\TapelsController@cetak_pdf');
+Route::get('/excel', 'App\Http\Controllers\TapelsController@laporanExcel');
 
 Route::get('/', function () {
     return view('welcome');

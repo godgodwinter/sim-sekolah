@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Tapel;
 use Illuminate\Http\Request;
 use PDF;
+use Excel;
+use App\Exports\UserReport;
 
 class TapelsController extends Controller
 {
@@ -123,5 +125,9 @@ class TapelsController extends Controller
  
     	$pdf = PDF::loadview('admin.tapels.tapelpdf',['tapels'=>$tapel]);
     	return $pdf->download('laporan-tapel-pdf');
+    }
+    public function laporanExcel()
+    {
+        return Excel::download(new UserReport, 'users.xlsx');
     }
 }
