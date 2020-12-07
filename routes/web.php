@@ -13,18 +13,29 @@ use App\Http\Controllers\MyExportImportController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//ppdb
+//ppdb_luar
 Route::resource('tapel','App\Http\Controllers\TapelsController');
 Route::resource('ppdb','App\Http\Controllers\PpdbsController');
+Route::resource('/','App\Http\Controllers\PpdbsController');
+// Route::get('ppdb/login','App\Http\Controllers\PpdbsController@login');
+Route::get('/ppdblogin', function () {
+    return view('ppdb/login');
+});
+
+//ppdb_dalam
 Route::resource('ppdbuser_beranda','App\Http\Controllers\PpdbUserBerandaController');
 Route::resource('ppdbuser_ortu','App\Http\Controllers\PpdbUserIdentitasOrtuController');
 Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiriController');
 Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincianController');
+
+//admin/.
+Route::resource('admin/ppdb_siswa','App\Http\Controllers\Ppdb_siswasController');
 // Route::get('tapel', 'App\Http\Controllers\TapelsController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/documentation', function () {
     return view('documentation');
 });

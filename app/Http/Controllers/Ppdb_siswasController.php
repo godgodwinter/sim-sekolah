@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ppdb;
+use App\Models\Ppdb_siswa;
 use Illuminate\Http\Request;
 
-class PpdbsController extends Controller
+class Ppdb_siswasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +15,6 @@ class PpdbsController extends Controller
     public function index()
     {
         //
-        return view('ppdb.index');
-    }
-
-    //login
-    public function login()
-    {
-        //
-        return view('ppdb.login');
     }
 
     /**
@@ -49,10 +41,10 @@ class PpdbsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Ppdb  $ppdb
+     * @param  \App\Models\Ppdb_siswa  $ppdb_siswa
      * @return \Illuminate\Http\Response
      */
-    public function show(Ppdb $ppdb)
+    public function show(Ppdb_siswa $ppdb_siswa)
     {
         //
     }
@@ -60,10 +52,10 @@ class PpdbsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Ppdb  $ppdb
+     * @param  \App\Models\Ppdb_siswa  $ppdb_siswa
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ppdb $ppdb)
+    public function edit(Ppdb_siswa $ppdb_siswa)
     {
         //
     }
@@ -72,10 +64,10 @@ class PpdbsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Ppdb  $ppdb
+     * @param  \App\Models\Ppdb_siswa  $ppdb_siswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ppdb $ppdb)
+    public function update(Request $request, Ppdb_siswa $ppdb_siswa)
     {
         //
     }
@@ -83,10 +75,10 @@ class PpdbsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Ppdb  $ppdb
+     * @param  \App\Models\Ppdb_siswa  $ppdb_siswa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ppdb $ppdb)
+    public function destroy(Ppdb_siswa $ppdb_siswa)
     {
         //
     }
