@@ -15,6 +15,12 @@ class CreatePpdbSiswasRinciansTable extends Migration
     {
         Schema::create('ppdb_siswas_rincians', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('ppdb_siswas_id')->unsigned();
+            $table->foreign('ppdb_siswas_id')
+                    ->references('id')
+                    ->on('ppdb_siswas')
+                    ->onDelete('cascade ')
+                    ->onUpdate('cascade');
             //rincian peserta didik
             $table->string('tinggi');
             $table->string('berat');
@@ -40,7 +46,7 @@ class CreatePpdbSiswasRinciansTable extends Migration
             $table->string('kesejahteraanpesertadidik_jenis');
             $table->string('kesejahteraanpesertadidik_nokartu');
             $table->string('kesejahteraanpesertadidik_namadikartu');
-            $table->string('kesejahteraanpesertadidik_');
+            // $table->string('kesejahteraanpesertadidik_');
 
 //registrasi peserta didik
             $table->string('regristrasi_kompetensikeahlian');
