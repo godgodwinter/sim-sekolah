@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ppdbuser extends Model
 {
-    protected $table = 'ppdbusers';
-    use HasFactory;  
+    public $table = "ppdbuser";
+    use HasFactory;
+    
     protected $fillable = [
         'name',
         'email',

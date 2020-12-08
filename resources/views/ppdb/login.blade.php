@@ -40,19 +40,45 @@
 				@csrf
                 <h3 class="mb-4 text-center">Form Daftar</h3>
                 <div class="form-group">
-					<input type="text" class="form-control" id="InputNama" aria-describedby="emailHelp" placeholder="Nama" required="" name="name">
+					<input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="InputNama" aria-describedby="emailHelp" placeholder="Nama" required="" name="name" value="{{ old('name') }}">
+					@if($errors->has('name'))
+						<div class="invalid-feedback">
+							{{ $errors->first('name') }}
+						</div>
+					@endif
+				
 				</div>
 				<div class="form-group">
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" required="" name="email">
+					<input type="email" class="form-control  {{ $errors->has('email') ? 'is-invalid' : '' }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" required="" name="email" value="{{ old('email') }}">
+					@if($errors->has('email'))
+					<div id="validationServer03Feedback" class="invalid-feedback">
+						Please provide a valid city.
+					  </div>
+					@endif
 				</div>
 				<div class="form-group">
-					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required=""  name="password">
+					<input type="password" class="form-control  {{ $errors->has('password') ? 'is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Password" required=""  name="password">
+					@if($errors->has('password'))
+						<div class="invalid-feedback">
+							{{ $errors->first('password') }}
+						</div>
+					@endif
                 </div>
                 <div class="form-group">
-					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required=""  name="password_confirmed">
+					<input type="password" class="form-control  {{ $errors->has('password') ? 'is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Password" required=""  name="password_confirmation">
+					@if($errors->has('password'))
+						<div class="invalid-feedback">
+							{{ $errors->first('password') }}
+						</div>
+					@endif
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" id="exampleInputPassword1" placeholder="NISN" required=""  name="nisn">
+					<input type="text" class="form-control  {{ $errors->has('nisn') ? 'is-invalid' : '' }}" id="exampleInputPassword1" placeholder="NISN" required=""  name="nisn" value="{{ old('nisn') }}">
+					@if($errors->has('nisn'))
+						<div class="invalid-feedback">
+							{{ $errors->first('nisn') }}
+						</div>
+					@endif
 				</div>
 			
 				<button type="submit" class="btn btn-success btn-round btn-block shadow-sm">Daftar</button>

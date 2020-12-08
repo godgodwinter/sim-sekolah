@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ppdb;
+// use App\Models\Ppdb;
 use App\Models\ppdbuser;
 use Illuminate\Http\Request;
 
@@ -37,7 +37,11 @@ class PpdbsController extends Controller
           $this->validate($request,[
                 'name'=>'required',
                 'email'=>'required|email|unique:ppdbuser',
-                // 'password'=>'required|confirmed|min:6',
+                'password'=>'required|min:3|confirmed',
+            //     'password' => ['required', 
+            //    'min:6', 
+            //    'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/', 
+            //    'confirmed'],
                 'nisn'=>'required|min:4'
             ]);
             

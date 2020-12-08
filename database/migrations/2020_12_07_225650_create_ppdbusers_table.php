@@ -13,7 +13,7 @@ class CreatePpdbusersTable extends Migration
      */
     public function up()
     {
-        Schema::create('ppdbusers', function (Blueprint $table) {
+        Schema::create('ppdbuser', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
