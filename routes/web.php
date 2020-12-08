@@ -24,8 +24,15 @@ Route::get('/ppdblogin', function () {
     return view('ppdb/login');
 });
 
+Auth::routes();
+Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('admin.home')->middleware('is_admin');
+Route::get('ppdbuser_beranda',[App\Http\Controllers\PpdbUserBerandaController::class,'index'])->name('ppdbuser_beranda')->middleware();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('home');
+
+// Route::get('ppdbuser_beranda',[App\Http\Controllers\PpdbUserBerandaController::class,'index'])->name('ppdbuser_beranda')->middleware('is_admin');
+
 //ppdb_dalam
-Route::resource('ppdbuser_beranda','App\Http\Controllers\PpdbUserBerandaController');
+// Route::resource('ppdbuser_beranda','App\Http\Controllers\PpdbUserBerandaController');
 Route::resource('ppdbuser_ortu','App\Http\Controllers\PpdbUserIdentitasOrtuController');
 Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiriController');
 Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincianController');
@@ -51,3 +58,7 @@ Route::get('export', [ MyExportImportController::class, 'export' ])->name('expor
 Route::post('import', [ MyExportImportController::class, 'import' ])->name('import');
 
 Route::resource('ppdb2','App\Http\Controllers\PpdbContohController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -44,8 +44,7 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
                   
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Daftar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ppdbuser_beranda">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
                 </ul>
             </div>
         </div>
