@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ppdb;
+use App\Models\ppdbuser;
 use Illuminate\Http\Request;
 
 class PpdbsController extends Controller
@@ -25,6 +26,29 @@ class PpdbsController extends Controller
         return view('ppdb.login');
     }
 
+        //
+        public function postLogin(Request $request){
+            // dd($request);
+            return view('ppdb.login');
+        }
+        public function postRegister(Request $request){
+            // dd($request);
+
+          $this->validate($request,[
+                'name'=>'required',
+                'email'=>'required|email|unique:ppdbuser',
+                // 'password'=>'required|confirmed|min:6',
+                'nisn'=>'required|min:4'
+            ]);
+            
+            ppdbuser::create([
+                'name'=> $request->name,
+                'email'=> $request->email,
+                'password'=> bcrypt($request->password),
+                'nisn'=> $request->nisn,
+            ]);
+            return redirect()->back()->withErrors(['msg', 'The Message']);
+        }
     /**
      * Show the form for creating a new resource.
      *

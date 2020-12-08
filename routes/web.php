@@ -17,6 +17,8 @@ use App\Http\Controllers\MyExportImportController;
 Route::resource('tapel','App\Http\Controllers\TapelsController');
 Route::resource('ppdb','App\Http\Controllers\PpdbsController');
 Route::resource('/','App\Http\Controllers\PpdbsController');
+Route::post('/ppdblogin/login','App\Http\Controllers\PpdbsController@postLogin');
+Route::post('/ppdblogin/register','App\Http\Controllers\PpdbsController@postRegister');
 // Route::get('ppdb/login','App\Http\Controllers\PpdbsController@login');
 Route::get('/ppdblogin', function () {
     return view('ppdb/login');

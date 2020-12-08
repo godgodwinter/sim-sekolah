@@ -16,7 +16,8 @@
 <div class="d-md-flex h-md-100 align-items-center">
 	<div class="col-md-6 p-0 bg-indigo h-md-100">
 		<div class="text-white d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
-			<form class="border rounded p-5">
+			<form class="border rounded p-5" method="POST" action="ppdblogin/login">
+				@csrf
 				<h3 class="mb-4 text-center">Form Masuk</h3>
 				<div class="form-group">
 					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" required="">
@@ -35,10 +36,11 @@
 	</div>
 	<div class="col-md-6 p-0 bg-white h-md-100 registerarea">
 		<div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
-			<form class="border rounded p-5">
+			<form class="border rounded p-5" method="POST" action="ppdblogin/register">
+				@csrf
                 <h3 class="mb-4 text-center">Form Daftar</h3>
                 <div class="form-group">
-					<input type="text" class="form-control" id="InputNama" aria-describedby="emailHelp" placeholder="Nama" required="" name="nama">
+					<input type="text" class="form-control" id="InputNama" aria-describedby="emailHelp" placeholder="Nama" required="" name="name">
 				</div>
 				<div class="form-group">
 					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" required="" name="email">
@@ -47,7 +49,10 @@
 					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required=""  name="password">
                 </div>
                 <div class="form-group">
-					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required=""  name="password2">
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required=""  name="password_confirmed">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="exampleInputPassword1" placeholder="NISN" required=""  name="nisn">
 				</div>
 			
 				<button type="submit" class="btn btn-success btn-round btn-block shadow-sm">Daftar</button>
