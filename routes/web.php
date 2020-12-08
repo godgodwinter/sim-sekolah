@@ -16,7 +16,7 @@ use App\Http\Controllers\MyExportImportController;
 //ppdb_luar
 Route::resource('tapel','App\Http\Controllers\TapelsController');
 Route::resource('ppdb','App\Http\Controllers\PpdbsController');
-Route::resource('/','App\Http\Controllers\PpdbsController');
+// Route::resource('/','App\Http\Controllers\PpdbsController');
 Route::post('/ppdblogin/login','App\Http\Controllers\PpdbsController@postLogin');
 Route::post('/ppdblogin/register','App\Http\Controllers\PpdbsController@postRegister');
 // Route::get('ppdb/login','App\Http\Controllers\PpdbsController@login');
@@ -34,9 +34,9 @@ Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincia
 Route::resource('admin/ppdb_siswa','App\Http\Controllers\Ppdb_siswasController');
 // Route::get('tapel', 'App\Http\Controllers\TapelsController@index');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/documentation', function () {
     return view('documentation');
@@ -51,3 +51,7 @@ Route::get('export', [ MyExportImportController::class, 'export' ])->name('expor
 Route::post('import', [ MyExportImportController::class, 'import' ])->name('import');
 
 Route::resource('ppdb2','App\Http\Controllers\PpdbContohController');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
