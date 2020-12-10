@@ -175,7 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Milon\Barcode\BarcodeServiceProvider::class
+        Milon\Barcode\BarcodeServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
     ],
 
@@ -232,6 +233,7 @@ return [
          'Excel' => Maatwebsite\Excel\Facades\Excel::class,
          'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
          'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
+         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
 
     ],
 

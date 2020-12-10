@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyExportImportController;
+use App\Http\Controllers\QrCodeGeneratorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,5 @@ Route::resource('ppdb2','App\Http\Controllers\PpdbContohController');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//qrcode
+Route::get('/qr-code', [App\Http\Controllers\QrCodeGeneratorController::class, 'index'])->name('qr.code.index');
