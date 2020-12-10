@@ -5,12 +5,12 @@ Work On Progress,,
 
 composer install
 
-<br>
+<hr>
 php artisan migrate
 or
 php artisan migrate:fresh
 
-<br>
+<hr>
 php artisan db:seed --class=CreateUserSeeder 
 php artisan db:seed
 setting database on .env
@@ -18,5 +18,5 @@ or
 copy .env_copy to .env 
 setting database then
 
-<br>
+<hr>
 php artisan db:seed
