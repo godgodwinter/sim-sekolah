@@ -49,7 +49,17 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
                     <li class="nav-item @yield('link-nav-ortu')"><a class="nav-link" href="ppdbuser_ortu">Orang Tua</a></li>
                     <li class="nav-item @yield('link-nav-rincian')"><a class="nav-link" href="ppdbuser_rincian">Rincian</a></li>
                     <li class="nav-item @yield('link-nav-persetujuan')"><a class="nav-link" href="ppdbuser_persetujuan">Persetujuan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+                    {{-- <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li> --}}
+                    <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                     {{ __('Logout') }}
+                 </a>
+                </li>
+
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                     @csrf
+                 </form>
                 </ul>
             </div>
         </div>
