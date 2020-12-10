@@ -27,19 +27,11 @@ Route::get('/ppdblogin', function () {
 Auth::routes();
 
 Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');
-// Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('admin.home')->middleware('is_admin');
-Route::get('ppdbuser_beranda',[App\Http\Controllers\PpdbUserBerandaController::class,'index'])->name('ppdbuser_beranda')->middleware('is_ppdb');
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('home');
 
-// Route::get('ppdbuser_beranda',[App\Http\Controllers\PpdbUserBerandaController::class,'index'])->name('ppdbuser_beranda')->middleware('is_admin');
-
-//ppdb_dalam
-// Route::resource('ppdbuser_beranda','App\Http\Controllers\PpdbUserBerandaController');
-
-
-
-Route::group(['middleware' => ['auth:sanctum', 'is_admin']], function() {
+Route::group(['middleware' => ['is_ppdb']], function() {
     
+Route::get('/ppdbuser_beranda', [App\Http\Controllers\PpdbUserBerandaController::class, 'index'])->name('ppdbuser_beranda');
+// Route::resource('ppdbuser_beranda','App\Http\Controllers\PpdbUserBerandaController');
 Route::resource('ppdbuser_ortu','App\Http\Controllers\PpdbUserIdentitasOrtuController');
 Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiriController');
 Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincianController');
@@ -47,11 +39,6 @@ Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincia
 //admin/.
 Route::resource('admin/ppdb_siswa','App\Http\Controllers\Ppdb_siswasController');
 });
-// Route::get('tapel', 'App\Http\Controllers\TapelsController@index');
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/documentation', function () {
     return view('documentation');

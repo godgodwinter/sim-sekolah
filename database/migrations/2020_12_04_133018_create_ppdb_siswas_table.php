@@ -15,6 +15,12 @@ class CreatePpdbSiswasTable extends Migration
     {
         Schema::create('ppdb_siswas', function (Blueprint $table) {
             $table->id();
+            $table->string('users_email')->indeks();
+            $table->foreign('users_email')
+                    ->references('email')
+                    ->on('users')
+                    ->onDelete('cascade ')
+                    ->onUpdate('cascade');
             $table->string('nama');
             $table->string('jk');
             $table->string('nisn');
@@ -43,7 +49,6 @@ class CreatePpdbSiswasTable extends Migration
 //kontak
             $table->string('telp');
             $table->string('hp');
-            $table->string('email');
 
 
             $table->timestamps();

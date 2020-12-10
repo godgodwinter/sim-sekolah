@@ -21,7 +21,8 @@
   
 
     
-	<form action="#" method="post" id="form">
+	<form action="ppdbuser_identitas" method="POST" id="form">
+        @csrf
         <div class="row mt-5">
             <div class="col-xl-12">
                 <div class="card">
@@ -34,6 +35,18 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <legend class="text-uppercase font-size-sm font-weight-bold">IDENTITAS DIRI</legend>
+    
+                                <div class="form-group row">
+                                    <label class="col-form-label col-lg-3">Email <code>*</code></label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-menu"></i></span>
+                                            </span>
+                                            <input type="email" class="form-control" placeholder="email" name="email" id="email" readonly value="{{ Auth::user()->email }}">
+                                        </div>
+                                    </div>
+                                </div>
     
                                 <div class="form-group row">
                                     <label class="col-form-label col-lg-3">NISN <code>*</code></label>
@@ -54,7 +67,7 @@
                                             <span class="input-group-prepend">
                                                 <span class="input-group-text"><i class="icon-user"></i></span>
                                             </span>
-                                            <input type="text" class="form-control" placeholder="Nama Pendaftar" name="nama" id="nama_lengkap">
+                                            <input type="text" class="form-control" placeholder="Nama Pendaftar" name="nama" id="nama_lengkap" value="{{ Auth::user()->name }}">
                                         </div>
                                     </div>
                                 </div>
@@ -377,7 +390,7 @@
                                                 <span class="input-group-prepend">
                                                     <span class="input-group-text"><i class="icon-envelop5"></i></span>
                                                 </span>
-                                                <input readonly type="email" class="form-control" placeholder="Email" name="email" id="email">
+                                                <input readonly type="email" class="form-control" placeholder="Email" name="email222" id="email" readonly value="{{ Auth::user()->email }}">
                                             </div>
                                         </div>
                                     </div>
@@ -421,20 +434,20 @@
     
         
     
-        </form>
+      
     
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body text-center">
                         <p class="mb-3">Dengan menekan tombol <code>Simpan</code>, data yang anda cantumkan di atas adalah benar dan dapat dipertanggungjawabkan.</p>
-                        <a href="#" onclick="save()" class="btn bg-teal btn-lg"><i class="icon-floppy-disk mr-2"></i>Simpan</a>
+                        <button type="submit" class="btn btn-success btn-round"><i class="icon-floppy-disk mr-2"></i>Simpan</a>
                     </div>
                 </div>
             </div>
-        </div>
-</section>    
-
+        </div> 
+    </form>
+</section>   
 
       
         <div class="row justify-content-center mb-5 pb-3">
