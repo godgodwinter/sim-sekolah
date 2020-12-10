@@ -6,6 +6,7 @@ use App\Models\Tapel;
 use Illuminate\Http\Request;
 use PDF;
 use Excel;
+use QrCode;
 use App\Exports\UserReport;
 
 class TapelsController extends Controller
@@ -121,9 +122,10 @@ class TapelsController extends Controller
 
     public function cetak_pdf()
     {
+        $qrcode = base64_encode(QrCode::format('svg')->size(100)->errorCorrection('H')->generate('www.google.com'));
     	$tapel = Tapel::all();
  
-    	$pdf = PDF::loadview('admin.tapels.tapelpdf',['tapels'=>$tapel]);
+    	$pdf = PDF::loadview('admin.tapels.tapelpdf',['tapels'=>$tapel],compact('qrcode'));
     	return $pdf->download('laporan-tapel-pdf');
     }
     public function laporanExcel()
