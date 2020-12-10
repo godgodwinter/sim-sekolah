@@ -12,7 +12,7 @@ php artisan migrate:fresh
 
 <br>
 php artisan db:seed --class=CreateUserSeeder 
-
+php artisan db:seed
 setting database on .env
 or
 copy .env_copy to .env 
