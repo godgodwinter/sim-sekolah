@@ -28,7 +28,7 @@ Auth::routes();
 
 Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');
 // Route::get('/home',[App\Http\Controllers\HomeController::class,'index'])->name('admin.home')->middleware('is_admin');
-Route::get('ppdbuser_beranda',[App\Http\Controllers\PpdbUserBerandaController::class,'index'])->name('ppdbuser_beranda')->middleware();
+Route::get('ppdbuser_beranda',[App\Http\Controllers\PpdbUserBerandaController::class,'index'])->name('ppdbuser_beranda')->middleware('is_ppdb');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('home');
 
 // Route::get('ppdbuser_beranda',[App\Http\Controllers\PpdbUserBerandaController::class,'index'])->name('ppdbuser_beranda')->middleware('is_admin');
