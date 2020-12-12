@@ -22,44 +22,44 @@ class CreatePpdbSiswasRinciansTable extends Migration
                     ->onDelete('cascade ')
                     ->onUpdate('cascade');
             //rincian peserta didik
-            $table->string('tinggi');
-            $table->string('berat');
-            $table->string('lingkarkepala');
-            $table->string('jarakkesekolah');
-            $table->string('dalamkilometer');
-            $table->string('waktutempuh');
-            $table->string('jmlsaudarakandung');
+            $table->string('tinggi')->nullable();
+            $table->string('berat')->nullable();
+            $table->string('lingkarkepala')->nullable();
+            $table->string('jarakkesekolah')->nullable();
+            $table->string('dalamkilometer')->nullable();
+            $table->string('waktutempuh')->nullable();
+            $table->string('jmlsaudarakandung')->nullable();
 //prestasi
 
-            $table->string('prestasi_jenis');
-            $table->string('prestasi_tingkat');
-            $table->string('prestasi_nama');
-            $table->string('prestasi_tahun');
-            $table->string('prestasi_penyelenggara');
-            $table->string('prestasi_peringkat');
+            $table->string('prestasi_jenis')->nullable();
+            $table->string('prestasi_tingkat')->nullable();
+            $table->string('prestasi_nama')->nullable();
+            $table->string('prestasi_tahun')->nullable();
+            $table->string('prestasi_penyelenggara')->nullable();
+            $table->string('prestasi_peringkat')->nullable();
 //beasiswa
-            $table->string('beasiswa_jenis');
-            $table->string('beasiswa_keterangan');
-            $table->string('beasiswa_tahun_mulai');
-            $table->string('beasiswa_tahun_selesai');
- //kesejahteraanpesertadidik           
-            $table->string('kesejahteraanpesertadidik_jenis');
-            $table->string('kesejahteraanpesertadidik_nokartu');
-            $table->string('kesejahteraanpesertadidik_namadikartu');
+            $table->string('beasiswa_jenis')->nullable();
+            $table->string('beasiswa_keterangan')->nullable();
+            $table->string('beasiswa_tahun_mulai')->nullable();
+            $table->string('beasiswa_tahun_selesai')->nullable();
+ //kesejahteraanpesertadidik
+            $table->string('kesejahteraanpesertadidik_jenis')->nullable();
+            $table->string('kesejahteraanpesertadidik_nokartu')->nullable();
+            $table->string('kesejahteraanpesertadidik_namadikartu')->nullable();
             // $table->string('kesejahteraanpesertadidik_');
 
 //registrasi peserta didik
-            $table->string('regristrasi_kompetensikeahlian');
-            $table->string('regristrasi_jenisdaftar');
-            $table->string('regristrasi_nis');
-            $table->string('regristrasi_tglmasuk');
-            $table->string('regristrasi_sekolahasal');
-            $table->string('regristrasi_nomorpeserta_un');
-            $table->string('regristrasi_noseriijazah');
-            $table->string('regristrasi_noskhun');
-            $table->string('regristrasi_wna_keluarkarena');
-            $table->string('regristrasi_wna_tglkeluar');
-            $table->string('regristrasi_wna_alasan');
+            $table->string('regristrasi_kompetensikeahlian')->nullable();
+            $table->string('regristrasi_jenisdaftar')->nullable();
+            $table->string('regristrasi_nis')->nullable();
+            $table->string('regristrasi_tglmasuk')->nullable();
+            $table->string('regristrasi_sekolahasal')->nullable();
+            $table->string('regristrasi_nomorpeserta_un')->nullable();
+            $table->string('regristrasi_noseriijazah')->nullable();
+            $table->string('regristrasi_noskhun')->nullable();
+            $table->string('regristrasi_wna_keluarkarena')->nullable();
+            $table->string('regristrasi_wna_tglkeluar')->nullable();
+            $table->string('regristrasi_wna_alasan')->nullable();
             $table->timestamps();
         });
     }

@@ -21,34 +21,34 @@ class CreatePpdbSiswasTable extends Migration
                     ->on('users')
                     ->onDelete('cascade ')
                     ->onUpdate('cascade');
-            $table->string('nama');
-            $table->string('jk');
-            $table->string('nisn');
-            $table->string('nik');
-            $table->string('no_kk');
-            $table->string('tempat_lahir');
-            $table->string('tgl_lahir');
-            $table->string('no_registrasi_akta_lahir');
-            $table->string('agama');
-            $table->string('kewarganegaraan');
-            $table->string('berkebutuhankhusus');
-            $table->string('alamat_jalan');
-            $table->string('rt');
-            $table->string('rw');
-            $table->string('nama_dusun');
-            $table->string('nama_kelurahan_desa');
-            $table->string('kecamatan');
-            $table->string('kodepos');
-            $table->string('tempattinggal');
-            $table->string('modatransportasi');
-            $table->string('anakkeberapa');
-            $table->string('apakahpunyakip');
-            $table->string('apakahmenerimakip');
-            $table->string('alasanmenonakpip');
+            $table->string('nama')->nullable();
+            $table->string('jk')->nullable();
+            $table->string('nisn')->nullable();
+            $table->string('nik')->nullable();
+            $table->string('no_kk')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->string('tgl_lahir')->nullable();
+            $table->string('no_registrasi_akta_lahir')->nullable();
+            $table->string('agama')->nullable();
+            $table->string('kewarganegaraan')->nullable();
+            $table->string('berkebutuhankhusus')->nullable();
+            $table->string('alamat_jalan')->nullable();
+            $table->string('rt')->nullable();
+            $table->string('rw')->nullable();
+            $table->string('nama_dusun')->nullable();
+            $table->string('nama_kelurahan_desa')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kodepos')->nullable();
+            $table->string('tempattinggal')->nullable();
+            $table->string('modatransportasi')->nullable();
+            $table->string('anakkeberapa')->nullable();
+            $table->string('apakahpunyakip')->nullable();
+            $table->string('apakahmenerimakip')->nullable();
+            $table->string('alasanmenonakpip')->nullable();
 
 //kontak
-            $table->string('telp');
-            $table->string('hp');
+            $table->string('telp')->nullable();
+            $table->string('hp')->nullable();
 
 
             $table->timestamps();

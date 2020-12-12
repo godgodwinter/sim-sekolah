@@ -22,30 +22,30 @@ class CreatePpdbSiswasOrtusTable extends Migration
                     ->onDelete('cascade ')
                     ->onUpdate('cascade');
             //data ayah
-            $table->string('ayah_nama');
-            $table->string('ayah_nik');
-            $table->string('ayah_tahunlahir');
-            $table->string('ayah_pendidikan');
-            $table->string('ayah_pekerjaan');
-            $table->string('ayah_penghasilanbulanan');
-            $table->string('ayah_berkebutuhankhusus');
+            $table->string('ayah_nama')->nullable();
+            $table->string('ayah_nik')->nullable();
+            $table->string('ayah_tahunlahir')->nullable();
+            $table->string('ayah_pendidikan')->nullable();
+            $table->string('ayah_pekerjaan')->nullable();
+            $table->string('ayah_penghasilanbulanan')->nullable();
+            $table->string('ayah_berkebutuhankhusus')->nullable();
 
 //data ibu kandung
-            $table->string('ibu_nama');
-            $table->string('ibu_nik');
-            $table->string('ibu_tahunlahir');
-            $table->string('ibu_pendidikan');
-            $table->string('ibu_pekerjaan');
-            $table->string('ibu_penghasilanbulanan');
-            $table->string('ibu_berkebutuhankhusus');
-            
+            $table->string('ibu_nama')->nullable();
+            $table->string('ibu_nik')->nullable();
+            $table->string('ibu_tahunlahir')->nullable();
+            $table->string('ibu_pendidikan')->nullable();
+            $table->string('ibu_pekerjaan')->nullable();
+            $table->string('ibu_penghasilanbulanan')->nullable();
+            $table->string('ibu_berkebutuhankhusus')->nullable();
+
 //wali
-$table->string('wali_nama');
-$table->string('wali_nik');
-$table->string('wali_tahunlahir');
-$table->string('wali_pendidikan');
-$table->string('wali_pekerjaan');
-$table->string('wali_penghasilanbulanan');
+$table->string('wali_nama')->nullable();
+$table->string('wali_nik')->nullable();
+$table->string('wali_tahunlahir')->nullable();
+$table->string('wali_pendidikan')->nullable();
+$table->string('wali_pekerjaan')->nullable();
+$table->string('wali_penghasilanbulanan')->nullable();
 
             $table->timestamps();
         });
