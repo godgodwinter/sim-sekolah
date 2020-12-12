@@ -11,7 +11,7 @@
   <p align="center">
    Masih dalam proses pengembangan
     <br />
-    <a href="https://github.com/godgodwinter"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/godgodwinter"><strong>Documentation »</strong></a>
     <br />
     <br />
     <a href="https://github.com/godgodwinter">View Demo</a>
