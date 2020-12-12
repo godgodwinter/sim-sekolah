@@ -83,7 +83,7 @@ if(!empty($ppdb_siswas_ortus)){
                         <p class="mb-3">Silahkan melengkapi data profil kalian sesuai dengan form yang disediakan. jika terdapat tanda bintang <code>(*)</code>, maka wajib diisi.</p>
 
                         <input type="hidden" class="form-control" placeholder="email" name="users_email" id="email" readonly value="{{ Auth::user()->email }}">
-                                            <input type="hidden" class="form-control" placeholder="email" name="caridata" id="email" readonly value="{{ $caridata }}">
+                        <input type="hidden" class="form-control" placeholder="email" name="caridata" id="email" readonly value="{{ $caridata }}">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <legend class="text-uppercase font-size-sm font-weight-bold">DATA AYAH</legend>

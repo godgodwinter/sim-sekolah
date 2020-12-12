@@ -44,7 +44,7 @@ class PpdbUserIdentitasOrtuController extends Controller
 // dd($caridata);
         if($caridata>0){
 //update
-        $update_ppdb_siswas = DB::table('ppdb_siswas_ortus')->where('users_email', '=', $email)->update(array(
+        $update_ppdb_siswas_ortus = DB::table('ppdb_siswas_ortus')->where('users_email', '=', $email)->update(array(
             'ayah_nama' => $request->ayah_nama,
             'ayah_nik' => $request->ayah_nik,
             'ayah_tahunlahir' => $request->ayah_tahunlahir,

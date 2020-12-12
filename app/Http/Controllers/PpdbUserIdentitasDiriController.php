@@ -128,54 +128,5 @@ class PpdbUserIdentitasDiriController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Tapel  $tapel
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Tapel $tapel)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Tapel  $tapel
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Tapel $tapel)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tapel  $tapel
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Tapel $tapel)
-    {
-        //
-        // $request->validate([
-        //     'nama'=>'required'
-        // ],
-
-        // [
-        //     'nama.required'=>'Nama harus diisi'
-
-
-        // ]);
-        //  //aksi update
-
-        // tapel::where('id',$tapel->id)
-        //     ->update([
-        //         'nama'=>$request->nama
-        //     ]);
-        //     return redirect('/tapel')->with('status','Data berhasil diupdate!');
-
-    }
 }
