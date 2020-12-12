@@ -12,9 +12,6 @@
 
 @section('container')
 
-
-
-    <main class="container">
 @php
 if(!empty($ppdb_siswas)){
     $nik=$ppdb_siswas->nik;
@@ -72,6 +69,9 @@ if(!empty($ppdb_siswas)){
     $hp="";
 }
 @endphp
+
+
+    <main class="container">
 
 
             {{-- {{ dd($ppdb_siswas->nik) }} --}}

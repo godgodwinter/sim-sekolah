@@ -15,10 +15,10 @@ class CreatePpdbSiswasOrtusTable extends Migration
     {
         Schema::create('ppdb_siswas_ortus', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('ppdb_siswas_id')->unsigned();
-            $table->foreign('ppdb_siswas_id')
-                    ->references('id')
-                    ->on('ppdb_siswas')
+            $table->string('users_email')->indeks();
+            $table->foreign('users_email')
+                    ->references('email')
+                    ->on('users')
                     ->onDelete('cascade ')
                     ->onUpdate('cascade');
             //data ayah
