@@ -16,6 +16,7 @@
 
     <main class="container">
 @php
+if(!empty($ppdb_siswas)){
     $nik=$ppdb_siswas->nik;
     $nisn=$ppdb_siswas->nisn;
     $nama=$ppdb_siswas->nama;
@@ -42,6 +43,34 @@
     $anakkeberapa=$ppdb_siswas->anakkeberapa;
     $telp=$ppdb_siswas->telp;
     $hp=$ppdb_siswas->hp;
+}else{
+    $nik="";
+    $nisn="";
+    $nama="";
+    $jk="";
+    $no_kk="";
+    $tempat_lahir="";
+    $tgl_lahir="";
+    $no_registrasi_akta_lahir="";
+    $agama="";
+    $kewarganegaraan="";
+    $berkebutuhankhusus="";
+    $alamat_jalan="";
+    $rt="";
+    $rw="";
+    $nama_dusun="";
+    $nama_kelurahan_desa="";
+    $kecamatan="";
+    $kodepos="";
+    $tempattinggal=
+    $modatransportasi="";
+    $apakahpunyakip="";
+    $apakahmenerimakip="";
+    $alasanmenonakpip="";
+    $anakkeberapa="";
+    $telp="";
+    $hp="";
+}
 @endphp
 
 
@@ -276,7 +305,7 @@
                                             <span class="input-group-prepend">
                                                 <span class="input-group-text"><i class="icon-location3"></i></span>
                                             </span>
-                                            <textarea rows="3" cols="3" class="form-control" placeholder="Alamat" name="alamat_jalan" id="alamat_jalan">{{ $alamat_jalan }}</textarea>
+                                            <textarea maxlength='250' rows="3" cols="3" class="form-control" placeholder="Alamat" name="alamat_jalan" id="alamat_jalan">{{ $alamat_jalan }}</textarea>
                                         </div>
                                     </div>
                                 </div>

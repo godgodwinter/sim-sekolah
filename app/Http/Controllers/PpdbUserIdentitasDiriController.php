@@ -28,7 +28,7 @@ class PpdbUserIdentitasDiriController extends Controller
             // dd($ppdb_siswas);
             return view('ppdb.user.step1',compact('ppdb_siswas'))->with('caridata',$caridata);
         }else{
-            return view('ppdb.user.step1');
+            return view('ppdb.user.step1')->with('caridata',$caridata);
         }
 
         // return view('ppdb.user.step1');
