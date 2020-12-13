@@ -10,18 +10,18 @@
 			font-size: 9pt;
 		}
 	</style>
-	
+
 		<h5>Laporan Tahun Pelajaran</h4>
-        <div class="col-md-6" align="right">            
+        <div class="col-md-6" align="right">
           <img src="data:image/png;base64, {!! $qrcode !!}">
         </div>
-	
+
   <table class="table table-striped table-bordered dataTable" id="table-1">
               <thead>
                 <tr>
                   <th>-</th>
                   <th>Tahun Pelajaran</th>
-                  
+
                 </tr>
               </thead>
               <tbody>
@@ -29,22 +29,22 @@
               @foreach ($tapels as $tapel)
                 <tr>
                   <td>{{ ($loop->index)+1 }}</td>
-                  <td>{{$tapel->nama}}</td>
-                  
+                  <td>{{$tapel->a}}</td>
+
                 </tr>
               @endforeach
-               
+
               </tbody>
               <tfoot>
                 <tr>
                   <th></th>
                   <th>
-                    
+
                   </th>
-                  
+
                 </tr>
               </tfoot>
             </table>
- 
+
 </body>
 </html>
