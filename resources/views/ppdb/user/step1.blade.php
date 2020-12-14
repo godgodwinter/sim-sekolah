@@ -521,7 +521,7 @@ if(!empty($ppdb_siswas)){
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-3">Apakah Punya KIP<code>*</code></label>
+                                    <label class="col-form-label col-lg-3">Anak Ke Berapa?<code>*</code></label>
                                     <div class="col-lg-9">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
