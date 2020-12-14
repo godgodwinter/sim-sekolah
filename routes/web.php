@@ -35,8 +35,19 @@ Route::get('/ppdbuser_beranda', [App\Http\Controllers\PpdbUserBerandaController:
 // Route::resource('ppdbuser_beranda','App\Http\Controllers\PpdbUserBerandaController');
 Route::resource('ppdbuser_ortu','App\Http\Controllers\PpdbUserIdentitasOrtuController');
 Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiriController');
+
+Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincianController');
+Route::get('ppdbuser_persetujuan/cetak','App\Http\Controllers\PpdbUserPernyataanController@cetak_pdf');
+Route::resource('ppdbuser_persetujuan','App\Http\Controllers\PpdbUserPernyataanController');
+
+
+
 Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincianController')->except(['edit','update','delete']);
 Route::resource('ppdbuser_persetujuan','App\Http\Controllers\PpdbUserPernyataanController');
+
+Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincianController')->except(['edit','update','delete']);
+Route::resource('ppdbuser_persetujuan','App\Http\Controllers\PpdbUserPernyataanController');
+
 
 //admin/.
 Route::resource('admin/ppdb_siswa','App\Http\Controllers\Ppdb_siswasController');

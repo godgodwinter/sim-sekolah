@@ -45,7 +45,7 @@ class TapelsController extends Controller
          //
          $request->validate([
             'nama'=>'required'
-            
+
         ],
         [
             'nama.required'=>'Nama harus diisi'
@@ -91,14 +91,13 @@ class TapelsController extends Controller
         $request->validate([
             'nama'=>'required'
         ],
-          
         [
             'nama.required'=>'Nama harus diisi'
 
 
         ]);
          //aksi update
-      
+
         tapel::where('id',$tapel->id)
             ->update([
                 'nama'=>$request->nama
@@ -124,7 +123,7 @@ class TapelsController extends Controller
     {
         $qrcode = base64_encode(QrCode::format('svg')->size(100)->errorCorrection('H')->generate('www.google.com'));
     	$tapel = Tapel::all();
- 
+
     	$pdf = PDF::loadview('admin.tapels.tapelpdf',['tapels'=>$tapel],compact('qrcode'));
     	return $pdf->download('laporan-tapel-pdf');
     }
