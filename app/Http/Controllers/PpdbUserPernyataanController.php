@@ -14,6 +14,7 @@ use QrCode;
 
 class PpdbUserPernyataanController extends Controller
 {
+
     public function index()
     {
         //
@@ -42,6 +43,7 @@ class PpdbUserPernyataanController extends Controller
     }
 
       /**
+
     /**
      * Display a listing of the resource.
      *
@@ -72,12 +74,13 @@ class PpdbUserPernyataanController extends Controller
     }
 
     /**
->>>>>>> 5f9452b0c66d57702e99744859824e96dfbbed0a
+
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function cetak_pdf()
     {
         $email=Auth::user()->email;
@@ -97,7 +100,7 @@ class PpdbUserPernyataanController extends Controller
 
     	$pdf = PDF::loadview('ppdb.user.pernyataanpdf',['pernyataans'=>$pernyataan],compact('qrcode'))->setPaper('legal', 'potrait');
     	return $pdf->download('lembar-pernyataan-pdf');
-=======
+
     public function store(Request $request)
     {
         //
@@ -145,5 +148,6 @@ class PpdbUserPernyataanController extends Controller
      */
     public function destroy(ppdb_siswas_pernyataansTable $ppdb_siswas_pernyataansTable)
     {
+
     }
 }
