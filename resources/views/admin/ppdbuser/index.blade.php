@@ -29,7 +29,7 @@
 <div class="site-content">
     <div class="panel panel-default m-b-0">
       <div class="panel-heading">
-        <h3 class="m-y-0">Beranda</h3>
+        <h3 class="m-y-0">PPDB SISWA</h3>
       </div>
       <div class="panel-body">
         <p class="text-muted m-b-15">Ini Halaman Beranda.</p>

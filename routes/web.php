@@ -29,6 +29,7 @@ Auth::routes();
 
 Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('is_admin');
+Route::get('/admin_ppdb_user', [App\Http\Controllers\AdminPpdbUserController::class, 'index'])->name('admin_ppdb_user')->middleware('is_admin');
 
 Route::group(['middleware' => ['is_ppdb']], function() {
 

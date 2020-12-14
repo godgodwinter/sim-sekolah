@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tapel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,12 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tapels=Tapel::all();
-        return view('home',compact('tapels'));
+        // $tapels=Tapel::all();
+        return view('home');
     }
 
     public function adminHome()
     {
-        return view('ppdb.user.index');
+        return view('ppdbuser.index');
     }
 }
