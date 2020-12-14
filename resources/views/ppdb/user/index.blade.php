@@ -1,4 +1,4 @@
-git @extends('ppdb.layouts.halluar')
+@extends('ppdb.layouts.halluar')
 
 @section('title','Beranda')
 @section('link-nav-beranda','active')

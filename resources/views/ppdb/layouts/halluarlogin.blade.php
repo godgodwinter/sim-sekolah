@@ -7,24 +7,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <title>PPDB - @yield('title')</title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'/>
-    
+
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,600,800" rel="stylesheet">
-    
+
 <!-- Font Awesome Icons -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    
+
 <!-- Main CSS -->
 <link href="{{ asset("anchor/") }}/assets/css/main.css" rel="stylesheet"/>
-    
+
 <!-- Animation CSS -->
 <link href="{{ asset("anchor/") }}/assets/css/vendor/aos.css" rel="stylesheet"/>
-    
+
 </head>
-    
-<body> 
-    
-    
+
+<body>
+
+
 <!--------------------------------------
 NAVBAR
 --------------------------------------->
@@ -39,15 +39,15 @@ NAVBAR
 			<li class="nav-item">
 			<a class="nav-link" href="/">Beranda PPDB</a>
 			</li>
-			
+
 		</ul>
 	</div>
 </div>
 </nav>
 <!-- End Navbar -->
+{{-- @yield('notif') --}}
+@yield('container')
 
-@yield('container')    
-    
 <!------------------------------------------
 DEMO MODAL & DONATE BUTTON ONLY - DON'T COPY
 ------------------------------------------->
@@ -122,17 +122,17 @@ DEMO MODAL & DONATE BUTTON ONLY - DON'T COPY
 <!--------------------------------------
 END DEMO MODAL & DONATE BUTTON
 --------------------------------------->
-    
-    
-   
+
+
+
 <!--------------------------------------
 JAVASCRIPTS
---------------------------------------->    
+--------------------------------------->
 <script src="{{ asset("anchor/") }}/assets/js/vendor/jquery.min.js" type="text/javascript"></script>
 <script src="{{ asset("anchor/") }}/assets/js/vendor/popper.min.js" type="text/javascript"></script>
 <script src="{{ asset("anchor/") }}/assets/js/vendor/bootstrap.min.js" type="text/javascript"></script>
 <script src="{{ asset("anchor/") }}/assets/js/functions.js" type="text/javascript"></script>
-    
+
 <!-- Animation -->
 <script src="{{ asset("anchor/") }}/assets/js/vendor/aos.js" type="text/javascript"></script>
 <noscript>
@@ -149,7 +149,7 @@ JAVASCRIPTS
         duration: 700
     });
 </script>
- 
+
 <!-- Disable animation on less than 1200px, change value if you like -->
 <script>
 AOS.init({

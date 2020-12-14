@@ -77,6 +77,24 @@ if(!empty($ppdb_siswas)){
             {{-- {{ dd($ppdb_siswas->nik) }} --}}
 
 
+            @section('notif')
+            @if (session('status'))
+
+            <section class="pt-5 pb-5" data-aos="fade-up">
+                <div class="row mt-5">
+
+                    <div class="col-md-12">
+                        <div class="alert alert-danger" role="alert">
+                            <i class="fas fa-bullhorn"></i>   {{ session('status') }}  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                </section>
+
+            @endif
 
 <section class="pt-5 pb-5" data-aos="fade-up">
 
