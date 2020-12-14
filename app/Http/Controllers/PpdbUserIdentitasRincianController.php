@@ -83,11 +83,11 @@ class PpdbUserIdentitasRincianController extends Controller
             'regristrasi_wna_alasan' => $request->regristrasi_wna_alasan
         ));
 
-        return redirect('ppdbuser_rincian')->with('status','Data berhasil di tambahkan');
+        return redirect('ppdbuser_persetujuan')->with('status','Data berhasil di tambahkan');
         }else{
             //insert
             ppdb_siswas_rincians::create($request->all());
-            return redirect('ppdbuser_rincian')->with('status','Data berhasil di tambahkan');
+            return redirect('ppdbuser_persetujuan')->with('status','Data berhasil di tambahkan');
         }
 
 

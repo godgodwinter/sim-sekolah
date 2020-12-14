@@ -9,6 +9,7 @@ use App\Models\ppdb_siswas_ortus;
 use App\Models\ppdb_siswas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 use PDF;
 use QrCode;
 
@@ -65,6 +66,9 @@ class PpdbUserPernyataanController extends Controller
     public function cetak_pdf()
     {
         $email=Auth::user()->email;
+        $emailencode=base64_encode($email);
+
+        // dd($emailencode);
         $pernyataan = DB::table('ppdb_siswas')
             ->join('ppdb_siswas_ortus', 'ppdb_siswas.users_email', '=', 'ppdb_siswas_ortus.users_email')
             //->join('ppdb_siswas_rincians','ppdb_siswas.users_email', '=', 'ppdb_siswas_ortus.users_email')
@@ -76,12 +80,14 @@ class PpdbUserPernyataanController extends Controller
             ->where('ppdb_siswas.users_email', '=', $email)
             ->get();
 
-        $qrcode = base64_encode(QrCode::format('svg')->size(80)->errorCorrection('H')->generate('www.google.com'));
+            $linkku=URL::to('/').'/print_data?id='.$emailencode;
+        $qrcode = base64_encode(QrCode::format('svg')->size(80)->errorCorrection('H')->generate($linkku));
 
 
     	$pdf = PDF::loadview('ppdb.user.pernyataanpdf',['pernyataans'=>$pernyataan],compact('qrcode'))->setPaper('a4', 'potrait');
     	return $pdf->download('lembar-pernyataan-pdf');
     }
+
     public function store(Request $request)
     {
         //

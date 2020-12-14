@@ -40,6 +40,7 @@ Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiri
 
 Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincianController');
 Route::get('ppdbuser_persetujuan/cetak','App\Http\Controllers\PpdbUserPernyataanController@cetak_pdf');
+
 Route::resource('ppdbuser_persetujuan','App\Http\Controllers\PpdbUserPernyataanController');
 
 
@@ -73,3 +74,8 @@ Auth::routes();
 
 //qrcode
 Route::get('/qr-code', [App\Http\Controllers\QrCodeGeneratorController::class, 'index'])->name('qr.code.index');
+
+
+//cetak generate
+
+Route::get('print_data',[App\Http\Controllers\CetakDataPpdbUserController::class, 'index']);

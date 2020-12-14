@@ -84,11 +84,11 @@ class PpdbUserIdentitasDiriController extends Controller
             'hp' => $request->hp
         ));
 
-        return redirect('ppdbuser_identitas')->with('status','Data berhasil di tambahkan');
+        return redirect('ppdbuser_ortu')->with('status','Data berhasil di tambahkan');
         }else{
             //insert
             Ppdb_siswas::create($request->all());
-            return redirect('ppdbuser_identitas')->with('status','Data berhasil di tambahkan');
+            return redirect('ppdbuser_ortu')->with('status','Data berhasil di tambahkan');
         }
 
 

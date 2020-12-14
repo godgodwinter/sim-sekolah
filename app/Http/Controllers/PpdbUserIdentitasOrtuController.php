@@ -69,11 +69,11 @@ class PpdbUserIdentitasOrtuController extends Controller
             'wali_penghasilanbulanan' => $request->wali_penghasilanbulanan,
         ));
 
-        return redirect('ppdbuser_ortu')->with('status','Data berhasil di tambahkan');
+        return redirect('ppdbuser_rincian')->with('status','Data berhasil di tambahkan');
         }else{
             //insert
             Ppdb_siswas_ortus::create($request->all());
-            return redirect('ppdbuser_ortu')->with('status','Data berhasil di tambahkan');
+            return redirect('ppdbuser_rincian')->with('status','Data berhasil di tambahkan');
         }
 
 
