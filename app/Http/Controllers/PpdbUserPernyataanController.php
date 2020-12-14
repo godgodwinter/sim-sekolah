@@ -14,7 +14,6 @@ use QrCode;
 
 class PpdbUserPernyataanController extends Controller
 {
-<<<<<<< HEAD
     public function index()
     {
         //
@@ -43,7 +42,6 @@ class PpdbUserPernyataanController extends Controller
     }
 
       /**
-=======
     /**
      * Display a listing of the resource.
      *
@@ -80,7 +78,6 @@ class PpdbUserPernyataanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
     public function cetak_pdf()
     {
         $email=Auth::user()->email;
@@ -148,7 +145,5 @@ class PpdbUserPernyataanController extends Controller
      */
     public function destroy(ppdb_siswas_pernyataansTable $ppdb_siswas_pernyataansTable)
     {
-        //
->>>>>>> 5f9452b0c66d57702e99744859824e96dfbbed0a
     }
 }
