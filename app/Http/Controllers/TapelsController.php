@@ -91,7 +91,6 @@ class TapelsController extends Controller
         $request->validate([
             'nama'=>'required'
         ],
-
         [
             'nama.required'=>'Nama harus diisi'
 
