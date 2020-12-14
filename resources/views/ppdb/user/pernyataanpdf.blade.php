@@ -8,21 +8,40 @@
 		table tr td,
 		table tr th{
 			font-size: 12px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
 		}
         body {
             font-size: 12px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family:Georgia, 'Times New Roman', Times, serif;
             }
+        h1 h2 h3 h4 h5{
+            line-height: 1.2;
+        }
+        .spa{
+          letter-spacing:3px;
+        }
 	</style>
-    <table width="100%">
+    <table width="100%" border="0">
         <tr>
-        <td width="25" align="center"></td>
-        <td width="50" align="center"><h1>Gemscool Game Portal Pertama Indonesia</h1><br><h2>Jakarta</h2></td>
-        <td width="25" align="center"></td>
+        <td width="13%" align="right"><img src="../download.jpeg" width="110" height="110"></td>
+        <td width="80%" align="center"><p><b><font size="28px">SMK DHARMA WANITA KROMENGAN</font><br>
+                                      <font size="20px">STATUS : TERAKREDITASI "A" </font></b><br>
+                                      KOMPETENSI KEAHLIAN<BR>
+                                        1. TEKNIK OTOMOTIF &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. TEKNIK KOMPUTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  3. PEMASARAN
+                                        <BR>
+                                        NSS. 322051818001&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NPSN. 20517715
+                                        <br>Jl.NAILUN SELATAN NO 22 P 085-100-454-667 KROMENGAN - MALANG<BR>
+                                        Email: smk_kromengan0735@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://smkdwkromengan.sch,id
+                                    </p>
+
+                                    </td>
+        <td widht="7%"></td>
+        </tr>
+        <tr>
+            <td colspan="3"><hr></td>
         </tr>
         </table>
-		<h1>Surat Pernyataan</h1>
+		<center><h1>Surat Pernyataan</h1></center>
 
   Saya yang bertanda tangan dibawah ini :<br>
   <table>
@@ -33,7 +52,7 @@
                 <tr height="20px">
                   <td width="130px">Nama Lengkap</td>
                   <td width="5px">:</td>
-                  <td width="100px">{{ ($pernyataan->nama) }}</td>
+                  <td width="100px" class="spa">{{ ($pernyataan->nama) }}</td>
 
                 </tr>
               @endforeach
@@ -41,7 +60,7 @@
                 <tr>
                   <td>Tempat Lahir</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->tl) }}</td>
+                  <td class="spa">{{ ($pernyataan->tl) }}</td>
 
                 </tr>
               @endforeach
@@ -49,7 +68,7 @@
                 <tr>
                   <td>Tanggal lahir</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->tgl_l) }}</td>
+                  <td class="spa">{{ ($pernyataan->tgl_l) }}</td>
 
                 </tr>
               @endforeach
@@ -57,7 +76,7 @@
                 <tr>
                   <td>Jenis Kelamin</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->jk) }}</td>
+                  <td class="spa">{{ ($pernyataan->jk) }}</td>
 
                 </tr>
               @endforeach
@@ -65,7 +84,7 @@
                 <tr>
                   <td>Nama Orang Tua</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->ayah_n) }}</td>
+                  <td class="spa">{{ ($pernyataan->ayah_n) }}</td>
 
                 </tr>
               @endforeach
@@ -73,7 +92,7 @@
                 <tr>
                   <td>Pekerjaan Orang Tua</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->job) }}</td>
+                  <td class="spa">{{ ($pernyataan->job) }}</td>
 
                 </tr>
               @endforeach
@@ -81,7 +100,7 @@
                 <tr>
                   <td>Alamat Orang Tua</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->alamat) }}</td>
+                  <td class="spa">{{ ($pernyataan->alamat) }}</td>
 
                 </tr>
               @endforeach
@@ -89,7 +108,7 @@
                 <tr>
                   <td>No. Telp</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->hp) }}</td>
+                  <td class="spa">{{ ($pernyataan->hp) }}</td>
 
                 </tr>
               @endforeach
@@ -97,7 +116,7 @@
                 <tr>
                   <td>Nama Wali</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->wali_n) }}</td>
+                  <td class="spa">{{ ($pernyataan->wali_n) }}</td>
 
                 </tr>
               @endforeach
@@ -105,7 +124,7 @@
                 <tr>
                   <td>Pekerjaan Wali</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->wali_job) }}</td>
+                  <td class="spa">{{ ($pernyataan->wali_job) }}</td>
 
                 </tr>
               @endforeach
@@ -113,7 +132,7 @@
                 <tr>
                   <td>No Telp</td>
                   <td>:</td>
-                  <td>{{ ($pernyataan->hp) }}</td>
+                  <td class="spa">{{ ($pernyataan->hp) }}</td>
 
                 </tr>
               @endforeach
@@ -125,7 +144,7 @@
               </tfoot>
             </table>
             <br>
-            <div align="center"><b><font size="18px">Menyatakan</font></b></div>
+            <div align="center"><b><font size="18px">Menyatakan</font></b></div><br>
             Bahwa jika saya dinyatakan diterima sebagai siswa SMK Dhama Wanita Kromengan, maka Saya
             <table>
                 <tr>
@@ -179,7 +198,23 @@
                     </td>
                 </tr>
             </table>
-
+<br><br>
 Pernyataan ini saya buat dengan sebenar-benarnya dan dengan penuh tanggung jawab serta diketahui orang tua/wali saya
+<br><br><br><br><br>
+<table width="100%">
+    <tr>
+        <td widht="50" align="left">
+            Mengetahui, <br>
+            Orang Tua / Wali<br><br><br><br><br><br><br>
+            ..........................
+
+        </td>
+        <td widht="50" align="right">.........,..............................20
+            <br>Yang Membuat Pernyataan,<br><br>
+            <img src="data:image/png;base64, {!! $qrcode !!}">
+            <br><b>@foreach ($pernyataans as $pernyataan) {{$pernyataan->nama}}  @endforeach</b>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

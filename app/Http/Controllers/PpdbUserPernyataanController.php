@@ -60,10 +60,10 @@ class PpdbUserPernyataanController extends Controller
             ->where('ppdb_siswas.users_email', '=', $email)
             ->get();
 
-        $qrcode = base64_encode(QrCode::format('svg')->size(100)->errorCorrection('H')->generate('www.google.com'));
+        $qrcode = base64_encode(QrCode::format('svg')->size(80)->errorCorrection('H')->generate('www.google.com'));
 
 
-    	$pdf = PDF::loadview('ppdb.user.pernyataanpdf',['pernyataans'=>$pernyataan],compact('qrcode'))->setPaper('legal', 'potrait');
+    	$pdf = PDF::loadview('ppdb.user.pernyataanpdf',['pernyataans'=>$pernyataan],compact('qrcode'))->setPaper('a4', 'potrait');
     	return $pdf->download('lembar-pernyataan-pdf');
     }
 }
