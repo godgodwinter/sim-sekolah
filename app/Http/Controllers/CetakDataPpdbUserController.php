@@ -54,7 +54,7 @@ class CetakDataPpdbUserController extends Controller
 
 
                 $pdf = PDF::loadview('ppdb.user.pernyataanpdf',['pernyataans'=>$pernyataan],compact('qrcode'))->setPaper('a4', 'potrait');
-                return $pdf->download('lembar-pernyataan-pdf');
+                return $pdf->download('lembar-persetujuansiswa_'.$emaildecode.'-pdf');
            }else{
             return redirect('404')->with('status','Kode Rahaisa tidak ditemukan');
            }

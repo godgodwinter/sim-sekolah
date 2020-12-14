@@ -85,7 +85,7 @@ class PpdbUserPernyataanController extends Controller
 
 
     	$pdf = PDF::loadview('ppdb.user.pernyataanpdf',['pernyataans'=>$pernyataan],compact('qrcode'))->setPaper('a4', 'potrait');
-    	return $pdf->download('lembar-pernyataan-pdf');
+        return $pdf->download('lembar-persetujuansiswa_'.$email.'-pdf');
     }
 
     public function store(Request $request)
