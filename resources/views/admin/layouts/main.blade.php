@@ -218,6 +218,7 @@
   </div> --}}
 
     @yield('site-content')
+
       <div class="site-footer">
         2017 © Cosmos
       </div>

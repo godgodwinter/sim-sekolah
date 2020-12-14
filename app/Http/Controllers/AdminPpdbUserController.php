@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ppdb_siswas;
+use App\Models\Tapel;
 use Illuminate\Http\Request;
 
 class AdminPpdbUserController extends Controller
@@ -10,6 +12,8 @@ class AdminPpdbUserController extends Controller
     public function index()
     {
         // $tapels=Tapel::all();
-        return view('admin.ppdbuser.index');
+        $ppdb_siswas=Ppdb_siswas::all();
+        // return view('admin.tapels.index',compact('tapels'));
+        return view('admin.ppdbuser.index',compact('ppdb_siswas'));
     }
 }

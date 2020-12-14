@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Tahun Pelajaran')
+@section('title','PPDB Siswa')
 @section('csshere')
 <!-- Data Table Css -->
 
@@ -29,63 +29,57 @@
 <div class="site-content">
     <div class="panel panel-default m-b-0">
       <div class="panel-heading">
-        <h3 class="m-y-0">PPDB SISWA</h3>
+        <h3 class="m-y-0">@yield('title')</h3>
       </div>
+
+
       <div class="panel-body">
-        <p class="text-muted m-b-15">Ini Halaman Beranda.</p>
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2">
-            <div class="form-group">
-              <label class="control-label">Title</label>
-              <input type="text" class="form-control" id="title" placeholder="Title">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Message</label>
-              <textarea class="form-control" rows="3" id="message"></textarea>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Toast type</label>
-              <select id="toastTypeGroup" class="custom-select">
-                <option value="success" selected="selected">Success</option>
-                <option value="info">Info</option>
-                <option value="warning">Warning</option>
-                <option value="error">Error</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Position</label>
-              <select id="positionGroup" class="custom-select">
-                <option value="toast-top-right" selected="selected">Top Right</option>
-                <option value="toast-bottom-right">Bottom Right</option>
-                <option value="toast-bottom-left">Bottom Left</option>
-                <option value="toast-top-left">Top Left</option>
-                <option value="toast-top-full-width">Top Full Width</option>
-                <option value="toast-bottom-full-width">Bottom Full Width</option>
-                <option value="toast-top-center">Top Center</option>
-                <option value="toast-bottom-center">Bottom Center</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <div class="custom-controls-stacked">
-                <label class="custom-control custom-control-primary custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" id="closeButton">
-                  <span class="custom-control-indicator"></span>
-                  <span class="custom-control-label">Close button</span>
-                </label>
-                <label class="custom-control custom-control-primary custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" id="progressBar">
-                  <span class="custom-control-indicator"></span>
-                  <span class="custom-control-label">Progress bar</span>
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
-              <button type="button" class="btn btn-primary" id="showtoast">Show Toast</button>
-              <button type="button" class="btn btn-danger" id="cleartoasts">Clear Toasts</button>
-            </div>
-          </div>
+        <div class="table-responsive">
+            <a href="/cetak_pdf" class="btn btn-success" target="_blank">Import</a>
+            <a class="btn btn-warning" href="{{ route('export') }}">Export &nbsp; &nbsp;</a>
+
+        <div class="clearfix"> &nbsp; </div>
+        <div class="col-12 mb-3 mb-sm-0">&nbsp;</div>
+            <table class="table table-striped table-bordered dataTable" id="table-1">
+                <thead>
+                    <tr>
+                        <th>-</th>
+                        <th>Nama</th>
+                        <th>NISN</th>
+                        <th>Email</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{-- {{dd($ppdb_siswas)}} --}}
+                    @foreach ($ppdb_siswas as $data)
+                    <tr>
+                        <td>{{ ($loop->index)+1 }}</td>
+                        <td>{{$data->nama}}</td>
+                        <td>{{$data->nisn}}</td>
+                        <td>{{$data->users_email}}</td>
+                        <td>
+                            <a href="/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+                        </td>
+
+                    </tr>
+                    @endforeach
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>-</th>
+                        <th>Nama</th>
+                        <th>NISN</th>
+                        <th>Email</th>
+                        <th>Aksi</th>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
-      </div>
+
+
+    </div>
     </div>
   </div>
 @endsection
