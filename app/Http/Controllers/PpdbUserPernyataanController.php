@@ -36,7 +36,7 @@ class PpdbUserPernyataanController extends Controller
                $ppdb_siswas_ortus=DB::table('ppdb_siswas_ortus');
                return view('ppdb.user.step4',compact('ppdb_siswas'))->with('caridata',$caridata);
            }else{
-               return view('ppdb.user.step2')->with('caridata',$caridata);
+               return ddd('isi data terlebih dahulu');
            }
 
         // return view('ppdb.user.step3');

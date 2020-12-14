@@ -28,6 +28,7 @@ Route::get('/ppdblogin', function () {
 Auth::routes();
 
 Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('is_admin');
 
 Route::group(['middleware' => ['is_ppdb']], function() {
 
@@ -69,6 +70,5 @@ Route::resource('ppdb2','App\Http\Controllers\PpdbContohController');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //qrcode
 Route::get('/qr-code', [App\Http\Controllers\QrCodeGeneratorController::class, 'index'])->name('qr.code.index');
