@@ -100,7 +100,7 @@
 
                 </tr>
               @endforeach
-              @foreach ($pernyataans as $pernyataan)
+              {{-- @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td style="vertical-align:top;">Alamat Orang Tua</td>
                   <td style="vertical-align:top;">:</td>
@@ -112,7 +112,7 @@
                   </td>
 
                 </tr>
-              @endforeach
+              @endforeach --}}
               @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>No. Telp</td>
