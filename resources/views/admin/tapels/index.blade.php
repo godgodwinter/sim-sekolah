@@ -12,7 +12,7 @@
 @section('headernav')
 
 @endsection
-@section('notif')
+{{-- @section('notif')
 @if (session('status'))
 <div class="container mt-2">
     <div class="alert alert-info border-info">
@@ -24,7 +24,7 @@
 </div>
 
 @endif
-@endsection
+@endsection --}}
 @section('site-content')
 <div class="site-content">
     <div class="panel panel-default panel-table">
@@ -204,7 +204,7 @@
             </div>
         </div>
 <<<<<<< HEAD
-    
+
 =======
 >>>>>>> abf24b51e5fd12af150c2a53ca86bdf853e437db
     </div>

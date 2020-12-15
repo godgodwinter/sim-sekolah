@@ -84,11 +84,7 @@
                         <td>{{$data->nisn}}</td>
                         <td>{{$data->users_email}}</td>
                         <td>
-<<<<<<< HEAD
-                            <a href="{{ route('cetak_ppdb_siswas')}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
-=======
                             <a href="{{ url('/print_data?id='.$emailencode) }}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
->>>>>>> d29e98f3b854ab0e284b3fd79c3e8bf62c97e521
                         </td>
 
                     </tr>
