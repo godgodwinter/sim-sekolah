@@ -154,8 +154,8 @@
               </a>
               <ul class="sidebar-submenu collapse">
                 <li><a href="{{ url('admin/tapel ') }}">Tahun Pelajaran</a></li>
-                <li><a href="{{ url('/kelass ') }}">Kelas</a></li>
-                <li><a href="{{ url('/siswas ') }}">Siswa</a></li>
+                <li><a href="{{ url('admin/kelass ') }}">Kelas</a></li>
+                <li><a href="{{ url('admin/siswas ') }}">Siswa</a></li>
               </ul>
             </li>
             <li>

@@ -19,9 +19,10 @@ class TapelsSeeder extends Seeder
         //
         $faker = Faker::create('id_ID');
         for($i = 1; $i <= 20; $i++){
+            $tapel=$faker->year($max = 'now');
             // insert data ke table products menggunakan Faker
             DB::table('tapels')->insert([
-              'nama' => $faker->name,
+              'nama' => $tapel.'/'.($tapel+1),
               'created_at' => Carbon::now(),
               'updated_at' => Carbon::now()
              ]);
