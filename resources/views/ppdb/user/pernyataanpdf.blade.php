@@ -10,6 +10,9 @@
 			font-size: 12px;
             font-family: Georgia, 'Times New Roman', Times, serif;
 		}
+        td{
+            height:10px;
+        }
         body {
             font-size: 12px;
             font-family:Georgia, 'Times New Roman', Times, serif;
@@ -38,7 +41,8 @@
         <td widht="7%"></td>
         </tr>
         <tr>
-            <td colspan="3"><hr></td>
+            <td colspan="3"><hr style="border:2px;">
+            </td>
         </tr>
         </table>
 		<center><h1>Surat Pernyataan</h1></center>
@@ -49,7 +53,7 @@
 
               {{-- {{dd($tapels)}} --}}
               @foreach ($pernyataans as $pernyataan)
-                <tr height="20px">
+                <tr>
                   <td width="130px">Nama Lengkap</td>
                   <td width="5px">:</td>
                   <td width="100px" class="spa">{{ ($pernyataan->nama) }}</td>
@@ -201,19 +205,31 @@
 <br><br>
 Pernyataan ini saya buat dengan sebenar-benarnya dan dengan penuh tanggung jawab serta diketahui orang tua/wali saya
 <br><br><br><br><br>
-<table width="100%">
+<table width="100%" border="0">
     <tr>
-        <td widht="50" align="left">
+        <th width="3%"></th>
+        <th width="30%" align="center">
             Mengetahui, <br>
-            Orang Tua / Wali<br><br><br><br><br><br><br>
-            ..........................
+            Orang Tua / Wali<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br><br><br><br><br><br><br>
+            <hr style="width:70%; border-top:2px dotted; border-style: none none dotted;  ">
 
-        </td>
-        <td widht="50" align="right">.........,..............................20
-            <br>Yang Membuat Pernyataan,<br><br>
+        </th>
+
+        <th width="34%"></th>
+
+        <th width="30%" align="center">.........,..............................20
+
+            <br>Yang Membuat Pernyataan,<br>
+            <br><br>
             <img src="data:image/png;base64, {!! $qrcode !!}">
-            <br><b>@foreach ($pernyataans as $pernyataan) {{$pernyataan->nama}}  @endforeach</b>
-        </td>
+            <hr style="width:80%; border-top:2px dotted; border-style: none none dotted;  ">
+            <b>@foreach ($pernyataans as $pernyataan) {{$pernyataan->nama}}  @endforeach</b>
+        </th>
+        <th width="3%"></th>
+
     </tr>
 </table>
 </body>

@@ -52,7 +52,7 @@ if((!empty($ppdb_siswas))&&(!empty($ppddb_siswas_ortus))){
 <section class="pt-5 pb-5" data-aos="fade-up">
 <br><br><br><br>
     <div class="table-responsive">
-        <a href="ppdbuser_persetujuan/cetak" class="btn btn-primary" target="_blank">CETAK PDF</a>
+        <a href="{{route('cetak_ppdb_siswas')}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
     </div>
 
 </section>

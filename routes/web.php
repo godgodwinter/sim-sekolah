@@ -39,7 +39,7 @@ Route::resource('ppdbuser_ortu','App\Http\Controllers\PpdbUserIdentitasOrtuContr
 Route::resource('ppdbuser_identitas','App\Http\Controllers\PpdbUserIdentitasDiriController');
 
 Route::resource('ppdbuser_rincian','App\Http\Controllers\PpdbUserIdentitasRincianController');
-Route::get('ppdbuser_persetujuan/cetak','App\Http\Controllers\PpdbUserPernyataanController@cetak_pdf');
+Route::get('ppdbuser_persetujuan/cetak','App\Http\Controllers\PpdbUserPernyataanController@cetak_pdf')->name('cetak_ppdb_siswas');
 
 Route::resource('ppdbuser_persetujuan','App\Http\Controllers\PpdbUserPernyataanController');
 
@@ -67,6 +67,8 @@ Route::get('barcode', 'App\Http\Controllers\TapelsController@barcode');
 Route::get('importExportView', [ MyExportImportController::class, 'importExportView' ]);
 Route::get('export', [ MyExportImportController::class, 'export' ])->name('export');
 Route::post('import', [ MyExportImportController::class, 'import' ])->name('import');
+Route::get('/admin_ppdb_user/export', [ MyExportImportController::class, 'export_ppdb_siswas' ])->name('export_ppdb_siswas');
+Route::post('/admin_ppdb_user/import', [ MyExportImportController::class, 'import_ppdb_siswas' ])->name('import_ppdb_siswas');
 
 Route::resource('ppdb2','App\Http\Controllers\PpdbContohController');
 

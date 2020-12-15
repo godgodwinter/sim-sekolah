@@ -1,16 +1,16 @@
 <?php
 namespace App\Exports;
 
-use App\Models\Tapel;
+use App\Models\Ppdb_siswas;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
-class UsersExport implements FromCollection
+class UsersExport_ppdb_siswa implements FromCollection
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
-        return Tapel::all();
+        return Ppdb_siswas::all();
     }
 }

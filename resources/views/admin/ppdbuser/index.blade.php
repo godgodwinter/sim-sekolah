@@ -35,8 +35,32 @@
 
       <div class="panel-body">
         <div class="table-responsive">
-            <a href="/cetak_pdf" class="btn btn-success" target="_blank">Import</a>
-            <a class="btn btn-warning" href="{{ route('export') }}">Export &nbsp; &nbsp;</a>
+            {{-- <a href="/cetak_pdf" class="btn btn-success" target="_blank">Import</a> --}}
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#import_ppdb_siswas">
+                Import
+              </button>
+              <!--modal-->
+              <div class="modal fade" id="import_ppdb_siswas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                                          Import PPDB Siswa
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                                      </div>
+                                      <div class="modal-body">
+                                          <form action="{{ route('import_ppdb_siswas') }}" method="POST" enctype="multipart/form-data">
+                                              @csrf
+                                              <input type="file" name="file" class="form-control">
+                                     </div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary">Import User Data</button>
+                  </div>
+                </form>
+                  </div>
+                </div>
+              </div>
+            <a class="btn btn-warning" href="{{ route('export_ppdb_siswas') }}">Export &nbsp; &nbsp;</a>
 
         <div class="clearfix"> &nbsp; </div>
         <div class="col-12 mb-3 mb-sm-0">&nbsp;</div>
@@ -59,7 +83,7 @@
                         <td>{{$data->nisn}}</td>
                         <td>{{$data->users_email}}</td>
                         <td>
-                            <a href="/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+                            <a href="{{ route('cetak_ppdb_siswas')}}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
                         </td>
 
                     </tr>
