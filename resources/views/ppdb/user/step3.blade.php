@@ -532,7 +532,6 @@ if(!empty($ppdb_siswas_rincians)){
                     </div>
                 </div>
             </div>
-        </div>
 
 
 
