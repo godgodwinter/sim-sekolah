@@ -126,7 +126,7 @@
           <ul class="sidebar-menu">
             <li class="menu-title">Main</li>
             <li>
-              <a href="home">
+              <a href="{{ url('admin/home ') }}">
                 <span class="menu-icon">
                   <i class="zmdi zmdi-home"></i>
                 </span>
@@ -141,8 +141,8 @@
                 <span class="menu-text">Pengaturan</span>
               </a>
               <ul class="sidebar-submenu collapse">
-                <li><a href="admin/password">Ganti Password</a></li>
-                <li><a href="admin/password">Reset Password</a></li>
+                <li><a href="{{ url('/password ') }}">Ganti Password</a></li>
+                <li><a href="{{ url('/password ') }}">Reset Password</a></li>
               </ul>
             </li>
             <li class="with-sub">
@@ -153,9 +153,9 @@
                 <span class="menu-text">Master</span>
               </a>
               <ul class="sidebar-submenu collapse">
-                <li><a href="tapel">Tahun Pelajaran</a></li>
-                <li><a href="admin/kelass">Kelas</a></li>
-                <li><a href="admin/siswas">Siswa</a></li>
+                <li><a href="{{ url('admin/tapel ') }}">Tahun Pelajaran</a></li>
+                <li><a href="{{ url('/kelass ') }}">Kelas</a></li>
+                <li><a href="{{ url('/siswas ') }}">Siswa</a></li>
               </ul>
             </li>
             <li>
@@ -167,7 +167,7 @@
               </a>
             </li>
             <li>
-              <a href="admin/tagihansiswas">
+              <a href="{{ url('/admin/tagihansiswas ') }}">
                 <span class="menu-icon">
                   <i class="zmdi zmdi-account-circle"></i>
                 </span>
@@ -175,7 +175,7 @@
               </a>
             </li>
             <li>
-              <a href="admin_ppdb_user">
+              <a href="{{ url('/admin/ppdb_user') }}">
                 <span class="menu-icon">
                   <i class="zmdi zmdi-account-circle"></i>
                 </span>

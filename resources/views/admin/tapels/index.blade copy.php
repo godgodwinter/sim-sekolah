@@ -43,7 +43,8 @@
 
                         <div class="form-group row">
                             <label for="inputTapel"
-                                class="col-sm-2 col-form-label  @error('nama') text-danger @enderror">Tambah @yield('title')</label>
+                                class="col-sm-2 col-form-label  @error('nama') text-danger @enderror">Tambah Tahun
+                                Pelajaran</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control @error('nama') is-invalid @enderror"
                                     id="inputTapel" placeholder="Nama" value="{{old('nama')}}" name="nama">
@@ -77,9 +78,7 @@
             <div class="panel-body">
                 <div class="table-responsive">
                     <a href="/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
-                    <a class="btn btn-warning" href="{{ route('export') }}">Export Excel</a>
-                    <br>
-                    <hr>
+                    <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
                     <table class="table table-striped table-bordered dataTable" id="table-1">
                         <thead>
                             <tr>
@@ -181,14 +180,14 @@
                 <div class="col-md-8 offset-md-2">
                     <div class="card bg-light mt-3">
                         <div class="card-header">
-                            Import @yield('title')
+                            Import Tapel
                         </div>
                         <div class="card-body">
                             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="file" name="file" class="form-control">
                                 <br>
-                                <button class="btn btn-success">Import @yield('title')</button>
+                                <button class="btn btn-success">Import User Data</button>
 
                             </form>
                         </div>
@@ -196,9 +195,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    
-=======
->>>>>>> abf24b51e5fd12af150c2a53ca86bdf853e437db
+        {!! QrCode::size(250)->generate('http://127.0.0.1:8000/tapel') !!}
     </div>
     @endsection

@@ -8,6 +8,7 @@ use PDF;
 use Excel;
 use QrCode;
 use App\Exports\UserReport;
+use Illuminate\Support\Facades\URL;
 
 class TapelsController extends Controller
 {
@@ -41,6 +42,7 @@ class TapelsController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         //
          //
          $request->validate([
@@ -53,7 +55,7 @@ class TapelsController extends Controller
         ]);
             // dd($request);
         Tapel::create($request->all());
-        return redirect('/tapel')->with('status','Data berhasil di tambahkan');
+        return redirect(URL::to('/').'/admin/tapel')->with('status','Data berhasil di tambahkan!');
     }
 
     /**
@@ -102,7 +104,9 @@ class TapelsController extends Controller
             ->update([
                 'nama'=>$request->nama
             ]);
-            return redirect('/tapel')->with('status','Data berhasil diupdate!');
+
+            // dd(URL::to('/').'/admin/tapel');
+            return redirect(URL::to('/').'/admin/tapel')->with('status','Data berhasil diupdate!');
 
     }
 
@@ -116,7 +120,7 @@ class TapelsController extends Controller
     {
         //
         Tapel::destroy($tapel->id);
-        return redirect('/tapel')->with('status','Data berhasil dihapus!');
+        return redirect(URL::to('/').'/admin/tapel')->with('status','Data berhasil dihapus!');
     }
 
     public function cetak_pdf()

@@ -15,8 +15,7 @@ use App\Http\Controllers\QrCodeGeneratorController;
 |
 */
 //ppdb_luar
-Route::resource('tapel','App\Http\Controllers\TapelsController');
-Route::resource('ppdb','App\Http\Controllers\PpdbsController');
+// Route::resource('ppdb','App\Http\Controllers\PpdbsController');
 Route::resource('/','App\Http\Controllers\PpdbsController');
 Route::post('/ppdblogin/login','App\Http\Controllers\PpdbsController@postLogin');
 Route::post('/ppdblogin/register','App\Http\Controllers\PpdbsController@postRegister');
@@ -26,11 +25,18 @@ Route::get('/ppdblogin', function () {
 });
 
 Auth::routes();
+//route admin
+Route::group(['middleware' => ['is_admin']], function() {
+    Route::resource('admin/tapel','App\Http\Controllers\TapelsController');
+    Route::get('admin/ppdb_user', [App\Http\Controllers\AdminPpdbUserController::class, 'index'])->name('admin_ppdb_user')->middleware('is_admin');
 
-Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('is_admin');
-Route::get('/admin_ppdb_user', [App\Http\Controllers\AdminPpdbUserController::class, 'index'])->name('admin_ppdb_user')->middleware('is_admin');
+    Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('is_admin');
+    Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('is_admin');
 
+});
+
+//route is_ppdb (ppdbuser) yang register pendaftaran siswa baru
 Route::group(['middleware' => ['is_ppdb']], function() {
 
 Route::get('/ppdbuser_beranda', [App\Http\Controllers\PpdbUserBerandaController::class, 'index'])->name('ppdbuser_beranda');
