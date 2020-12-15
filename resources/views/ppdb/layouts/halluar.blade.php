@@ -40,8 +40,8 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
                 aria-label="Toggle navigation" style=""><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown-1">
                 <ul class="navbar-nav mr-auto">
-                   
-                 
+
+
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item @yield('link-nav-beranda')"><a class="nav-link" href="ppdbuser_beranda">Beranda </a></li>
@@ -69,7 +69,7 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
     @yield('notif')
     @yield('container')
 
-    
+
 
 
     <!------------------------------------------
@@ -249,7 +249,25 @@ JAVASCRIPTS
     <script src="{{ asset("anchor/") }}/assets/js/functions.js" type="text/javascript"></script>
 
     @yield('jshere')
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+
+@if(Session::has('status'))
+<script>
+    swal("Pesan!!","{!! Session::get('status')!!}","success",{
+        button:"OK",
+    })
+</script>
+@endif
+
+@if(Session::has('warning'))
+<script>
+    swal("Pesan!!","{!! Session::get('status')!!}","warning",{
+        button:"OK",
+    })
+</script>
+@endif
+
     <!-- Animation -->
     <script src="{{ asset("anchor/") }}/assets/js/vendor/aos.js" type="text/javascript"></script>
     <noscript>

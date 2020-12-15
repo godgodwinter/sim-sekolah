@@ -77,7 +77,7 @@ if(!empty($ppdb_siswas)){
             {{-- {{ dd($ppdb_siswas->nik) }} --}}
 
 
-            @section('notif')
+            {{-- @section('notif')
             @if (session('status'))
 
             <section class="pt-5 pb-5" data-aos="fade-up">
@@ -94,7 +94,7 @@ if(!empty($ppdb_siswas)){
                 </div>
                 </section>
 
-            @endif
+            @endif --}}
 
 <section class="pt-5 pb-5" data-aos="fade-up">
 
