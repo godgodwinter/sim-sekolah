@@ -159,7 +159,7 @@
               </ul>
             </li>
             <li>
-              <a href="aturtagihans">
+              <a href="{{  url('/admin/aturtagihans ')  }}">
                 <span class="menu-icon">
                   <i class="zmdi zmdi-view-web"></i>
                 </span>
