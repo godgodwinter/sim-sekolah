@@ -48,15 +48,15 @@
 		<center><h1>Surat Pernyataan</h1></center>
 
   Saya yang bertanda tangan dibawah ini :<br>
-  <table>
+  <table width="100%" border="0">
 
 
               {{-- {{dd($tapels)}} --}}
               @foreach ($pernyataans as $pernyataan)
                 <tr>
-                  <td width="130px">Nama Lengkap</td>
-                  <td width="5px">:</td>
-                  <td width="100px" class="spa">{{ ($pernyataan->nama) }}</td>
+                  <td width="20%">Nama Lengkap</td>
+                  <td width="1%">:</td>
+                  <td width="79%" class="spa">{{ ($pernyataan->nama) }}</td>
 
                 </tr>
               @endforeach
@@ -102,9 +102,14 @@
               @endforeach
               @foreach ($pernyataans as $pernyataan)
                 <tr>
-                  <td>Alamat Orang Tua</td>
-                  <td>:</td>
-                  <td class="spa">{{ ($pernyataan->alamat) }}</td>
+                  <td style="vertical-align:top;">Alamat Orang Tua</td>
+                  <td style="vertical-align:top;">:</td>
+                  <td class="spa">{{ ($pernyataan->alamat)." RT : ".($pernyataan->rt)." RW : ".
+                                    ($pernyataan->rw)}}<br>
+                                    {{ " Kelurahan/Desa : ".($pernyataan->keldes)
+                                    ." Kecamatan : ".($pernyataan->kec)." Kodepos : ".($pernyataan->kodpos) }}
+
+                  </td>
 
                 </tr>
               @endforeach

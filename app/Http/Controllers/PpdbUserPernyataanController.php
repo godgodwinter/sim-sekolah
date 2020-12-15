@@ -76,6 +76,8 @@ class PpdbUserPernyataanController extends Controller
                     'ppdb_siswas.jk as jk','ppdb_siswas.agama as agama', 'ppdb_siswas_ortus.ayah_nama as ayah_n',
                     'ppdb_siswas_ortus.ayah_pekerjaan as job', 'ppdb_siswas.alamat_jalan as alamat',
                     'ppdb_siswas.hp as hp','ppdb_siswas_ortus.wali_nama as wali_n',
+                    'ppdb_siswas.nama_dusun as nadus','ppdb_siswas.rt as rt','ppdb_siswas.rw as rw',
+                    'ppdb_siswas.nama_kelurahan_desa as keldes','ppdb_siswas.kodepos as kodpos','ppdb_siswas.kecamatan as kec',
                     'ppdb_siswas_ortus.wali_pekerjaan as wali_job','ppdb_siswas.telp as telp','ppdb_siswas.agama as agama')
             ->where('ppdb_siswas.users_email', '=', $email)
             ->get();

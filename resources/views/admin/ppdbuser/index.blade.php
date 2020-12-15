@@ -83,7 +83,7 @@
                         <td>{{$data->nisn}}</td>
                         <td>{{$data->users_email}}</td>
                         <td>
-                            <a href="{{ route('cetak_ppdb_siswas')}}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
+                            <a href="{{ route('cetak_ppdb_siswas')}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
                         </td>
 
                     </tr>
