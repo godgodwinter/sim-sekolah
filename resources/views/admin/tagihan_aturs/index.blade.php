@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Tahun Pelajaran')
+@section('title','Tagihan Siswa')
 @section('csshere')
 <!-- Data Table Css -->
 
@@ -35,32 +35,36 @@
         <div class="panel panel-default">
 
             <div class="panel-body">
-                <form class="form-horizontal" action="/admin/tapel" method="post">
+                <form class="form-horizontal" action="/admin/aturtagihans" method="post">
 
                     @csrf
-
                     <div class="panel-body">
                         <div class="row">
                           <div class="col-md-8">
 
 
                               <div class="form-group">
-                                <label class="col-sm-3 control-label" for="form-control-5">Nama @yield('title')</label>
-                                <div class="col-sm-6">
-                                  <input id="form-control-5" class="form-control @error('nama') is-invalid @enderror" type="text" placeholder="Nama" value="{{old('nama')}}" name="nama">
+                                <label class="col-sm-3 control-label" for="form-control-5">Placeholder Input</label>
+                                <div class="col-sm-9">
+                                  <input id="form-control-5" class="form-control" type="email" placeholder="Placeholder input text">
                                 </div>
-                                @error('nama')
-                                <div class="col-sm-2">
-                                    <small id="passwordHelp" class="text-danger">
-                                        {{$message}}.
-                                    </small>
-                                </div>
-
-                                @enderror
                               </div>
 
 
-
+                              <div class="form-group">
+                                <label class="col-sm-3 control-label" for="form-control-9">Select</label>
+                                <div class="col-sm-9">
+                                  <select id="form-control-9" class="form-control">
+                                    <option value="corporate">Corporate</option>
+                                    <option value="creative">Creative</option>
+                                    <option value="ecommerce">eCommerce</option>
+                                    <option value="mobile">Mobile</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="wedding">Wedding</option>
+                                  </select>
+                                </div>
+                              </div>
 
                               <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
@@ -73,10 +77,37 @@
                         </div>
                       </div>
                     </div>
+                    <div class="container">
+
+                        <div class="form-group row">
+                            <label for="InputNama"
+                                class="col-sm-2 col-form-label  @error('nama') text-danger @enderror">Tambah @yield('title')</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                    id="InputNama" placeholder="Nama" value="{{old('nama')}}" name="nama">
+                            </div>
+                            @error('nama')
+                            <div class="col-sm-3">
+                                <small id="passwordHelp" class="text-danger">
+                                    {{$message}}.
+                                </small>
+                            </div>
+
+                            @enderror
+                        </div>
+
+
+
+                    </div>
 
 
 
 
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </div>
                 </form>
 
             </div>
@@ -96,17 +127,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- {{dd($tapels)}} --}}
-                            @foreach ($tapels as $tapel)
+                            {{-- {{dd($tagihan_aturs)}} --}}
+                            @foreach ($tagihan_aturs as $data)
                             <tr>
                                 <td>{{ ($loop->index)+1 }}</td>
-                                <td>{{$tapel->nama}}</td>
+                                <td>{{$data->nama}}</td>
                                 <td>
                                     <button type="button" class="btn btn-primary m-w-100" data-toggle="modal"
-                                        data-target="#otherModal2{{$tapel->id}}"><i class="zmdi zmdi-edit"></i>
+                                        data-target="#otherModal2{{$data->id}}"><i class="zmdi zmdi-edit"></i>
                                     </button>
 
-                                    <div id="otherModal2{{$tapel->id}}" class="modal fade" tabindex="-1" role="dialog">
+                                    <div id="otherModal2{{$data->id}}" class="modal fade" tabindex="-1" role="dialog">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-primary">
@@ -116,25 +147,25 @@
                                                             <i class="zmdi zmdi-close"></i>
                                                         </span>
                                                     </button>
-                                                    <h4 class="modal-title">Edit " {{$tapel->nama}} "</h4>
+                                                    <h4 class="modal-title">Edit " {{$data->nama}} "</h4>
                                                 </div>
                                                 <div class="modal-body">
 
 
 
 
-                                                    <form class="form-horizontal" action="{{ url('admin/tapel/ ') }}{{$tapel->id}}" method="post">
+                                                    <form class="form-horizontal" action="{{ url('admin/aturtagihans/ ') }}{{$data->id}}" method="post">
                                                         @method('put')
                                                         @csrf
 
                                                         <p>
-                                                            <label for="form-control-3{{$tapel->id}}"
+                                                            <label for="form-control-3{{$data->id}}"
                                                                 class="control-label ">Tahun Pelajaran &nbsp;</label>
                                                             <input type="text"
                                                                 class="form-control input-pill mt-2 @error('nama') is-invalid @enderror"
-                                                                id="form-control-3{{$tapel->id}}"
+                                                                id="form-control-3{{$data->id}}"
                                                                 placeholder="Tahun Pelajaran" name="nama"
-                                                                value="{{$tapel->nama}}">
+                                                                value="{{$data->nama}}">
                                                             @error('nama')<div class="invalid-feedback">Error!
                                                                 {{$message}}</div>
                                                             @enderror
@@ -159,7 +190,7 @@
                                     {{-- <a href="#" onclick="save()"class="btn btn-warning">  <i class="zmdi zmdi-edit"></i> </a>  --}}
 
 
-                                    <form action="/admin/tapel/{{$tapel->id}}" method="post" class="d-inline">
+                                    <form action="/admin/aturtagihans/{{$data->id}}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger m-w-100"
@@ -203,9 +234,5 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    
-=======
->>>>>>> abf24b51e5fd12af150c2a53ca86bdf853e437db
     </div>
     @endsection

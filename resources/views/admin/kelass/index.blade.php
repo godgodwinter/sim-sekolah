@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Tahun Pelajaran')
+@section('title','Kelas')
 @section('csshere')
 <!-- Data Table Css -->
 
@@ -35,9 +35,10 @@
         <div class="panel panel-default">
 
             <div class="panel-body">
-                <form class="form-horizontal" action="/admin/tapel" method="post">
+                <form class="form-horizontal" action="/admin/kelass" method="post">
 
                     @csrf
+
 
                     <div class="panel-body">
                         <div class="row">
@@ -96,17 +97,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- {{dd($tapels)}} --}}
-                            @foreach ($tapels as $tapel)
+                            {{-- {{dd($kelass)}} --}}
+                            @foreach ($kelass as $kelas)
                             <tr>
                                 <td>{{ ($loop->index)+1 }}</td>
-                                <td>{{$tapel->nama}}</td>
+                                <td>{{$kelas->nama}}</td>
                                 <td>
                                     <button type="button" class="btn btn-primary m-w-100" data-toggle="modal"
-                                        data-target="#otherModal2{{$tapel->id}}"><i class="zmdi zmdi-edit"></i>
+                                        data-target="#otherModal2{{$kelas->id}}"><i class="zmdi zmdi-edit"></i>
                                     </button>
 
-                                    <div id="otherModal2{{$tapel->id}}" class="modal fade" tabindex="-1" role="dialog">
+                                    <div id="otherModal2{{$kelas->id}}" class="modal fade" tabindex="-1" role="dialog">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-primary">
@@ -116,25 +117,25 @@
                                                             <i class="zmdi zmdi-close"></i>
                                                         </span>
                                                     </button>
-                                                    <h4 class="modal-title">Edit " {{$tapel->nama}} "</h4>
+                                                    <h4 class="modal-title">Edit " {{$kelas->nama}} "</h4>
                                                 </div>
                                                 <div class="modal-body">
 
 
 
 
-                                                    <form class="form-horizontal" action="{{ url('admin/tapel/ ') }}{{$tapel->id}}" method="post">
+                                                    <form class="form-horizontal" action="{{ url('admin/kelass/ ') }}{{$kelas->id}}" method="post">
                                                         @method('put')
                                                         @csrf
 
                                                         <p>
-                                                            <label for="form-control-3{{$tapel->id}}"
+                                                            <label for="form-control-3{{$kelas->id}}"
                                                                 class="control-label ">Tahun Pelajaran &nbsp;</label>
                                                             <input type="text"
                                                                 class="form-control input-pill mt-2 @error('nama') is-invalid @enderror"
-                                                                id="form-control-3{{$tapel->id}}"
+                                                                id="form-control-3{{$kelas->id}}"
                                                                 placeholder="Tahun Pelajaran" name="nama"
-                                                                value="{{$tapel->nama}}">
+                                                                value="{{$kelas->nama}}">
                                                             @error('nama')<div class="invalid-feedback">Error!
                                                                 {{$message}}</div>
                                                             @enderror
@@ -159,7 +160,7 @@
                                     {{-- <a href="#" onclick="save()"class="btn btn-warning">  <i class="zmdi zmdi-edit"></i> </a>  --}}
 
 
-                                    <form action="/admin/tapel/{{$tapel->id}}" method="post" class="d-inline">
+                                    <form action="/admin/kelass/{{$kelas->id}}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger m-w-100"
@@ -203,9 +204,5 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    
-=======
->>>>>>> abf24b51e5fd12af150c2a53ca86bdf853e437db
     </div>
     @endsection
