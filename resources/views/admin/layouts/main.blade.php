@@ -126,7 +126,7 @@
           <ul class="sidebar-menu">
             <li class="menu-title">Main</li>
             <li>
-              <a href="{{ url('/home ') }}">
+              <a href="{{ url('admin/home ') }}">
                 <span class="menu-icon">
                   <i class="zmdi zmdi-home"></i>
                 </span>
@@ -153,7 +153,7 @@
                 <span class="menu-text">Master</span>
               </a>
               <ul class="sidebar-submenu collapse">
-                <li><a href="{{ url('/tapel ') }}">Tahun Pelajaran</a></li>
+                <li><a href="{{ url('admin/tapel ') }}">Tahun Pelajaran</a></li>
                 <li><a href="{{ url('/kelass ') }}">Kelas</a></li>
                 <li><a href="{{ url('/siswas ') }}">Siswa</a></li>
               </ul>
@@ -167,7 +167,7 @@
               </a>
             </li>
             <li>
-              <a href="{{ url('/tagihansiswas ') }}">
+              <a href="{{ url('/admin/tagihansiswas ') }}">
                 <span class="menu-icon">
                   <i class="zmdi zmdi-account-circle"></i>
                 </span>
@@ -175,7 +175,7 @@
               </a>
             </li>
             <li>
-              <a href="{{ url('/admin_ppdb_user ') }}">
+              <a href="{{ url('/admin/ppdb_user') }}">
                 <span class="menu-icon">
                   <i class="zmdi zmdi-account-circle"></i>
                 </span>
