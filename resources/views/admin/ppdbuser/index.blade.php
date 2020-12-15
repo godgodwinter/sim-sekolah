@@ -77,13 +77,14 @@
                 <tbody>
                     {{-- {{dd($ppdb_siswas)}} --}}
                     @foreach ($ppdb_siswas as $data)
+                    @php($emailencode=base64_encode($data->users_email))
                     <tr>
                         <td>{{ ($loop->index)+1 }}</td>
                         <td>{{$data->nama}}</td>
                         <td>{{$data->nisn}}</td>
                         <td>{{$data->users_email}}</td>
                         <td>
-                            <a href="{{ route('cetak_ppdb_siswas')}}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
+                            <a href="{{ url('/print_data?id='.$emailencode) }}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
                         </td>
 
                     </tr>

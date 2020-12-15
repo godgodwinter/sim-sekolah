@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Ppdb_siswas extends Model
 {
     use HasFactory;
+
+    public $table = "ppdb_siswas";
     protected $fillable = [
             'nisn',
             'nama',
