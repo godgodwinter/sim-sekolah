@@ -123,9 +123,21 @@ class AdminTagihanAturController extends Controller
      * @param  \App\Models\Tagihan_aturs  $tagihan_aturs
      * @return \Illuminate\Http\Response
      */
-    public function show(Tagihan_aturs $tagihan_aturs)
+    public function show($id)
     {
         //
+
+        // dd($id);
+        $tagihan_aturs=Tagihan_aturs::all();
+        $tapels=Tapel::all();
+        $kelass=Kelass::all();
+
+        $result  = DB::select('select * from tagihan_aturs where id = ?', [$id]);
+        // dd($result);
+        // $results = DB::select("select * from users where ? LIKE '%?%'", array($column, $value));
+
+        return view('admin.tagihan_aturs.edit',compact('tagihan_aturs','tapels','kelass','result'));
+
     }
 
     /**
@@ -146,9 +158,94 @@ class AdminTagihanAturController extends Controller
      * @param  \App\Models\Tagihan_aturs  $tagihan_aturs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tagihan_aturs $tagihan_aturs)
+    public function update(Request $request, $id)
     {
+
+
+        $rupiah=$request->rupiah;
+        $exrupiah=explode(" ",$rupiah);
+        $rplexrupiah=str_replace(",","",$exrupiah);
+        $nominal=str_replace(".","",$rplexrupiah);
+        $nominal_tagihan=$nominal[1];
+
+
+        $tapel = DB::table('tapels')->where('id', $request->tapel_id)->first();
+
+        $tapel_nama=$tapel->nama;
+
+
+        $kelas = DB::table('kelass')->where('id', $request->kelas_id)->first();
+
+        $kelas_nama=$kelas->nama;
+
         //
+// dd($request->file);
+
+if($request->file!==null){
+// jika pilih gambar kesini
+// dd($request->file);
+
+
+	// menyimpan data file yang diupload ke variabel $file
+    $file = $request->file('file');
+//nama file baru
+$nama_file = time()."_".$file->getClientOriginalName();
+
+          // nama file
+echo 'File Name: '.$file->getClientOriginalName();
+echo '<br>';
+
+          // ekstensi file
+echo 'File Extension: '.$file->getClientOriginalExtension();
+echo '<br>';
+
+          // real path
+echo 'File Real Path: '.$file->getRealPath();
+echo '<br>';
+
+          // ukuran file
+echo 'File Size: '.$file->getSize();
+echo '<br>';
+
+          // tipe mime
+echo 'File Mime Type: '.$file->getMimeType();
+
+          // isi dengan nama folder tempat kemana file diupload
+$tujuan_upload = 'uploads';
+
+        // upload file
+$file->move($tujuan_upload,$nama_file);
+
+//jalankan update
+Tagihan_aturs::where('id',$id)
+->update([
+    'tapel'=>$tapel_nama,
+    'tapel_id'=>$request->tapel_id,
+    'kelas'=>$kelas_nama,
+    'kelas_id'=>$request->kelas_id,
+    'nominal_tagihan'=>$nominal_tagihan,
+    'user_foto'=>$nama_file,
+]);
+}else{
+//jika tidak upload gambar
+// dd($request);
+
+//jalankan update
+Tagihan_aturs::where('id',$id)
+->update([
+    'tapel'=>$tapel_nama,
+    'tapel_id'=>$request->tapel_id,
+    'kelas'=>$kelas_nama,
+    'kelas_id'=>$request->kelas_id,
+    'nominal_tagihan'=>$nominal_tagihan
+]);
+
+
+
+}
+
+
+return redirect(URL::to('/').'/admin/aturtagihans')->with('status','Data berhasil di ubah!');
     }
 
     /**

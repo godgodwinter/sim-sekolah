@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Atur Tagihan Siswa')
+@section('title','Edit Tagihan Siswa')
 @section('csshere')
 <!-- Data Table Css -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -43,20 +43,32 @@
         <div class="panel panel-default">
 
 
-
+{{-- {{ dd($result) }} --}}
+@foreach ($result as $ambildataedit)
+{{-- {{ dd($ambildataedit->tapel_id) }} --}}
+<?php
+ $id=$ambildataedit->id;
+ $tapel_id=$ambildataedit->tapel_id;
+ $tapel=$ambildataedit->tapel;
+ $kelas=$ambildataedit->kelas;
+ $kelas_id=$ambildataedit->kelas_id;
+ $nominal_tagihan=$ambildataedit->nominal_tagihan;
+?>
+@endforeach
             <div class="panel-body">
-                <form class="form-horizontal" action="/admin/aturtagihans" method="post" enctype="multipart/form-data">
-
+                <form class="form-horizontal" action="{{ url('admin/aturtagihans/ ') }}{{$id}}" method="post" enctype="multipart/form-data">
+                    @method('put')
                     @csrf
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-8">
-                                {{-- {{ dd($tapels) }} --}}
+
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label" for="form-control-9">Tahun Pelajaran</label>
                                     <div class="col-sm-9">
                                         <select id="form-control-9" class="form-control" name="tapel_id">
 
+                                            <option value="{{  $tapel_id }}" selected> {{ $tapel }} </option>
                                             <option disabled>-- Pilih --</option>
                                             @foreach($tapels as $tapel)
 
@@ -78,7 +90,7 @@
                                     <label class="col-sm-3 control-label" for="form-control-9">Kelas</label>
                                     <div class="col-sm-9">
                                         <select id="form-control-9" class="form-control" name="kelas_id">
-
+                                            <option value="{{  $kelas_id }}" selected> {{ $kelas }} </option>
                                             <option disabled>-- Pilih --</option>
                                             @foreach($kelass as $kelas)
 
@@ -100,7 +112,7 @@
                                     <label class="col-sm-3 control-label" for="rupiah">Nominal Tagihan</label>
                                     <div class="col-sm-9">
                                         <input id="rupiah" class="form-control" type="text"
-                                            placeholder="Masukkan Nominal Tagihan" name="rupiah" value="Rp. 0">
+                                            placeholder="Masukkan Nominal Tagihan" name="rupiah" value="@currency($nominal_tagihan)">
 
                                     </div>
                                 </div>
@@ -196,7 +208,9 @@ $("#imgInp").change(function() {
 
                                 <div class="form-group">
                                     <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
-                                        <button type="submit" class="btn btn-primary">Simpan</button>
+
+        <a href="{{ url('/admin/aturtagihans') }}" class="btn btn-warning">&nbsp;Batal &nbsp; </a> &nbsp; <button type="submit" class="btn btn-primary">Simpan</button>
+
                                     </div>
                                 </div>
 
@@ -216,85 +230,8 @@ $("#imgInp").change(function() {
 
 </div>
 
-<div class="panel-body">
-    <div class="table-responsive">
-        <a href="/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
-        <a class="btn btn-warning" href="{{ route('export') }}">Export Excel</a>
-        <br>
-        <hr>
-        <table class="table table-striped table-bordered dataTable" id="table-1">
-            <thead>
-                <tr>
-                    <th>-</th>
-                    <th>Tahun Pelajaran</th>
-                    <th>Kelas</th>
-                    <th>Nominal Tagihan</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{-- {{dd($tagihan_aturs)}} --}}
-                @foreach ($tagihan_aturs as $data)
-                <tr>
-                    <td>{{ ($loop->index)+1 }}</td>
-                    <td>{{$data->tapel}}</td>
-                    <td>{{$data->kelas}}</td>
-                    <td>@currency($data->nominal_tagihan)</td>
-                    <td>
-                        <a href="/admin/aturtagihans/{{$data->id}}" type="button" class="btn btn-primary m-w-100" ><i class="zmdi zmdi-edit"></i>
-                        </a>
 
-
-
-                        {{-- <a href="#" onclick="save()"class="btn btn-warning">  <i class="zmdi zmdi-edit"></i> </a>  --}}
-
-
-
-                        <form action="/admin/aturtagihans/{{$data->id}}" method="post" class="d-inline">
-                            @method('DELETE')
-                            @csrf
-                            <button class="btn btn-danger m-w-100"
-                                onclick="return  confirm('Anda yakin menghapus data ini? Y/N')"><span
-                                    class="pcoded-micon"> <i class="zmdi zmdi-delete"></i> </span></button>
-                        </form>
-                        {{-- <a href="#" onclick="save()"class="btn btn-danger">  <i class="zmdi zmdi-delete"></i> </a>  --}}
-                    </td>
-                </tr>
-                @endforeach
-
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>-</th>
-                    <th>Tahun Pelajaran</th>
-                    <th>Kelas</th>
-                    <th>Nominal Tagihan</th>
-                    <th>Aksi</th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
 </div>
-</div>
-<div class="container main-section">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <div class="card bg-light mt-3">
-                <div class="card-header">
-                    Import @yield('title')
-                </div>
-                <div class="card-body">
-                    <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <input type="file" name="file" class="form-control">
-                        <br>
-                        <button class="btn btn-success">Import @yield('title')</button>
 
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 @endsection
