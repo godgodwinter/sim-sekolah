@@ -31,6 +31,7 @@ Route::group(['middleware' => ['is_admin']], function() {
     Route::resource('admin/siswas','App\Http\Controllers\AdminSiswasController');
     Route::resource('admin/kelass','App\Http\Controllers\AdminKelassController');
     Route::resource('admin/aturtagihans','App\Http\Controllers\AdminTagihanAturController');
+    // Route::resource('admin/tagihan_aturs','App\Http\Controllers\tagihan_atursController');
 
     Route::get('admin/ppdb_user', [App\Http\Controllers\AdminPpdbUserController::class, 'index'])->name('admin_ppdb_user')->middleware('is_admin');
 

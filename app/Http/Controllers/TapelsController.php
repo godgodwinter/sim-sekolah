@@ -119,6 +119,7 @@ class TapelsController extends Controller
     public function destroy(Tapel $tapel)
     {
         //
+        dd($tapel);
         Tapel::destroy($tapel->id);
         return redirect(URL::to('/').'/admin/tapel')->with('status','Data berhasil dihapus!');
     }

@@ -8,6 +8,10 @@ use App\Models\Tapel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
+use PDF;
+use Excel;
+use QrCode;
+use App\Exports\UserReport;
 
 class AdminTagihanAturController extends Controller
 {
@@ -22,6 +26,9 @@ class AdminTagihanAturController extends Controller
         $tagihan_aturs=Tagihan_aturs::all();
         $tapels=Tapel::all();
         $kelass=Kelass::all();
+
+        // $results = DB::select("select * from users where ? LIKE '%?%'", array($column, $value));
+
         return view('admin.tagihan_aturs.index',compact('tagihan_aturs','tapels','kelass'));
     }
 
@@ -150,8 +157,11 @@ class AdminTagihanAturController extends Controller
      * @param  \App\Models\Tagihan_aturs  $tagihan_aturs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tagihan_aturs $tagihan_aturs)
+    public function destroy($id)
     {
         //
+// dd($id);
+        Tagihan_aturs::destroy($id);
+        return redirect(URL::to('/').'/admin/aturtagihans')->with('status','Data berhasil dihapus!');
     }
 }

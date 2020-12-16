@@ -227,6 +227,8 @@ $("#imgInp").change(function() {
                 <tr>
                     <th>-</th>
                     <th>Tahun Pelajaran</th>
+                    <th>Kelas</th>
+                    <th>Nominal Tagihan</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -235,7 +237,9 @@ $("#imgInp").change(function() {
                 @foreach ($tagihan_aturs as $data)
                 <tr>
                     <td>{{ ($loop->index)+1 }}</td>
-                    <td>{{$data->nama}}</td>
+                    <td>{{$data->tapel}}</td>
+                    <td>{{$data->kelas}}</td>
+                    <td>@currency($data->nominal_tagihan)</td>
                     <td>
                         <button type="button" class="btn btn-primary m-w-100" data-toggle="modal"
                             data-target="#otherModal2{{$data->id}}"><i class="zmdi zmdi-edit"></i>
@@ -250,7 +254,7 @@ $("#imgInp").change(function() {
                                                 <i class="zmdi zmdi-close"></i>
                                             </span>
                                         </button>
-                                        <h4 class="modal-title">Edit " {{$data->nama}} "</h4>
+                                        <h4 class="modal-title">Edit " {{$data->tapel}} - {{$data->kelas}} - @currency($data->nominal_tagihan)"</h4>
                                     </div>
                                     <div class="modal-body">
 
@@ -261,19 +265,48 @@ $("#imgInp").change(function() {
                                             action="{{ url('admin/aturtagihans/ ') }}{{$data->id}}" method="post">
                                             @method('put')
                                             @csrf
+                                            <div class="col-sm-6">
 
-                                            <p>
                                                 <label for="form-control-3{{$data->id}}" class="control-label ">Tahun
                                                     Pelajaran &nbsp;</label>
-                                                <input type="text"
-                                                    class="form-control input-pill mt-2 @error('nama') is-invalid @enderror"
-                                                    id="form-control-3{{$data->id}}" placeholder="Tahun Pelajaran"
-                                                    name="nama" value="{{$data->nama}}">
-                                                @error('nama')<div class="invalid-feedback">Error!
-                                                    {{$message}}</div>
-                                                @enderror
+                                                    <select id="form-control-9" class="form-control" name="tapel_id">
 
-                                            </p>
+                                                        <option disabled>-- Pilih --</option>
+                                                        @foreach($tapels as $tapel)
+
+                                                        <option value="{{  $tapel->id  }}"> {{ $tapel->nama }} </option>
+                                                        @endforeach
+                                                    </select>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <label for="form-control-3{{$data->id}}" class="control-label ">Kelas &nbsp;</label>
+                                                    <select id="form-control-9" class="form-control" name="kelas_id">
+
+                                                        <option disabled>-- Pilih --</option>
+                                                        @foreach($kelass as $kelas)
+
+                                                        <option value="{{ $kelas->id }}"> {{ $kelas->nama }} </option>
+                                                        @endforeach
+                                                    </select>
+
+
+                                            </div>
+                                            <hr>
+                                            <br>
+                                            <div class="col-sm-6">
+                                                <label for="form-control-3{{$data->id}}" class="control-label ">Nominal Tagihan &nbsp;</label>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-9">
+                                                            <input id="rupiah{{$data->id}}" class="form-control" type="text"
+                                                                placeholder="Masukkan Nominal Tagihan" name="rupiah" value="Rp. 0">
+
+                                                        </div>
+                                                    </div>
+
+
+
+                                            </div>
 
 
 
@@ -292,8 +325,9 @@ $("#imgInp").change(function() {
                         {{-- <a href="#" onclick="save()"class="btn btn-warning">  <i class="zmdi zmdi-edit"></i> </a>  --}}
 
 
+
                         <form action="/admin/aturtagihans/{{$data->id}}" method="post" class="d-inline">
-                            @method('delete')
+                            @method('DELETE')
                             @csrf
                             <button class="btn btn-danger m-w-100"
                                 onclick="return  confirm('Anda yakin menghapus data ini? Y/N')"><span
@@ -309,6 +343,8 @@ $("#imgInp").change(function() {
                 <tr>
                     <th>-</th>
                     <th>Tahun Pelajaran</th>
+                    <th>Kelas</th>
+                    <th>Nominal Tagihan</th>
                     <th>Aksi</th>
                 </tr>
             </tfoot>

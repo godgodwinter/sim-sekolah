@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelass;
 use App\Models\Siswas;
+use App\Models\Tapel;
 use Illuminate\Http\Request;
 
 class AdminSiswasController extends Controller
@@ -15,6 +17,10 @@ class AdminSiswasController extends Controller
     public function index()
     {
         //
+
+        $tapels=Tapel::all();
+        $kelass=Kelass::all();
+        return view('admin.tagihan_aturs.index',compact('tapels','kelass'));
     }
 
     /**
