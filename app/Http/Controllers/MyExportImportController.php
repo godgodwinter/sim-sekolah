@@ -7,6 +7,7 @@ use App\Imports\UsersImport;
 use App\Exports\UsersExport;
 use App\Exports\UsersExport_ppdb_siswa;
 use App\Imports\UsersImport_ppdb_siswas;
+use App\Models\Ppdb_siswas;
 use Maatwebsite\Excel\Facades\Excel;
 
 class MyExportImportController extends Controller
@@ -41,6 +42,7 @@ class MyExportImportController extends Controller
 
     public function export_ppdb_siswas()
     {
+        // dd(Ppdb_siswas::all());
         return Excel::download(new UsersExport_ppdb_siswa, 'PPDB_SISWA.xlsx');
     }
 

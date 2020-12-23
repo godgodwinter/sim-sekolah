@@ -15,7 +15,7 @@ class CreatePpdbSiswasTable extends Migration
     {
         Schema::create('ppdb_siswas', function (Blueprint $table) {
             $table->id();
-            $table->string('users_email')->indeks();
+            $table->string('users_email')->unique();
             $table->foreign('users_email')
                     ->references('email')
                     ->on('users')

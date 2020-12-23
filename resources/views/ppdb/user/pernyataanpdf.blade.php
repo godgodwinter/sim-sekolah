@@ -51,100 +51,82 @@
   <table width="100%" border="0">
 
 
-              {{-- {{dd($tapels)}} --}}
+              {{-- {{dd($pernyataans)}} --}}
+
               @foreach ($pernyataans as $pernyataan)
+                    @php
+                        $nama=$pernyataan->nama;
+                        $tl=$pernyataan->tl;
+                        $tgl_l=$pernyataan->tgl_l;
+                        $jk=$pernyataan->jk;
+                        $ayah_n=$pernyataan->ayah_n;
+                        $job=$pernyataan->job;
+                        $telp=$pernyataan->telp;
+                        $wali_n=$pernyataan->wali_n;
+                        $wali_job=$pernyataan->wali_job;
+                    @endphp
+              @endforeach
                 <tr>
                   <td width="20%">Nama Lengkap</td>
                   <td width="1%">:</td>
-                  <td width="79%" class="spa">{{ ($pernyataan->nama) }}</td>
+                  <td width="79%" class="spa">{{ $nama }}</td>
 
                 </tr>
-              @endforeach
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>Tempat Lahir</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->tl) }}</td>
+                  <td class="spa">{{ $tl }}</td>
 
                 </tr>
-              @endforeach
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>Tanggal lahir</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->tgl_l) }}</td>
+                  <td class="spa">{{ $tgl_l }}</td>
 
                 </tr>
-              @endforeach
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>Jenis Kelamin</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->jk) }}</td>
+                  <td class="spa">{{ $jk }}</td>
 
                 </tr>
-              @endforeach
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>Nama Orang Tua</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->ayah_n) }}</td>
+                  <td class="spa">{{ $ayah_n }}</td>
 
                 </tr>
-              @endforeach
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>Pekerjaan Orang Tua</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->job) }}</td>
+                  <td class="spa">{{ $job }}</td>
 
                 </tr>
-              @endforeach
-              {{-- @foreach ($pernyataans as $pernyataan)
-                <tr>
-                  <td style="vertical-align:top;">Alamat Orang Tua</td>
-                  <td style="vertical-align:top;">:</td>
-                  <td class="spa">{{ ($pernyataan->alamat)." RT : ".($pernyataan->rt)." RW : ".
-                                    ($pernyataan->rw)}}<br>
-                                    {{ " Kelurahan/Desa : ".($pernyataan->keldes)
-                                    ." Kecamatan : ".($pernyataan->kec)." Kodepos : ".($pernyataan->kodpos) }}
-
-                  </td>
-
-                </tr>
-              @endforeach --}}
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>No. Telp</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->hp) }}</td>
+                  <td class="spa">{{ $telp }}</td>
 
                 </tr>
-              @endforeach
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>Nama Wali</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->wali_n) }}</td>
+                  <td class="spa">{{ $wali_n     }}</td>
 
                 </tr>
-              @endforeach
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>Pekerjaan Wali</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->wali_job) }}</td>
+                  <td class="spa">{{ $wali_job }}</td>
 
                 </tr>
-              @endforeach
-              @foreach ($pernyataans as $pernyataan)
                 <tr>
                   <td>No Telp</td>
                   <td>:</td>
-                  <td class="spa">{{ ($pernyataan->hp) }}</td>
+                  <td class="spa">{{ $telp }}</td>
 
                 </tr>
-              @endforeach
+
 
 
                 <tr>
