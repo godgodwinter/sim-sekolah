@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $data = [
             [
-                'id' => '1',
+                // 'id' => '1',
                 'persen' => '75',
             ]
             ];

@@ -235,6 +235,8 @@
                 {{-- {{dd($tagihan_aturs)}} --}}
                 @foreach ($siswas as $data)
                 @php
+                $tapel_nama='-';
+                $kelas_nama='-';
                     $caritapel = DB::select('select * from tapels where id = ?', array($data->tapels_id));
                     foreach ($caritapel as $ambil) {
                         // dd($ambil);

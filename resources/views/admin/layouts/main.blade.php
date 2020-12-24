@@ -20,7 +20,7 @@
   </head>
   {{-- <body class="layout layout-header-fixed layout-left-sidebar-fixed layout-desktop layout-left-sidebar-collapsed"> --}}
 
-  <body class="layout layout-header-fixed layout-left-sidebar-fixed">
+  <body class="layout layout-header-fixed layout-left-sidebar-fixed" id="inibody">
     <div class="site-overlay"></div>
     <div class="site-header">
       <nav class="navbar navbar-default">

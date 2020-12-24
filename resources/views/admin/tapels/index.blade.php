@@ -32,6 +32,7 @@
                     $.each(allids,function(key,val){
                         $("#sid"+val).remove();
                     })
+
                 }
             });
         })
@@ -131,12 +132,12 @@
                         <tbody>
                             {{-- {{dd($tapels)}} --}}
                             @foreach ($tapels as $tapel)
-                            <tr>
-                                <td class="text-center" width="5%"><input type="checkbox" name="ids" class="checkBoxClass" value="{{ $tapel->id }}"></td>
+                            <tr id="sid{{$tapel['id']}}">
+                                <td class="text-center" width="5%"><input type="checkbox" name="ids" class="checkBoxClass" value="{{$tapel['id']}}"></td>
 
                                 <td class="text-center" width="5%">{{ ($loop->index)+1 }}</td>
-                                <td>{{$tapel->nama}}</td>
-                                <div id="otherModal2{{$tapel->id}}" class="modal fade" tabindex="-1" role="dialog">
+                                <td>{{$tapel['nama']}} </td>
+                                <div id="otherModal2{{$tapel['id']}}" class="modal fade" tabindex="-1" role="dialog">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header bg-primary">
@@ -146,25 +147,25 @@
                                                         <i class="zmdi zmdi-close"></i>
                                                     </span>
                                                 </button>
-                                                <h4 class="modal-title">Edit " {{$tapel->nama}} "</h4>
+                                                <h4 class="modal-title">Edit " {{$tapel['nama']}} "</h4>
                                             </div>
                                             <div class="modal-body">
 
 
 
 
-                                                <form class="form-horizontal" action="{{ url('admin/tapel/ ') }}{{$tapel->id}}" method="post">
+                                                <form class="form-horizontal" action="{{ url('admin/tapel/ ') }}{{$tapel['id']}}" method="post">
                                                     @method('put')
                                                     @csrf
 
                                                     <p>
-                                                        <label for="form-control-3{{$tapel->id}}"
+                                                        <label for="form-control-3{{$tapel['id']}} "
                                                             class="control-label ">Tahun Pelajaran &nbsp;</label>
                                                         <input type="text"
                                                             class="form-control input-pill mt-2 @error('nama') is-invalid @enderror"
-                                                            id="form-control-3{{$tapel->id}}"
+                                                            id="form-control-3{{$tapel['id']}} "
                                                             placeholder="Tahun Pelajaran" name="nama"
-                                                            value="{{$tapel->nama}}">
+                                                            value="{{$tapel['nama']}} ">
                                                         @error('nama')<div class="invalid-feedback">Error!
                                                             {{$message}}</div>
                                                         @enderror
@@ -187,7 +188,7 @@
                                 </div>
                                 <td>
                                     <button type="button" class="btn btn-primary m-w-100" data-toggle="modal"
-                                        data-target="#otherModal2{{$tapel->id}}"><i class="zmdi zmdi-edit"></i>
+                                        data-target="#otherModal2{{$tapel['id']}} "><i class="zmdi zmdi-edit"></i>
                                     </button>
 
 
@@ -195,7 +196,7 @@
                                     {{-- <a href="#" onclick="save()"class="btn btn-warning">  <i class="zmdi zmdi-edit"></i> </a>  --}}
 
 
-                                    <form action="/admin/tapel/{{$tapel->id}}" method="post" class="d-inline">
+                                    <form action="/admin/tapel/{{$tapel['id']}} " method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger m-w-100"

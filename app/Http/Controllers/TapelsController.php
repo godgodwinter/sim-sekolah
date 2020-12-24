@@ -20,7 +20,9 @@ class TapelsController extends Controller
     public function index()
     {
         $tapels=Tapel::all();
-        return view('admin.tapels.index',compact('tapels'));
+        // $tapels=response()->json($dataasli);
+        return view('admin.tapels.index')->with('tapels', json_decode($tapels, true));
+        // return view('admin.tapels.index',compact('tapels'));
         // return view('admin.tapels.index');
     }
 
@@ -146,6 +148,7 @@ class TapelsController extends Controller
         $ids=$request->ids;
         Tapel::whereIn('id',$ids)->delete();
         return response()->json(['success'=>"Data telah terhapus!"]);
+        // return redirect(URL::to('/').'/admin/tapel')->with('status','Data berhasil di dihapus!');
 
     }
 }
