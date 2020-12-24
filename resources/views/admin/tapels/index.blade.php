@@ -117,7 +117,8 @@
                 <div class="table-responsive">
                     <a href="/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
                     <a class="btn btn-warning" href="{{ route('export') }}">Export Excel</a>
-                    <a class="btn btn-danger" href="#" id="deleteAllSelectedRecord">Hapus Terpilih</a>
+                    <a class="btn btn-danger" href="#" id="deleteAllSelectedRecord"
+                    onclick="return  confirm('Anda yakin menghapus data ini? Y/N')">Hapus Terpilih</a>
                     <br>
                     <hr>
                     <table class="table table-striped table-bordered dataTable" id="table-1">
