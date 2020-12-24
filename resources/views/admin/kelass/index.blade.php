@@ -2,7 +2,9 @@
 @section('title','Kelas')
 @section('csshere')
 <!-- Data Table Css -->
+<style>
 
+</style>
 @endsection
 @section('jshere')
 <!-- data-table js -->
@@ -92,7 +94,7 @@
                         <thead>
                             <tr>
                                 <th>-</th>
-                                <th>Tahun Pelajaran</th>
+                                <th>Nama Kelas</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -102,60 +104,64 @@
                             <tr>
                                 <td>{{ ($loop->index)+1 }}</td>
                                 <td>{{$kelas->nama}}</td>
-                                <td>
+                                <div id="otherModal2{{$kelas->id}}" class="modal fade" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-primary">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">
+                                                        <i class="zmdi zmdi-close"></i>
+                                                    </span>
+                                                </button>
+                                                <h4 class="modal-title">Edit " {{$kelas->nama}} "</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+
+
+
+                                                <form class="form-horizontal" action="{{ url('admin/kelass/ ') }}{{$kelas->id}}" method="post">
+                                                    @method('put')
+                                                    @csrf
+
+                                                    <p>
+                                                        <label for="form-control-3{{$kelas->id}}"
+                                                            class="control-label ">Tahun Pelajaran &nbsp;</label>
+                                                        <input type="text"
+                                                            class="form-control input-pill mt-2 @error('nama') is-invalid @enderror"
+                                                            id="form-control-3{{$kelas->id}}"
+                                                            placeholder="Tahun Pelajaran" name="nama"
+                                                            value="{{$kelas->nama}}">
+                                                        @error('nama')<div class="invalid-feedback">Error!
+                                                            {{$message}}</div>
+                                                        @enderror
+
+                                                    </p>
+
+
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" value="submit"
+                                                    class="btn btn-primary">Simpan</button>
+                                                </form>
+                                                <button type="button" data-dismiss="modal"
+                                                    class="btn btn-default">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <td width="20%">
+
+                <!--modal-->
+
                                     <button type="button" class="btn btn-primary m-w-100" data-toggle="modal"
                                         data-target="#otherModal2{{$kelas->id}}"><i class="zmdi zmdi-edit"></i>
                                     </button>
 
-                                    <div id="otherModal2{{$kelas->id}}" class="modal fade" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header bg-primary">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">
-                                                            <i class="zmdi zmdi-close"></i>
-                                                        </span>
-                                                    </button>
-                                                    <h4 class="modal-title">Edit " {{$kelas->nama}} "</h4>
-                                                </div>
-                                                <div class="modal-body">
 
-
-
-
-                                                    <form class="form-horizontal" action="{{ url('admin/kelass/ ') }}{{$kelas->id}}" method="post">
-                                                        @method('put')
-                                                        @csrf
-
-                                                        <p>
-                                                            <label for="form-control-3{{$kelas->id}}"
-                                                                class="control-label ">Tahun Pelajaran &nbsp;</label>
-                                                            <input type="text"
-                                                                class="form-control input-pill mt-2 @error('nama') is-invalid @enderror"
-                                                                id="form-control-3{{$kelas->id}}"
-                                                                placeholder="Tahun Pelajaran" name="nama"
-                                                                value="{{$kelas->nama}}">
-                                                            @error('nama')<div class="invalid-feedback">Error!
-                                                                {{$message}}</div>
-                                                            @enderror
-
-                                                        </p>
-
-
-
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="submit" value="submit"
-                                                        class="btn btn-primary">Simpan</button>
-                                                    </form>
-                                                    <button type="button" data-dismiss="modal"
-                                                        class="btn btn-default">Close</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     {{-- <a href="#" onclick="save()"class="btn btn-warning">  <i class="zmdi zmdi-edit"></i> </a>  --}}
 
@@ -176,7 +182,7 @@
                         <tfoot>
                             <tr>
                                 <th>-</th>
-                                <th>Tahun Pelajaran</th>
+                                <th>Nama Kelas</th>
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>

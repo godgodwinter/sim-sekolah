@@ -13,7 +13,7 @@ class Siswas extends Model
     protected $fillable = [
         'usernamex',
         'passwordx',
-        'nomor',
+        'users_email',
         'nama',
         'tipe',
         'tapels_id',

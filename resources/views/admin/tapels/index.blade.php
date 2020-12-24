@@ -92,7 +92,7 @@
                             <tr>
                                 <th>-</th>
                                 <th>Tahun Pelajaran</th>
-                                <th>Aksi</th>
+                                <th width="20%">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,60 +101,61 @@
                             <tr>
                                 <td>{{ ($loop->index)+1 }}</td>
                                 <td>{{$tapel->nama}}</td>
+                                <div id="otherModal2{{$tapel->id}}" class="modal fade" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-primary">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">
+                                                        <i class="zmdi zmdi-close"></i>
+                                                    </span>
+                                                </button>
+                                                <h4 class="modal-title">Edit " {{$tapel->nama}} "</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+
+
+
+                                                <form class="form-horizontal" action="{{ url('admin/tapel/ ') }}{{$tapel->id}}" method="post">
+                                                    @method('put')
+                                                    @csrf
+
+                                                    <p>
+                                                        <label for="form-control-3{{$tapel->id}}"
+                                                            class="control-label ">Tahun Pelajaran &nbsp;</label>
+                                                        <input type="text"
+                                                            class="form-control input-pill mt-2 @error('nama') is-invalid @enderror"
+                                                            id="form-control-3{{$tapel->id}}"
+                                                            placeholder="Tahun Pelajaran" name="nama"
+                                                            value="{{$tapel->nama}}">
+                                                        @error('nama')<div class="invalid-feedback">Error!
+                                                            {{$message}}</div>
+                                                        @enderror
+
+                                                    </p>
+
+
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" value="submit"
+                                                    class="btn btn-primary">Simpan</button>
+                                                </form>
+                                                <button type="button" data-dismiss="modal"
+                                                    class="btn btn-default">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <td>
                                     <button type="button" class="btn btn-primary m-w-100" data-toggle="modal"
                                         data-target="#otherModal2{{$tapel->id}}"><i class="zmdi zmdi-edit"></i>
                                     </button>
 
-                                    <div id="otherModal2{{$tapel->id}}" class="modal fade" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header bg-primary">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">
-                                                            <i class="zmdi zmdi-close"></i>
-                                                        </span>
-                                                    </button>
-                                                    <h4 class="modal-title">Edit " {{$tapel->nama}} "</h4>
-                                                </div>
-                                                <div class="modal-body">
 
-
-
-
-                                                    <form class="form-horizontal" action="{{ url('admin/tapel/ ') }}{{$tapel->id}}" method="post">
-                                                        @method('put')
-                                                        @csrf
-
-                                                        <p>
-                                                            <label for="form-control-3{{$tapel->id}}"
-                                                                class="control-label ">Tahun Pelajaran &nbsp;</label>
-                                                            <input type="text"
-                                                                class="form-control input-pill mt-2 @error('nama') is-invalid @enderror"
-                                                                id="form-control-3{{$tapel->id}}"
-                                                                placeholder="Tahun Pelajaran" name="nama"
-                                                                value="{{$tapel->nama}}">
-                                                            @error('nama')<div class="invalid-feedback">Error!
-                                                                {{$message}}</div>
-                                                            @enderror
-
-                                                        </p>
-
-
-
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="submit" value="submit"
-                                                        class="btn btn-primary">Simpan</button>
-                                                    </form>
-                                                    <button type="button" data-dismiss="modal"
-                                                        class="btn btn-default">Close</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     {{-- <a href="#" onclick="save()"class="btn btn-warning">  <i class="zmdi zmdi-edit"></i> </a>  --}}
 
@@ -203,9 +204,5 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> abf24b51e5fd12af150c2a53ca86bdf853e437db
     </div>
     @endsection
