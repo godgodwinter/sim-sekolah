@@ -52,8 +52,10 @@ class AdminTagihanAturController extends Controller
     {
 
         $this->validate($request, [
-			'file' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
-		]);
+			'file' => 'file|image|mimes:jpeg,png,jpg|max:2048'
+        ]);
+
+        // dd($request->file);
         $rupiah=$request->rupiah;
         $exrupiah=explode(" ",$rupiah);
         $rplexrupiah=str_replace(",","",$exrupiah);
@@ -73,6 +75,20 @@ class AdminTagihanAturController extends Controller
 
         $kelas_nama=$kelas->nama;
 
+        if(empty($request->file))
+        {
+
+            Tagihan_aturs::create([
+                'tapel_id' => $request->tapel_id,
+                'tapel' => $tapel_nama,
+                'kelas_id' => $request->kelas_id,
+                'kelas' => $kelas_nama,
+                'nominal_tagihan' => $nominal_tagihan
+            ]);
+
+
+            return redirect(URL::to('/').'/admin/aturtagihans')->with('status','Data berhasil di tambahkan!');
+        }else{
 		// menyimpan data file yang diupload ke variabel $file
         $file = $request->file('file');
         //nama file baru
@@ -114,7 +130,7 @@ class AdminTagihanAturController extends Controller
 
 
         return redirect(URL::to('/').'/admin/aturtagihans')->with('status','Data berhasil di tambahkan!');
-
+    }
     }
 
     /**

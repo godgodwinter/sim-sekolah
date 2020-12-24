@@ -20,7 +20,7 @@ class CreateTagihanAtursTable extends Migration
             $table->string('kelas_id');
             $table->string('kelas');
             $table->bigInteger('nominal_tagihan');
-            $table->string('user_foto');
+            $table->string('user_foto')->nullable();
             $table->timestamps();
         });
     }

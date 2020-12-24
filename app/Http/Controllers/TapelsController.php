@@ -140,4 +140,12 @@ class TapelsController extends Controller
     {
         return view('admin.tapels.barcode');
     }
+    public function deleteChecked(Request $request){
+        // $a=0;
+        // dd($a);
+        $ids=$request->ids;
+        Tapel::whereIn('id',$ids)->delete();
+        return response()->json(['success'=>"Data telah terhapus!"]);
+
+    }
 }

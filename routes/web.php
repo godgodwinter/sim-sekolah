@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyExportImportController;
 use App\Http\Controllers\QrCodeGeneratorController;
+use App\Http\Controllers\TapelsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,12 +24,14 @@ Route::post('/ppdblogin/register','App\Http\Controllers\PpdbsController@postRegi
 Route::get('/ppdblogin', function () {
     return view('ppdb/login');
 });
+Route::delete('admin/tapel/selecteddata', [ TapelsController::class, 'deleteChecked' ])->name('tapel.deleteChecked');
 
 Auth::routes();
 //route admin
 Route::group(['middleware' => ['is_admin']], function() {
     Route::resource('admin/tapel','App\Http\Controllers\TapelsController');
     Route::resource('admin/siswas','App\Http\Controllers\AdminSiswasController');
+    Route::resource('admin/tagihansiswas','App\Http\Controllers\AdminTagihanSiswaController');
     Route::resource('admin/kelass','App\Http\Controllers\AdminKelassController');
     Route::resource('admin/aturtagihans','App\Http\Controllers\AdminTagihanAturController');
     // Route::resource('admin/tagihan_aturs','App\Http\Controllers\tagihan_atursController');
@@ -38,6 +41,8 @@ Route::group(['middleware' => ['is_admin']], function() {
     Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('is_admin');
     Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('is_admin');
+    // Route::get('admin/tapel/selecteddata', [App\Http\Controllers\TapelsController::class, 'deleteChecked'])->name('tapel.deleteChecked')
+
 
 });
 

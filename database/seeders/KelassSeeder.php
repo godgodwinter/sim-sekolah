@@ -19,7 +19,7 @@ class KelassSeeder extends Seeder
         //
          //
          $faker = Faker::create('id_ID');
-         for($i = 1; $i <= 20; $i++){
+         for($i = 1; $i <= 5; $i++){
              // insert data ke table products menggunakan Faker
              DB::table('kelass')->insert([
                'nama' => $faker->name,

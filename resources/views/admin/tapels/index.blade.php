@@ -6,6 +6,37 @@
 @endsection
 @section('jshere')
 <!-- data-table js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function(e){
+        $("#chkCheckAll").click(function(){
+            $(".checkBoxClass").prop('checked',$(this).prop('checked'));
+        });
+
+        $("#deleteAllSelectedRecord").click(function(e){
+            e.preventDefault();
+            var allids=[];
+
+            $("input:checkbox[name=ids]:checked").each(function(){
+                allids.push($(this).val());
+            });
+
+            $.ajax({
+                url:"{{ route('tapel.deleteChecked') }}",
+                type:"DELETE",
+                data:{
+                    _token:$("input[name=_token]").val(),
+                    ids:allids
+                },
+                success:function(response){
+                    $.each(allids,function(key,val){
+                        $("#sid"+val).remove();
+                    })
+                }
+            });
+        })
+    });
+</script>
 
 @endsection
 
@@ -85,12 +116,14 @@
                 <div class="table-responsive">
                     <a href="/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
                     <a class="btn btn-warning" href="{{ route('export') }}">Export Excel</a>
+                    <a class="btn btn-danger" href="#" id="deleteAllSelectedRecord">Hapus Terpilih</a>
                     <br>
                     <hr>
                     <table class="table table-striped table-bordered dataTable" id="table-1">
                         <thead>
                             <tr>
-                                <th>-</th>
+                                <th class="text-center" width="5%"><input type="checkbox" id="chkCheckAll"> Semua</th>
+                                <th>No</th>
                                 <th>Tahun Pelajaran</th>
                                 <th width="20%">Aksi</th>
                             </tr>
@@ -99,7 +132,9 @@
                             {{-- {{dd($tapels)}} --}}
                             @foreach ($tapels as $tapel)
                             <tr>
-                                <td>{{ ($loop->index)+1 }}</td>
+                                <td class="text-center" width="5%"><input type="checkbox" name="ids" class="checkBoxClass" value="{{ $tapel->id }}"></td>
+
+                                <td class="text-center" width="5%">{{ ($loop->index)+1 }}</td>
                                 <td>{{$tapel->nama}}</td>
                                 <div id="otherModal2{{$tapel->id}}" class="modal fade" tabindex="-1" role="dialog">
                                     <div class="modal-dialog modal-lg">
@@ -173,9 +208,11 @@
                             @endforeach
 
                         </tbody>
+
                         <tfoot>
                             <tr>
                                 <th>-</th>
+                                <th>No</th>
                                 <th>Tahun Pelajaran</th>
                                 <th>Aksi</th>
                             </tr>
@@ -206,3 +243,4 @@
         </div>
     </div>
     @endsection
+
