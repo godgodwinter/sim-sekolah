@@ -24,18 +24,22 @@ Route::post('/ppdblogin/register','App\Http\Controllers\PpdbsController@postRegi
 Route::get('/ppdblogin', function () {
     return view('ppdb/login');
 });
-Route::delete('admin/tapel/selecteddata', [ TapelsController::class, 'deleteChecked' ])->name('tapel.deleteChecked');
 
 Auth::routes();
 //route admin
 Route::group(['middleware' => ['is_admin']], function() {
+    Route::delete('admin/tapel/selecteddata', [ TapelsController::class, 'deleteChecked' ])->name('tapel.deleteChecked');
     Route::resource('admin/tapel','App\Http\Controllers\TapelsController');
     Route::resource('admin/siswas','App\Http\Controllers\AdminSiswasController');
-    Route::resource('admin/tagihansiswas','App\Http\Controllers\AdminTagihanSiswaController');
+    Route::resource('admin/tagihansiswas','App\Http\Controllers\AdminTagihanSiswaController')->except([
+        'index'
+    ]);
+
     Route::resource('admin/kelass','App\Http\Controllers\AdminKelassController');
     Route::resource('admin/aturtagihans','App\Http\Controllers\AdminTagihanAturController');
     // Route::resource('admin/tagihan_aturs','App\Http\Controllers\tagihan_atursController');
-
+    Route::get('admin/tagihansiswas', [App\Http\Controllers\AdminTagihanSiswaController::class, 'index'])->name('tagihansiswa.index')->middleware('is_admin');
+    Route::get('admin/tagihansiswas/{tapel}/{kelas}', [App\Http\Controllers\AdminTagihanSiswaController::class, 'cari'])->name('tagihansiswa.cari')->middleware('is_admin');
     Route::get('admin/ppdb_user', [App\Http\Controllers\AdminPpdbUserController::class, 'index'])->name('admin_ppdb_user')->middleware('is_admin');
 
     Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');

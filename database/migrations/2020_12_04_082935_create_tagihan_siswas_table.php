@@ -19,7 +19,7 @@ class CreateTagihanSiswasTable extends Migration
             $table->string('nama');
             $table->string('tapel');
             $table->string('kelas');
-            $table->string('tagihan_atur_id');
+            // $table->string('tagihan_atur_id');
             $table->timestamps();
         });
     }

@@ -85,8 +85,23 @@
         </div>
     </div>
 </div>
+@php
+    $maxcolspan=0;
+@endphp
+@foreach ($result2 as $data)
 
+    @php
+   $caridata = DB::table('tagihan_siswas_details')
+        ->where('tagihan_siswas_username', '=', $data->username_siswa)
+        ->count();
+        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_username='$data->username_siswa' ORDER BY tagihan_siswas_details.id ASC");
+if($maxcolspan<$caridata){
+    $maxcolspan=$caridata;
+}
+// dd($maxcolspan);
+@endphp
 
+@endforeach
 
 
 
@@ -109,28 +124,53 @@
                     <th>Nama</th>
                     <th>Tahun Pelajaran - Kelas</th>
                     <th>Nominal Tagihan</th>
-                    <th>Pembayaran</th>
+                    <th colspan="{{ $maxcolspan }}">Pembayaran</th>
                     <th>%</th>
                     <th>Bayar</th>
                 </tr>
             </thead>
             <tbody>
                 {{-- {{dd($tagihan_aturs)}} --}}
-                @foreach ($tagihan_aturs as $data)
+                @foreach ($result2 as $data)
+
                 <tr>
                     <td>{{ ($loop->index)+1 }}</td>
-                    <td>{{$data->tapel}}</td>
-                    <td>{{$data->kelas}}</td>
+                    <td>{{$data->username_siswa}}</td>
+                    <td>{{$data->nama}}</td>
+                    <td>{{$data->tapel}} - {{$data->kelas}}</td>
                     <td>@currency($data->nominal_tagihan)</td>
+                    @php
+                     $totalbayar=0;
+                   $caridata = DB::table('tagihan_siswas_details')
+                        ->where('tagihan_siswas_username', '=', $data->username_siswa)
+                        ->count();
+                        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_username='$data->username_siswa' ORDER BY tagihan_siswas_details.id ASC");
+                    $ulangitd=$maxcolspan-$caridata;
+                    // dd($ulangitd);
+                    @endphp
+                    @if($caridata<1)
+                        <td colspan={{ $maxcolspan }}  class="text-center">Belum membayar</td>
+                    @else
+
+                    @foreach ($result_detail_bayar as $datadetail)
+                        <td>@currency($datadetail->jml_bayar)</td>
+                        @php
+                            $totalbayar+=$datadetail->jml_bayar;
+                        @endphp
+                        @for ($i =1; $i <= $ulangitd ; $i++)
+                        <td class="text-center">-</td>
+                        @endfor
+                    @endforeach
+                        @endif
+
+                        @php
+                            $kurang=$data->nominal_tagihan-$totalbayar;
+                            $persentase=($totalbayar/$data->nominal_tagihan)*100;
+                        @endphp
+                    <td>{{ $persentase }} %</td>
                     <td>
                         <a href="/admin/aturtagihans/{{$data->id}}" type="button" class="btn btn-primary m-w-100" ><i class="zmdi zmdi-edit"></i>
                         </a>
-
-
-
-                        {{-- <a href="#" onclick="save()"class="btn btn-warning">  <i class="zmdi zmdi-edit"></i> </a>  --}}
-
-
 
                         <form action="/admin/aturtagihans/{{$data->id}}" method="post" class="d-inline">
                             @method('DELETE')

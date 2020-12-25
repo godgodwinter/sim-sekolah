@@ -27,6 +27,18 @@ class AdminTagihanSiswaController extends Controller
         $kelass=Kelass::all();
         $siswas=Siswas::all();
         $result  = DB::select('select * from admin_settings');
+        $result2  = DB::select('SELECT tagihan_siswas.id,tagihan_siswas.nama,tagihan_siswas.tapel,tagihan_siswas.kelas,tagihan_aturs.nominal_tagihan,tagihan_siswas.username_siswa FROM tagihan_siswas INNER JOIN tagihan_aturs WHERE tagihan_siswas.tapel=tagihan_aturs.tapel AND tagihan_siswas.kelas=tagihan_aturs.kelas ORDER BY tagihan_siswas.nama ASC');
+        return view('admin.tagihansiswa.index',compact('tapels','kelass','tagihan_aturs','siswas','result','result2'));
+    }
+    public function cari($tapel,$kelas)
+    {
+        //
+dd($tapel);
+        $tapels=Tapel::all();
+        $tagihan_aturs=Tagihan_aturs::all();
+        $kelass=Kelass::all();
+        $siswas=Siswas::all();
+        $result  = DB::select('select * from admin_settings');
         return view('admin.tagihansiswa.index',compact('tapels','kelass','tagihan_aturs','siswas','result'));
     }
 

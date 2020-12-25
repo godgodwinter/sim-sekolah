@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Kelass;
 use App\Models\Siswas;
 use App\Models\Tagihan_aturs;
+use App\Models\Tagihan_siswas;
+use App\Models\Tagihan_siswas_details;
 use App\Models\Tapel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -92,6 +94,14 @@ class AdminSiswasController extends Controller
             'kelas_nama' => $kelas_nama,
             'moodle_user' => $request->moodle_user,
             'moodle_pass' => $request->moodle_pass
+        ]);
+        $lastinput = Siswas::orderBy('created_at', 'desc')->first();
+// dd($lastinput->id);
+        Tagihan_siswas::create([
+            'username_siswa' => $lastinput->usernamex, //nis
+            'nama' => $lastinput->nama,
+            'tapel' => $tapel_nama,
+            'kelas' => $kelas_nama,
         ]);
 
 
