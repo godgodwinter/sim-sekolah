@@ -94,7 +94,7 @@
    $caridata = DB::table('tagihan_siswas_details')
         ->where('tagihan_siswas_username', '=', $data->username_siswa)
         ->count();
-        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_username='$data->username_siswa' ORDER BY tagihan_siswas_details.id ASC");
+        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_username='$data->username_siswa'");
 if($maxcolspan<$caridata){
     $maxcolspan=$caridata;
 }
