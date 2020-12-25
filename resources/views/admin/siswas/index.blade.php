@@ -55,7 +55,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label" for="nisn">NISN</label>
                                     <div class="col-sm-9">
-                                        <input id="nisn" class="form-control @error('usernamex') is-invalid @enderror" type="text"
+                                        <input id="nisn" class="form-control @error('usernamex') is-invalid @enderror" type="number"
                                             placeholder="Masukkan NISN" name="usernamex" value="{{old('usernamex')}}">
                                             @error('usernamex')
                                             <div class="col-sm-8">
