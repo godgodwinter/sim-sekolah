@@ -6,10 +6,14 @@ use App\Models\Admin_settings;
 use App\Models\Kelass;
 use App\Models\Siswas;
 use App\Models\Tagihan_aturs;
+use App\Models\Tagihan_siswas_details;
 use App\Models\Tapel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class AdminTagihanSiswaController extends Controller
 {
@@ -27,6 +31,7 @@ class AdminTagihanSiswaController extends Controller
         $kelass=Kelass::all();
         $siswas=Siswas::all();
         $result  = DB::select('select * from admin_settings');
+        // $result2  = DB::select('SELECT tagihan_siswas.id,tagihan_siswas.nama,tagihan_siswas.tapel,tagihan_siswas.kelas,tagihan_aturs.nominal_tagihan,tagihan_siswas.username_siswa FROM tagihan_siswas INNER JOIN tagihan_aturs WHERE tagihan_siswas.tapel=tagihan_aturs.tapel AND tagihan_siswas.kelas=tagihan_aturs.kelas ORDER BY tagihan_siswas.nama ASC');
         $result2  = DB::select('SELECT tagihan_siswas.id,tagihan_siswas.nama,tagihan_siswas.tapel,tagihan_siswas.kelas,tagihan_aturs.nominal_tagihan,tagihan_siswas.username_siswa FROM tagihan_siswas INNER JOIN tagihan_aturs WHERE tagihan_siswas.tapel=tagihan_aturs.tapel AND tagihan_siswas.kelas=tagihan_aturs.kelas ORDER BY tagihan_siswas.nama ASC');
         return view('admin.tagihansiswa.index',compact('tapels','kelass','tagihan_aturs','siswas','result','result2'));
     }
@@ -112,5 +117,17 @@ return redirect(URL::to('/').'/admin/tagihansiswas')->with('status','Data berhas
     public function destroy($id)
     {
         //
+    }
+
+    public function bayar(Request $request)
+    {
+        //
+        // dd($request);
+        Tagihan_siswas_details::create([
+            'tagihan_siswas_id' => $request->tagihan_siswas_id,
+            'jml_bayar' => $request->jml_bayar,
+            'tgl_bayar' => Carbon::now()
+        ]);
+        return redirect(URL::to('/').'/admin/tagihansiswas')->with('status','Data berhasil di tambahkan!');
     }
 }

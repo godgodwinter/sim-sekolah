@@ -16,7 +16,7 @@ class TagihanSiswasDetailsTable extends Migration
         //
         Schema::create('tagihan_siswas_details', function (Blueprint $table) {
             $table->id();
-            $table->string('tagihan_siswas_username')->indeks();
+            $table->string('tagihan_siswas_id')->indeks();
             // $table->foreign('tagihan_siswas_id')
             //         ->references('id')
             //         ->on('tagihan_siswas')

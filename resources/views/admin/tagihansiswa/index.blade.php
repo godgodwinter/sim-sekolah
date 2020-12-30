@@ -92,9 +92,9 @@
 
     @php
    $caridata = DB::table('tagihan_siswas_details')
-        ->where('tagihan_siswas_username', '=', $data->username_siswa)
+        ->where('tagihan_siswas_id', '=', $data->id)
         ->count();
-        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_username='$data->username_siswa'");
+        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_id='$data->id'");
 if($maxcolspan<$caridata){
     $maxcolspan=$caridata;
 }
@@ -126,7 +126,7 @@ if($maxcolspan<$caridata){
                     <th>Nominal Tagihan</th>
                     <th colspan="{{ $maxcolspan }}">Pembayaran</th>
                     <th>%</th>
-                    <th>Bayar</th>
+                    <th width="15%">Bayar</th>
                 </tr>
             </thead>
             <tbody>
@@ -142,9 +142,9 @@ if($maxcolspan<$caridata){
                     @php
                      $totalbayar=0;
                    $caridata = DB::table('tagihan_siswas_details')
-                        ->where('tagihan_siswas_username', '=', $data->username_siswa)
+                        ->where('tagihan_siswas_id', '=', $data->id)
                         ->count();
-                        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_username='$data->username_siswa' ORDER BY tagihan_siswas_details.id ASC");
+                        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_id='$data->id' ORDER BY tagihan_siswas_details.id ASC");
                     $ulangitd=$maxcolspan-$caridata;
                     // dd($ulangitd);
                     @endphp
@@ -157,10 +157,11 @@ if($maxcolspan<$caridata){
                         @php
                             $totalbayar+=$datadetail->jml_bayar;
                         @endphp
-                        @for ($i =1; $i <= $ulangitd ; $i++)
-                        <td class="text-center">-</td>
-                        @endfor
+
                     @endforeach
+                    @for ($i =1; $i <= $ulangitd ; $i++)
+                    <td class="text-center">-</td>
+                    @endfor
                         @endif
 
                         @php
@@ -169,8 +170,34 @@ if($maxcolspan<$caridata){
                         @endphp
                     <td>{{ $persentase }} %</td>
                     <td>
-                        <a href="/admin/aturtagihans/{{$data->id}}" type="button" class="btn btn-primary m-w-100" ><i class="zmdi zmdi-edit"></i>
-                        </a>
+                        <button type="button" class="btn btn-primary m-w-100" data-toggle="modal" data-target="#import_ppdb_siswas{{ $data->id }}">
+                            <i class="zmdi zmdi-money-box"></i>
+                        </button>
+                        <!--modal-->
+                        <div class="modal fade" id="import_ppdb_siswas{{ $data->id }}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        Detail Pembayaran "{{ $data->nama }}""
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{ url('admin/bayartagihansiswas') }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" name="tagihan_siswas_id" class="form-control" value="{{ $data->id }}">
+                                            <input type="number" name="jml_bayar" class="form-control" value="0">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary">Bayar</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <form action="/admin/aturtagihans/{{$data->id}}" method="post" class="d-inline">
                             @method('DELETE')
