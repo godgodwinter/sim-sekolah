@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin_settings;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 
@@ -15,6 +16,16 @@ class CreateUserSeeder extends Seeder
     public function run()
     {
         //
+        $data = [
+            [
+                // 'id' => '1',
+                'persen' => '75',
+            ]
+            ];
+            foreach ($data as $key => $value){
+                Admin_settings::create($value);
+            }
+
         $user = [
             [
                 'name' => 'Admin',
