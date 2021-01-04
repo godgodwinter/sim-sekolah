@@ -166,9 +166,10 @@ DEMO MODAL & DONATE BUTTON ONLY - DON'T COPY
         </div>
     </div>
     <div style="position:fixed; bottom:20px;left:20px;">
-        <a href="https://api.whatsapp.com/send?phone=112" target="_blank"><img class="rounded-circle shadow-lg"
-                src="{{ asset("anchor/") }}/assets/img/demo/coffee.png" width="70"
-                data-toggle="tooltip" data-placement="top" title="" data-original-title="Buy me a coffee!"></a>
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=6281234923340"><span
+            class="iconbox iconmedium rounded-circle bg-info text-white mr-1" data-toggle="tooltip"
+            data-placement="top" title="" data-original-title="Hubungi"><i
+                class="fab fa-whatsapp"></i></span></a>
     </div>
     <!--------------------------------------
 END DEMO MODAL & DONATE BUTTON

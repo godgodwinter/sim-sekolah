@@ -40,8 +40,8 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
                 aria-label="Toggle navigation" style=""><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown-1">
                 <ul class="navbar-nav mr-auto">
-                   
-                  
+
+
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
@@ -63,7 +63,7 @@ HEADER
                         <h1 class="display-3"><strong>SMK DHARMA WANITA</strong>KROMENGAN</h1>
                         <h5 class="font-weight-light mb-4">Penerimaan Peserta Didik Baru <br><strong> Online</strong> &
                             <strong><i class="fab fa-sass fa-2x text-info"></i></strong></h5>
-                        <a href="#" class="btn btn-lg btn-outline-white btn-round">Daftar Sekarang</a>
+                        <a href="login" class="btn btn-lg btn-outline-white btn-round">Daftar Sekarang</a>
                     </div>
                     <div
                         class="col align-self-bottom align-items-right text-right h-max-380 position-relative z-index-1">
@@ -91,15 +91,15 @@ COLOR SCHEME
 
 <section class="pt-4 pb-5" data-aos="fade-up" id="example-carousel">
     <h3 class="h5 mb-4 font-weight-bold">Jadwal PPDB</h3>
-    <p class="mb-3">Silahkan mengisi data nilai rapor mulai dari semester 1 hingga semester 4.
+    <p class="mb-3">Silahkan mengisi data dengan benar.
     </p>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-xl-2"></div>
         <div class="col-xl-12">
             <div class="card">
-               
+
                 <div class="card-body">
-                  
+
 
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -151,9 +151,9 @@ COLOR SCHEME
                                                 <td class="p-2 text-center"><input type="text"
                                                         class="text-center form-control p-1" name="nr_6782"
                                                         id="nr_6782" value="11 Desember 2020" readonly></td>
-                                                
+
                                             </tr>
-                                            
+
                                         </tbody>
                                     </table>
                                 </form>
@@ -163,160 +163,106 @@ COLOR SCHEME
 
                     </div>
 
-                  
+
                 </div>
             </div>
         </div>
         <div class="col-xl-2"></div>
-    </div>
+    </div> --}}
 
 
     </div>
 </section>
 
-        <section class="pt-5 pb-5" data-aos="fade-up">
-            <h3 class="h5 mb-1 font-weight-bold">Alur Pendaftaran</h3>
-            <div class="card-body">
-                <p class="mb-1">Periksa alur pendaftaran kalian melalui langkah berikut ini.</p>
+<section class="pt-5 pb-5" data-aos="fade-up">
+    <h3 class="h5 mb-1 font-weight-bold">Alur Pendaftaran</h3>
+    <div class="card-body">
+        <p class="mb-1">Periksa alur pendaftaran kalian melalui langkah berikut ini.</p>
 
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
+                <div class="card card-body bg-info">
+                    <div class="media">
+                        <div class="mr-3 align-self-center">
+                            <i class="icon-checkmark3 icon-2x"></i>
+                        </div>
 
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 1</strong></h6>
-                                    <span class="opacity-75">Daftar Akun</span>
-                                </div>
-                            </div>
+                        <div class="media-body text-center">
+                            <h6 class="media-title font-weight-semibold"><strong>Langkah 1</strong></h6>
+                            <span class="opacity-75">Daftar Akun <br>PPDB</span>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
-
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 2</strong></h6>
-                                    <span class="opacity-75">Pilih Gelombang</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
-
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 3</strong></h6>
-                                    <span class="opacity-75">Isi Identitas Diri</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
-
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 4</strong></h6>
-                                    <span class="opacity-75">Input Nilai Rapor</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
-
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 5</strong></h6>
-                                    <span class="opacity-75">Mengumpulkan Berkas</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
-
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 6</strong></h6>
-                                    <span class="opacity-75">Pilih Jurusan</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
-
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 7</strong></h6>
-                                    <span class="opacity-75">Mengisi Ekstra Kulikuler </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
-                        <div class="card card-body bg-info">
-                            <div class="media">
-                                <div class="mr-3 align-self-center">
-                                    <i class="icon-checkmark3 icon-2x"></i>
-                                </div>
-
-                                <div class="media-body text-center">
-                                    <h6 class="media-title font-weight-semibold"><strong>Langkah 8</strong></h6>
-                                    <span class="opacity-75">Cetak Kartu Peserta</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-           
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
+                <div class="card card-body bg-info">
+                    <div class="media">
+                        <div class="mr-3 align-self-center">
+                            <i class="icon-checkmark3 icon-2x"></i>
+                        </div>
+
+                        <div class="media-body text-center">
+                            <h6 class="media-title font-weight-semibold"><strong>Langkah 2</strong></h6>
+                            <span class="opacity-75">Mengisi Identitas <br>Diri</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
+                <div class="card card-body bg-info">
+                    <div class="media">
+                        <div class="mr-3 align-self-center">
+                            <i class="icon-checkmark3 icon-2x"></i>
+                        </div>
 
-
-      
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-8">
-                <div class="text-center pt-5 mt-5 mb-5">
-                    <h1 class="font-weight-light h3"> <strong>Bantuan</strong> </h1>
-                </div>
-                <div class="text-center">
-                
-                    <a target="_blank" href="https://api.whatsapp.com/send?phone=112"><span
-                            class="iconbox iconmedium rounded-circle bg-info text-white mr-1" data-toggle="tooltip"
-                            data-placement="top" title="" data-original-title="Hubungi"><i
-                                class="fab fa-whatsapp"></i></span></a>
-                   
+                        <div class="media-body text-center">
+                            <h6 class="media-title font-weight-semibold"><strong>Langkah 3</strong></h6>
+                            <span class="opacity-75">Isi data Orang Tua dan Wali</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
+                <div class="card card-body bg-info">
+                    <div class="media">
+                        <div class="mr-3 align-self-center">
+                            <i class="icon-checkmark3 icon-2x"></i>
+                        </div>
+
+                        <div class="media-body text-center">
+                            <h6 class="media-title font-weight-semibold"><strong>Langkah 4</strong></h6>
+                            <span class="opacity-75">Melengkapi data Diri dan Pilih Jurusan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-1">
+                <div class="card card-body bg-info">
+                    <div class="media">
+                        <div class="mr-3 align-self-center">
+                            <i class="icon-checkmark3 icon-2x"></i>
+                        </div>
+
+                        <div class="media-body text-center">
+                            <h6 class="media-title font-weight-semibold"><strong>Langkah 5</strong></h6>
+                            <span class="opacity-75">Mencetak Data Persetujuan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
+    </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
         <!--------------------------------------
 END
 --------------------------------------->
@@ -418,10 +364,13 @@ DEMO MODAL & DONATE BUTTON ONLY - DON'T COPY
             </div>
         </div>
     </div>
-    <div style="position:fixed; bottom:20px;left:20px;">
-        <a href="https://www.paypal.me/wowthemes/10" target="_blank"><img class="rounded-circle shadow-lg"
-                src="{{ asset("anchor/") }}/assets/img/demo/coffee.png" width="70"
-                data-toggle="tooltip" data-placement="top" title="" data-original-title="Buy me a coffee!"></a>
+    <div style="position:fixed; bottom:20px;left:20px;"><a target="_blank" href="https://api.whatsapp.com/send?phone=6281234923340"><span
+        class="iconbox iconmedium rounded-circle bg-info text-white mr-1" data-toggle="tooltip"
+        data-placement="top" title="" data-original-title="Hubungi"><i
+            class="fab fa-whatsapp"></i></span></a>
+        {{-- <a href="https://www.paypal.me/wowthemes/10" target="_blank"><img class="rounded-circle shadow-lg"
+                src="{{ asset("anchor/") }}/assets/img/demo/whatsapp-logo-vector-11.png" width="70"
+                data-toggle="tooltip" data-placement="top" title="" data-original-title="Buy me a coffee!"></a> --}}
     </div>
     <!--------------------------------------
 END DEMO MODAL & DONATE BUTTON
