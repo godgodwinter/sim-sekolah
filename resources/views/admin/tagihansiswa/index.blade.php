@@ -114,6 +114,31 @@ if($maxcolspan<$caridata){
     <div class="table-responsive">
         <a href="/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
         <a class="btn btn-warning" href="{{ route('export') }}">Export Excel</a>
+        &nbsp;&nbsp;&nbsp; *) Atur terlebih dahulu di menu Atur Tagihan apabila tahun pelajaran dan kelas belum ada!
+        <div class="container">
+            <div class="row">
+                <form action="{{ url('admin/tagihansiswas/pilihta') }}" method="POST">
+                    @csrf
+                <div class="form-group">
+                    <label class="col-sm-2 control-label " for="form-control-9">Tahun Pelajaran - Kelas</label>
+                    <div class="col-sm-3">
+                        <select id="form-control-9" class="form-control" name="id_ta">
+
+                            <option disabled>-- Pilih --</option>
+                            @foreach($tagihan_aturs as $ta)
+
+                            <option value="{{  $ta->id  }}"> {{ $ta->tapel }} - {{ $ta->kelas }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary ml-4" value="submit">Pilih Kelas</a>
+                </div>
+            </form>
+            </div>
+        </div>
         <br>
         <hr>
         <table class="table table-striped table-bordered dataTable" id="table-1">
@@ -219,9 +244,9 @@ if($maxcolspan<$caridata){
                     <th>Nama</th>
                     <th>Tahun Pelajaran - Kelas</th>
                     <th>Nominal Tagihan</th>
-                    <th>Pembayaran</th>
+                    <th colspan="{{ $maxcolspan }}">Pembayaran</th>
                     <th>%</th>
-                    <th>Bayar</th>
+                    <th width="15%">Bayar</th>
                 </tr>
             </tfoot>
         </table>
