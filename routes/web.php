@@ -50,7 +50,7 @@ Route::group(['middleware' => ['is_admin']], function() {
     Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('is_admin');
     // Route::get('admin/tapel/selecteddata', [App\Http\Controllers\TapelsController::class, 'deleteChecked'])->name('tapel.deleteChecked')
 
-    Route::post('admin/tagihansiswas/pilihta', [ App\Http\Controllers\AdminTagihanSiswaController::class, 'pilihta' ])->name('admin.home')->middleware('is_admin');
+    Route::post('admin/tagihansiswas/pilihta', [ App\Http\Controllers\AdminTagihanSiswaController::class, 'pilihta' ])->name('admin.pilihta')->middleware('is_admin');
 
 });
 
