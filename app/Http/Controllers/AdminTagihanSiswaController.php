@@ -53,6 +53,19 @@ class AdminTagihanSiswaController extends Controller
 
     }
 
+    public function edittagihansiswas($tapel,$kelas,$id)
+    {
+        //
+        $tapel_asli=str_replace('garing', '/', $tapel);
+
+
+        $result  = DB::select("SELECT * FROM tagihan_siswas WHERE username_siswa='$id' AND tapel='$tapel_asli' AND kelas='$kelas' ORDER BY tagihan_siswas.nama ASC");
+        // dd($result);
+        return view('admin.tagihansiswa.editbayar',compact('result'));
+
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -129,12 +142,19 @@ return redirect(URL::to('/').'/admin/tagihansiswas')->with('status','Data berhas
     {
         //
         // dd($request);
+        $rupiah=$request->jml_bayar;
+        $exrupiah=explode(" ",$rupiah);
+        $rplexrupiah=str_replace(",","",$exrupiah);
+        $nominal=str_replace(".","",$rplexrupiah);
+        $jml_bayar=$nominal[1];
+
+ $tapel_encode=str_replace('/', 'garing', $request->tapel);
         Tagihan_siswas_details::create([
             'tagihan_siswas_id' => $request->tagihan_siswas_id,
-            'jml_bayar' => $request->jml_bayar,
+            'jml_bayar' => $jml_bayar,
             'tgl_bayar' => Carbon::now()
         ]);
-        return redirect(URL::to('/').'/admin/tagihansiswas')->with('status','Data berhasil di tambahkan!');
+        return redirect(URL::to('/').'/admin/tagihansiswas/'.$tapel_encode.'/'.$request->kelas)->with('status','Data berhasil di tambahkan!');
     }
 
     public function pilihta(Request $request)

@@ -4,7 +4,19 @@
 <!-- Data Table Css -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    </style>
 @endsection
 @section('jshere')
 <!-- data-table js -->
@@ -139,7 +151,6 @@ if($maxcolspan<$caridata){
             </form>
             </div>
         </div>
-        <br>
         <hr>
         <table class="table table-striped table-bordered dataTable" id="table-1">
             <thead>
@@ -195,9 +206,12 @@ if($maxcolspan<$caridata){
                         @endphp
                     <td>{{ $persentase }} %</td>
                     <td>
-                        <button type="button" class="btn btn-primary m-w-100" data-toggle="modal" data-target="#import_ppdb_siswas{{ $data->id }}">
+                        <a href="/admin/tagihansiswas/edittagihansiswas/<?=$tapel_asli=str_replace('/', 'garing', $data->tapel);?>/{{ $data->kelas }}/{{$data->username_siswa}}" type="button" class="btn btn-primary m-w-100" ><i class="zmdi zmdi-money-box"></i>
+                        </a>
+
+                        {{-- <button type="button" class="btn btn-primary m-w-100" data-toggle="modal" data-target="#import_ppdb_siswas{{ $data->id }}">
                             <i class="zmdi zmdi-money-box"></i>
-                        </button>
+                        </button> --}}
                         <!--modal-->
                         <div class="modal fade" id="import_ppdb_siswas{{ $data->id }}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

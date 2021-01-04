@@ -41,6 +41,7 @@ Route::group(['middleware' => ['is_admin']], function() {
     Route::get('admin/tagihansiswas', [App\Http\Controllers\AdminTagihanSiswaController::class, 'index'])->name('tagihansiswa.index')->middleware('is_admin');
     Route::post('admin/bayartagihansiswas', [App\Http\Controllers\AdminTagihanSiswaController::class, 'bayar'])->name('tagihansiswa.bayar')->middleware('is_admin');
     Route::get('admin/tagihansiswas/{tapel}/{kelas}', [App\Http\Controllers\AdminTagihanSiswaController::class, 'cari'])->name('tagihansiswa.cari')->middleware('is_admin');
+    Route::get('admin/tagihansiswas/edittagihansiswas/{tapel}/{kelas}/{id}', [App\Http\Controllers\AdminTagihanSiswaController::class, 'edittagihansiswas'])->name('tagihansiswa.cari')->middleware('is_admin');
     Route::get('admin/ppdb_user', [App\Http\Controllers\AdminPpdbUserController::class, 'index'])->name('admin_ppdb_user')->middleware('is_admin');
 
     Route::post('home', [ App\Http\Controllers\HomeController::class, 'index' ])->name('admin.home')->middleware('is_admin');

@@ -169,7 +169,7 @@
             <li>
               <a href="{{ url('/admin/tagihansiswas ') }}">
                 <span class="menu-icon">
-                  <i class="zmdi zmdi-account-circle"></i>
+                  <i class="zmdi zmdi-money-box"></i>
                 </span>
                 <span class="menu-text">Tagihan Siswa</span>
               </a>
