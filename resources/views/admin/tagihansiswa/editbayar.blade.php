@@ -202,7 +202,50 @@ $("#imgInp").change(function() {
 </div>
 
 
+<hr>
+<div class="panel-body">
+<div class="table-responsive">
+<table class="table table-striped table-bordered dataTable" id="table-1">
+    <thead>
+        <tr>
+            <th width="10%">-</th>
+            <th>Pembayaran Ke - </th>
+            <th width="15%">Jumlah Bayar</th>
+            <th width="15%">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @php
+                     $totalbayar=0;
+                   $caridata = DB::table('tagihan_siswas_details')
+                        ->where('tagihan_siswas_id', '=', $id)
+                        ->count();
+                        $result_detail_bayar  = DB::select("SELECT * FROM tagihan_siswas_details WHERE tagihan_siswas_id='$id' ORDER BY tagihan_siswas_details.id ASC");
+        @endphp
+ @foreach ($result_detail_bayar as $datadetail)
+<tr>
+    <td>-</td>
+    <td>Pembayaran ke - {{ $loop->index+1 }}</td>
+ <td>@currency($datadetail->jml_bayar)</td>
+ <td>
+    <form action="/admin/tagihansiswas/hapusbayar/{{ $tapel_encode }}/{{ $kelas }}/{{$username_siswa}}/{{ $datadetail->id }}" method="post" class="d-inline">
+
+        @csrf
+        <button class="btn btn-danger m-w-100"
+            onclick="return  confirm('Anda yakin menghapus data ini? Y/N')"><span
+                class="pcoded-micon"> <i class="zmdi zmdi-delete"></i> </span></button>
+    </form>
+ </td>
+</tr>
+ @php
+     $totalbayar+=$datadetail->jml_bayar;
+ @endphp
+
+@endforeach
+    </div>
+    </div>
 </div>
 
 </div>
+
 @endsection

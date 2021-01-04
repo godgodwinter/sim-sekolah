@@ -183,4 +183,21 @@ return redirect(URL::to('/').'/admin/tagihansiswas')->with('status','Data berhas
         dd($kelas);
         }
     }
+
+    public function hapusbayar($tapel,$kelas,$id,$detail_id)
+    {
+        //
+        // dd($id);
+        $ids=$detail_id;
+        // Tagihan_siswas_details::whereIn('id',$ids)->delete();
+        Tagihan_siswas_details::destroy($ids);
+        // $tapel_asli=str_replace('garing', '/', $tapel);
+
+
+        // $result  = DB::select("SELECT * FROM tagihan_siswas WHERE username_siswa='$id' AND tapel='$tapel_asli' AND kelas='$kelas' ORDER BY tagihan_siswas.nama ASC");
+        // dd($result);
+            return redirect(URL::to('/').'/admin/tagihansiswas/edittagihansiswas/'.$tapel.'/'.$kelas.'/'.$id)->with('status','Data berhasil ditemukan!');
+
+
+    }
 }

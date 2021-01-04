@@ -238,7 +238,7 @@ if($maxcolspan<$caridata){
                         </div>
 
 
-                        <form action="/admin/aturtagihans/{{$data->id}}" method="post" class="d-inline">
+                        <form action="/admin/tagihansiswas/{{$data->id}}" method="post" class="d-inline">
                             @method('DELETE')
                             @csrf
                             <button class="btn btn-danger m-w-100"
